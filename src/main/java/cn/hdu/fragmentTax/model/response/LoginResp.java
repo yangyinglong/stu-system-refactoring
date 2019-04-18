@@ -6,6 +6,7 @@ public class LoginResp {
     private String phone;
     private Integer status;
     private Integer sex;
+    private Integer state;
 
     public LoginResp() {
     }
@@ -56,5 +57,13 @@ public class LoginResp {
 
     public void setSex(Integer sex) {
         this.sex = sex;
+    }
+
+    public Integer getState() {
+        return state;
+    }
+
+    public void setState(Integer state) {
+        this.state = state;
     }
 }

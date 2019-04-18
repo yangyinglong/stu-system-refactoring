@@ -2,7 +2,9 @@ package cn.hdu.fragmentTax.service;
 
 import cn.hdu.fragmentTax.model.request.EditHonorResp;
 import cn.hdu.fragmentTax.model.request.EditPaperRequ;
+import cn.hdu.fragmentTax.model.request.EditPatentRequ;
 
+import java.text.ParseException;
 import java.util.Map;
 
 public interface IPrizeService {
@@ -15,4 +17,8 @@ public interface IPrizeService {
     Map<String,Object> editPaper(EditPaperRequ editPaperRequ);
 
     Map<String,Object> getPapers(String stuId);
+
+    Map<String,Object> editPatent(EditPatentRequ editPatentRequ);
+
+    Map<String,Object> getPatents(String stuId);
 }

@@ -1,42 +1,33 @@
 package cn.hdu.fragmentTax.model.response;
 
-public class GetPaperResp {
+public class GetPatentResp {
     private Integer id;
     private String stuId;
     private String name;
-    private String paperTitle;
-    private String journalTitle;
-    private String paperGrade;
-    private String paperState;
+    private String patentName;
+    private String patentType;
+    private String patentState;
     private Integer ranking;
     private Integer totalNumber;
     private String status;
     private String getDate;
     private Float score;
 
-    public GetPaperResp() {
+    public GetPatentResp() {
     }
 
-    public Float getScore() {
-        return score;
-    }
-
-    public void setScore(Float score) {
-        this.score = score;
-    }
-
-    public GetPaperResp(Integer id, String stuId, String name, String paperTitle, String journalTitle, String paperGrade, String paperState, Integer ranking, Integer totalNumber, String status, String getDate) {
+    public GetPatentResp(Integer id, String stuId, String name, String patentName, String patentType, String patentState, Integer ranking, Integer totalNumber, String status, String getDate, Float score) {
         this.id = id;
         this.stuId = stuId;
         this.name = name;
-        this.paperTitle = paperTitle;
-        this.journalTitle = journalTitle;
-        this.paperGrade = paperGrade;
-        this.paperState = paperState;
+        this.patentName = patentName;
+        this.patentType = patentType;
+        this.patentState = patentState;
         this.ranking = ranking;
         this.totalNumber = totalNumber;
         this.status = status;
         this.getDate = getDate;
+        this.score = score;
     }
 
     public Integer getId() {
@@ -63,36 +54,28 @@ public class GetPaperResp {
         this.name = name;
     }
 
-    public String getPaperTitle() {
-        return paperTitle;
+    public String getPatentName() {
+        return patentName;
     }
 
-    public void setPaperTitle(String paperTitle) {
-        this.paperTitle = paperTitle;
+    public void setPatentName(String patentName) {
+        this.patentName = patentName;
     }
 
-    public String getJournalTitle() {
-        return journalTitle;
+    public String getPatentType() {
+        return patentType;
     }
 
-    public void setJournalTitle(String journalTitle) {
-        this.journalTitle = journalTitle;
+    public void setPatentType(String patentType) {
+        this.patentType = patentType;
     }
 
-    public String getPaperGrade() {
-        return paperGrade;
+    public String getPatentState() {
+        return patentState;
     }
 
-    public void setPaperGrade(String paperGrade) {
-        this.paperGrade = paperGrade;
-    }
-
-    public String getPaperState() {
-        return paperState;
-    }
-
-    public void setPaperState(String paperState) {
-        this.paperState = paperState;
+    public void setPatentState(String patentState) {
+        this.patentState = patentState;
     }
 
     public Integer getRanking() {
@@ -125,5 +108,13 @@ public class GetPaperResp {
 
     public void setGetDate(String getDate) {
         this.getDate = getDate;
+    }
+
+    public Float getScore() {
+        return score;
+    }
+
+    public void setScore(Float score) {
+        this.score = score;
     }
 }

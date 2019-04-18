@@ -28,7 +28,7 @@ public interface ICounsellorsMapper {
     })
     CounsellorsEntity queryByKey(@Param("id") Integer id);
 
-    @Insert("INSERT INTO `counsellors`(`id`, `counsellorId`, `name`, `phone`, `state`) VALUES(#{id}, #{counsellorId}, #{name}, #{phone}, #{state})")
+    @Insert("INSERT INTO `counsellors`(`counsellorId`, `name`, `phone`, `state`) VALUES(#{counsellorId}, #{name}, #{phone}, #{state})")
     void insert(CounsellorsEntity counsellorsEntity);
 
     @Update("UPDATE `counsellors` SET id=#{id}, counsellorId=#{counsellorId}, name=#{name}, phone=#{phone}, state=#{state} WHERE `id` = #{id}")

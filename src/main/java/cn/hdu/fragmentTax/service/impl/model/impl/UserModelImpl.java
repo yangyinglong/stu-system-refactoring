@@ -1,7 +1,9 @@
 package cn.hdu.fragmentTax.service.impl.model.impl;
 
+import cn.hdu.fragmentTax.dao.entity.CounsellorsEntity;
 import cn.hdu.fragmentTax.dao.entity.PasswordEntity;
 import cn.hdu.fragmentTax.dao.entity.StuBaseEntity;
+import cn.hdu.fragmentTax.dao.entity.TutorsEntity;
 import cn.hdu.fragmentTax.model.request.RegisterRequ;
 import cn.hdu.fragmentTax.model.response.LoginResp;
 import cn.hdu.fragmentTax.service.impl.model.IUserModel;
@@ -38,5 +40,25 @@ public class UserModelImpl implements IUserModel {
         loginResp.setSex(stuBaseEntity.getSex());
         loginResp.setStatus(stuBaseEntity.getState());
         return loginResp;
+    }
+
+    @Override
+    public CounsellorsEntity createCounsellor(RegisterRequ registerRequ) {
+        CounsellorsEntity counsellorsEntity = new CounsellorsEntity();
+        counsellorsEntity.setCounsellorId(registerRequ.getStuId());
+        counsellorsEntity.setName(registerRequ.getName());
+        counsellorsEntity.setPhone(registerRequ.getPhone());
+        counsellorsEntity.setState(1);
+        return counsellorsEntity;
+    }
+
+    @Override
+    public TutorsEntity createTutor(RegisterRequ registerRequ) {
+        TutorsEntity tutorsEntity = new TutorsEntity();
+        tutorsEntity.setTutorId(registerRequ.getStuId());
+        tutorsEntity.setName(registerRequ.getName());
+        tutorsEntity.setPhone(registerRequ.getPhone());
+        tutorsEntity.setState(1);
+        return tutorsEntity;
     }
 }

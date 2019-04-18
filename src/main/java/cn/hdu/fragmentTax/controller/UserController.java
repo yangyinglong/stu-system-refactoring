@@ -70,4 +70,25 @@ public class UserController {
         return resp;
     }
 
+    /**
+     * 导师或者辅导员注册
+     * @param registerRequ
+     * @return
+     */
+    @Path("/registerTeacher")
+    @POST
+    @Produces(MediaType.APPLICATION_JSON)
+    public Map<String, Object> registerTeacher(RegisterRequ registerRequ){
+        Map<String, Object> resp = userService.registerTeacher(registerRequ);
+        return resp;
+    }
+
+    @Path("/loginTeacher")
+    @POST
+    @Produces(MediaType.APPLICATION_JSON)
+    public Map<String, Object> loginTeacher(StuLoginRequ loginRequ){
+        Map<String, Object> resp = userService.loginTeacher(loginRequ);
+        return resp;
+    }
+
 }

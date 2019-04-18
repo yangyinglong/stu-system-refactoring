@@ -3,15 +3,20 @@ package cn.hdu.fragmentTax.service.impl.model.impl;
 import cn.hdu.fragmentTax.dao.entity.AllPrizeEntity;
 import cn.hdu.fragmentTax.dao.entity.HonorEntity;
 import cn.hdu.fragmentTax.dao.entity.PaperEntity;
+import cn.hdu.fragmentTax.dao.entity.PatentEntity;
 import cn.hdu.fragmentTax.model.request.EditHonorResp;
 import cn.hdu.fragmentTax.model.request.EditPaperRequ;
+import cn.hdu.fragmentTax.model.request.EditPatentRequ;
 import cn.hdu.fragmentTax.model.response.GetHonorResp;
 import cn.hdu.fragmentTax.model.response.GetPaperResp;
+import cn.hdu.fragmentTax.model.response.GetPatentResp;
 import cn.hdu.fragmentTax.model.response.GetPrizesResp;
 import cn.hdu.fragmentTax.service.impl.model.IPrizeModel;
 import cn.hdu.fragmentTax.utils.DateUtil;
 import org.springframework.stereotype.Service;
 import sun.security.krb5.internal.PAData;
+
+import java.text.ParseException;
 
 @Service
 public class PrizeModelImpl implements IPrizeModel {
@@ -33,6 +38,7 @@ public class PrizeModelImpl implements IPrizeModel {
         GetHonorResp getHonorResp = new GetHonorResp();
         getHonorResp.setId(honorEntity.getId());
         getHonorResp.setStuId(honorEntity.getStuId());
+        getHonorResp.setScore(honorEntity.getScore());
         if (honorEntity.getHonorType() == 1) {
             getHonorResp.setHonorType("本科生奖学金");
         } else if (honorEntity.getHonorType() == 2) {
@@ -94,7 +100,7 @@ public class PrizeModelImpl implements IPrizeModel {
     }
 
     @Override
-    public PaperEntity createPaperEntity(EditPaperRequ editPaperRequ) {
+    public PaperEntity createPaperEntity(EditPaperRequ editPaperRequ) throws ParseException {
         PaperEntity paperEntity = new PaperEntity();
         paperEntity.setStuId(editPaperRequ.getStuId());
         paperEntity.setJournalTitle(editPaperRequ.getJournalTitle());
@@ -103,7 +109,7 @@ public class PrizeModelImpl implements IPrizeModel {
         paperEntity.setPaperState(editPaperRequ.getPaperState());
         paperEntity.setRanking(editPaperRequ.getRanking());
         paperEntity.setTotalNumber(editPaperRequ.getTotalNumber());
-        paperEntity.setCreatedTime(DateUtil.getCurrentDatetime());
+        paperEntity.setCreatedTime(DateUtil.getChinaDateTime(editPaperRequ.getGetDate()));
         paperEntity.setScore(10);
         paperEntity.setState(1);
         return paperEntity;
@@ -118,6 +124,8 @@ public class PrizeModelImpl implements IPrizeModel {
         getPaperResp.setJournalTitle(paperEntity.getJournalTitle());
         getPaperResp.setRanking(paperEntity.getRanking());
         getPaperResp.setTotalNumber(paperEntity.getTotalNumber());
+        getPaperResp.setGetDate(paperEntity.getCreatedTime().split(" ")[0]);
+        getPaperResp.setScore(paperEntity.getScore());
         if (paperEntity.getPaperGrade() == 1) {
             getPaperResp.setPaperGrade("一般");
         } else if (paperEntity.getPaperGrade() == 2) {
@@ -162,5 +170,63 @@ public class PrizeModelImpl implements IPrizeModel {
             getPaperResp.setStatus("已删除");
         }
         return getPaperResp;
+    }
+
+    @Override
+    public PatentEntity createPatentEntity(EditPatentRequ editPatentRequ) throws ParseException {
+        PatentEntity patentEntity = new PatentEntity();
+        patentEntity.setStuId(editPatentRequ.getStuId());
+        patentEntity.setPatentName(editPatentRequ.getPatentName());
+        patentEntity.setPatentType(editPatentRequ.getPatentType());
+        patentEntity.setPatentState(editPatentRequ.getPatentState());
+        patentEntity.setRanking(editPatentRequ.getRanking());
+        patentEntity.setTotalNumber(editPatentRequ.getTotalNumber());
+        patentEntity.setState(1);
+        patentEntity.setScore(0);
+        patentEntity.setCreatedTime(DateUtil.getChinaDateTime(editPatentRequ.getGetDate()));
+        return patentEntity;
+    }
+
+    @Override
+    public GetPatentResp createGetPatentResp(PatentEntity patentResp) {
+        GetPatentResp getPatentResp = new GetPatentResp();
+        getPatentResp.setId(patentResp.getId());
+        getPatentResp.setStuId(patentResp.getStuId());
+        getPatentResp.setPatentName(patentResp.getPatentName());
+        getPatentResp.setRanking(patentResp.getRanking());
+        getPatentResp.setTotalNumber(patentResp.getTotalNumber());
+        getPatentResp.setGetDate(patentResp.getCreatedTime().split(" ")[0]);
+        getPatentResp.setScore(patentResp.getScore());
+        if (patentResp.getState() == 1) {
+            getPatentResp.setStatus("待审核");
+        } else if (patentResp.getState() == 2) {
+            getPatentResp.setStatus("已通过");
+        } else {
+            getPatentResp.setStatus("已删除");
+        }
+//        1-实用新型专利,2-发明专利
+        if (patentResp.getPatentType() == 1) {
+            getPatentResp.setPatentType("实用新型专利");
+        } else {
+            getPatentResp.setPatentType("发明专利");
+        }
+            // 专利状态：1-申请,2-受理,3-审查中,4-一审,5-二审,6-三审,7-授权
+        if (patentResp.getPatentState() == 1) {
+            getPatentResp.setPatentState("申请");
+        } else if (patentResp.getPatentState() == 2) {
+            getPatentResp.setPatentState("受理");
+        } else if (patentResp.getPatentState() == 3) {
+            getPatentResp.setPatentState("审查中");
+        } else if (patentResp.getPatentState() == 4) {
+            getPatentResp.setPatentState("一审");
+        } else if (patentResp.getPatentState() == 5) {
+            getPatentResp.setPatentState("二审");
+        } else if (patentResp.getPatentState() == 6) {
+            getPatentResp.setPatentState("三审");
+        } else {
+            getPatentResp.setPatentState("授权");
+        }
+
+        return getPatentResp;
     }
 }

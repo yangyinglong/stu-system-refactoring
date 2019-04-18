@@ -8,6 +8,7 @@ public class GetHonorResp {
         private String honorGrade;
         private String getDate;
         private String status;
+        private Float score;
 
     public GetHonorResp() {
     }
@@ -20,6 +21,14 @@ public class GetHonorResp {
         this.honorGrade = honorGrade;
         this.getDate = getDate;
         this.status = status;
+    }
+
+    public Float getScore() {
+        return score;
+    }
+
+    public void setScore(Float score) {
+        this.score = score;
     }
 
     public Integer getId() {

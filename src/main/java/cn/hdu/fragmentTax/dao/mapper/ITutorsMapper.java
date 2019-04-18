@@ -28,7 +28,7 @@ public interface ITutorsMapper {
     })
     TutorsEntity queryByKey(@Param("id") Integer id);
 
-    @Insert("INSERT INTO `tutors`(`id`, `tutorId`, `name`, `phone`, `state`) VALUES(#{id}, #{tutorId}, #{name}, #{phone}, #{state})")
+    @Insert("INSERT INTO `tutors`(`tutorId`, `name`, `phone`, `state`) VALUES(#{tutorId}, #{name}, #{phone}, #{state})")
     void insert(TutorsEntity tutorsEntity);
 
     @Update("UPDATE `tutors` SET id=#{id}, tutorId=#{tutorId}, name=#{name}, phone=#{phone}, state=#{state} WHERE `id` = #{id}")

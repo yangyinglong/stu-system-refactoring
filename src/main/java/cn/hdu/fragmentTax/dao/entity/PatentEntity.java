@@ -22,6 +22,10 @@ private Integer patentState;  // 专利状态：1-申请,2-受理,3-审查中,4-
 @Column
 private String proofMaterialId;  // 佐证材料的名称
 @Column
+private Integer ranking;
+@Column
+private Integer totalNumber;
+@Column
 private float score;  // 得分
 @Column
 private Integer state;  // 审核状态，0-以驳回，1-待审核，2-已通过
@@ -32,13 +36,15 @@ private String changedTime;
 
 public PatentEntity(){}
 
-public PatentEntity(Integer id,String stuId,Integer patentType,String patentName,Integer patentState,String proofMaterialId,float score,Integer state,String createdTime,String changedTime){
+public PatentEntity(Integer id,String stuId,Integer patentType,String patentName,Integer patentState,String proofMaterialId,Integer ranking,Integer totalNumber,float score,Integer state,String createdTime,String changedTime){
 this.id = id;
 this.stuId = stuId;
 this.patentType = patentType;
 this.patentName = patentName;
 this.patentState = patentState;
 this.proofMaterialId = proofMaterialId;
+this.ranking = ranking;
+this.totalNumber = totalNumber;
 this.score = score;
 this.state = state;
 this.createdTime = createdTime;
@@ -68,6 +74,14 @@ public void setPatentState(Integer patentState){this.patentState = patentState;}
 public String getProofMaterialId() {return proofMaterialId;}
 
 public void setProofMaterialId(String proofMaterialId){this.proofMaterialId = proofMaterialId;}
+
+public Integer getRanking() {return ranking;}
+
+public void setRanking(Integer ranking){this.ranking = ranking;}
+
+public Integer getTotalNumber() {return totalNumber;}
+
+public void setTotalNumber(Integer totalNumber){this.totalNumber = totalNumber;}
 
 public float getScore() {return score;}
 

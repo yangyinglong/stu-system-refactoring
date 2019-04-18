@@ -15,4 +15,8 @@ public interface IUserService {
     Map<String,Object> editBaseInfo(EditBaseInfoRequ editBaseInfoRequ);
 
     Map<String,Object> forgetPass(ForgetPassRequ forgetPassRequ);
+
+    Map<String,Object> registerTeacher(RegisterRequ registerRequ);
+
+    Map<String,Object> loginTeacher(StuLoginRequ loginRequ);
 }
