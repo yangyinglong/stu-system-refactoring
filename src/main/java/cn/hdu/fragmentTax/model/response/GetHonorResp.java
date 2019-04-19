@@ -9,11 +9,13 @@ public class GetHonorResp {
         private String getDate;
         private String status;
         private Float score;
+        private String name;
+        private String proofMaterialId;
 
     public GetHonorResp() {
     }
 
-    public GetHonorResp(Integer id, String stuId, String honorType, String honorLevel, String honorGrade, String getDate, String status) {
+    public GetHonorResp(Integer id, String stuId, String honorType, String honorLevel, String honorGrade, String getDate, String status, Float score, String name, String proofMaterialId) {
         this.id = id;
         this.stuId = stuId;
         this.honorType = honorType;
@@ -21,6 +23,25 @@ public class GetHonorResp {
         this.honorGrade = honorGrade;
         this.getDate = getDate;
         this.status = status;
+        this.score = score;
+        this.name = name;
+        this.proofMaterialId = proofMaterialId;
+    }
+
+    public String getProofMaterialId() {
+        return proofMaterialId;
+    }
+
+    public void setProofMaterialId(String proofMaterialId) {
+        this.proofMaterialId = proofMaterialId;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public Float getScore() {

@@ -1,9 +1,6 @@
 package cn.hdu.fragmentTax.controller.config;
 
-import cn.hdu.fragmentTax.controller.FileController;
-import cn.hdu.fragmentTax.controller.PrizeController;
-import cn.hdu.fragmentTax.controller.ScoreController;
-import cn.hdu.fragmentTax.controller.UserController;
+import cn.hdu.fragmentTax.controller.*;
 import org.glassfish.jersey.media.multipart.MultiPartFeature;
 import org.glassfish.jersey.server.ResourceConfig;
 import org.springframework.stereotype.Component;
@@ -24,6 +21,7 @@ public class JerseyConfig extends ResourceConfig {
 		register(PrizeController.class);
         register(MultiPartFeature.class);
 		register(FileController.class);
+		register(AdminController.class);
 	}
 //
 //	@Bean

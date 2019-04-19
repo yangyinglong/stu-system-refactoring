@@ -11,11 +11,12 @@ public class EditPatentRequ {
     private Integer totalNumber;
     private String getDate;
     private Float score;
+    private String proofMaterialId;
 
     public EditPatentRequ() {
     }
 
-    public EditPatentRequ(Integer id, String stuId, String name, String patentName, Integer patentType, Integer patentState, Integer ranking, Integer totalNumber, String getDate, Float score) {
+    public EditPatentRequ(Integer id, String stuId, String name, String patentName, Integer patentType, Integer patentState, Integer ranking, Integer totalNumber, String getDate, Float score, String proofMaterialId) {
         this.id = id;
         this.stuId = stuId;
         this.name = name;
@@ -26,6 +27,15 @@ public class EditPatentRequ {
         this.totalNumber = totalNumber;
         this.getDate = getDate;
         this.score = score;
+        this.proofMaterialId = proofMaterialId;
+    }
+
+    public String getProofMaterialId() {
+        return proofMaterialId;
+    }
+
+    public void setProofMaterialId(String proofMaterialId) {
+        this.proofMaterialId = proofMaterialId;
     }
 
     public Integer getId() {

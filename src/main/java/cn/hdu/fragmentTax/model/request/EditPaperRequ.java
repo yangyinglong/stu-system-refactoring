@@ -11,11 +11,12 @@ public class EditPaperRequ {
     private Integer ranking;
     private Integer totalNumber;
     private String getDate;
+    private String proofMaterialId;
 
     public EditPaperRequ() {
     }
 
-    public EditPaperRequ(Integer id, String stuId, String name, String paperTitle, String journalTitle, Integer paperGrade, Integer paperState, Integer ranking, Integer totalNumber, String getDate) {
+    public EditPaperRequ(Integer id, String stuId, String name, String paperTitle, String journalTitle, Integer paperGrade, Integer paperState, Integer ranking, Integer totalNumber, String getDate, String proofMaterialId) {
         this.id = id;
         this.stuId = stuId;
         this.name = name;
@@ -26,6 +27,15 @@ public class EditPaperRequ {
         this.ranking = ranking;
         this.totalNumber = totalNumber;
         this.getDate = getDate;
+        this.proofMaterialId = proofMaterialId;
+    }
+
+    public String getProofMaterialId() {
+        return proofMaterialId;
+    }
+
+    public void setProofMaterialId(String proofMaterialId) {
+        this.proofMaterialId = proofMaterialId;
     }
 
     public Integer getId() {

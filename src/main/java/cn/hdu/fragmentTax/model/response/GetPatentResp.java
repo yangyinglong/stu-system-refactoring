@@ -12,11 +12,12 @@ public class GetPatentResp {
     private String status;
     private String getDate;
     private Float score;
+    private String proofMaterialId;
 
     public GetPatentResp() {
     }
 
-    public GetPatentResp(Integer id, String stuId, String name, String patentName, String patentType, String patentState, Integer ranking, Integer totalNumber, String status, String getDate, Float score) {
+    public GetPatentResp(Integer id, String stuId, String name, String patentName, String patentType, String patentState, Integer ranking, Integer totalNumber, String status, String getDate, Float score, String proofMaterialId) {
         this.id = id;
         this.stuId = stuId;
         this.name = name;
@@ -28,6 +29,15 @@ public class GetPatentResp {
         this.status = status;
         this.getDate = getDate;
         this.score = score;
+        this.proofMaterialId = proofMaterialId;
+    }
+
+    public String getProofMaterialId() {
+        return proofMaterialId;
+    }
+
+    public void setProofMaterialId(String proofMaterialId) {
+        this.proofMaterialId = proofMaterialId;
     }
 
     public Integer getId() {

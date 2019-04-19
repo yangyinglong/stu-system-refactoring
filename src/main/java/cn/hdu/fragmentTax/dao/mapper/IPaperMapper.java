@@ -44,10 +44,10 @@ public interface IPaperMapper {
     })
     PaperEntity queryByKey(@Param("id") Integer id);
 
-    @Insert("INSERT INTO `paper`(`stu_id`, `paper_grade`, `paper_title`, `journal_title`, `ranking`, `total_number`, `paper_state`, `score`, `state`, `created_time`) VALUES(#{stuId}, #{paperGrade}, #{paperTitle}, #{journalTitle}, #{ranking}, #{totalNumber}, #{paperState}, #{score}, #{state}, #{createdTime})")
+    @Insert("INSERT INTO `paper`(`stu_id`, `paper_grade`, `paper_title`, `journal_title`, `ranking`, `total_number`, `paper_state`, `score`, `state`, `created_time`, `proof_material_id`) VALUES(#{stuId}, #{paperGrade}, #{paperTitle}, #{journalTitle}, #{ranking}, #{totalNumber}, #{paperState}, #{score}, #{state}, #{createdTime}, #{proofMaterialId})")
     void insert(PaperEntity paperEntity);
 
-    @Update("UPDATE `paper` SET stu_id=#{stuId}, paper_grade=#{paperGrade}, paper_title=#{paperTitle}, journal_title=#{journalTitle}, ranking=#{ranking}, total_number=#{totalNumber}, paper_state=#{paperState}, score=#{score}, state=#{state}} WHERE `id` = #{id}")
+    @Update("UPDATE `paper` SET stu_id=#{stuId}, paper_grade=#{paperGrade}, paper_title=#{paperTitle}, journal_title=#{journalTitle}, ranking=#{ranking}, total_number=#{totalNumber}, paper_state=#{paperState}, score=#{score}, state=#{state}, proof_material_id=#{proofMaterialId} WHERE `id` = #{id}")
     void update(PaperEntity paperEntity);
 
     @Delete("DELETE FROM `paper` WHERE `id` = #{id}")

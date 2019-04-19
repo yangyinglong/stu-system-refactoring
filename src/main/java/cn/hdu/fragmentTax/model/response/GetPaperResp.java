@@ -13,6 +13,23 @@ public class GetPaperResp {
     private String status;
     private String getDate;
     private Float score;
+    private String proofMaterialId;
+
+    public GetPaperResp(Integer id, String stuId, String name, String paperTitle, String journalTitle, String paperGrade, String paperState, Integer ranking, Integer totalNumber, String status, String getDate, Float score, String proofMaterialId) {
+        this.id = id;
+        this.stuId = stuId;
+        this.name = name;
+        this.paperTitle = paperTitle;
+        this.journalTitle = journalTitle;
+        this.paperGrade = paperGrade;
+        this.paperState = paperState;
+        this.ranking = ranking;
+        this.totalNumber = totalNumber;
+        this.status = status;
+        this.getDate = getDate;
+        this.score = score;
+        this.proofMaterialId = proofMaterialId;
+    }
 
     public GetPaperResp() {
     }
@@ -25,18 +42,12 @@ public class GetPaperResp {
         this.score = score;
     }
 
-    public GetPaperResp(Integer id, String stuId, String name, String paperTitle, String journalTitle, String paperGrade, String paperState, Integer ranking, Integer totalNumber, String status, String getDate) {
-        this.id = id;
-        this.stuId = stuId;
-        this.name = name;
-        this.paperTitle = paperTitle;
-        this.journalTitle = journalTitle;
-        this.paperGrade = paperGrade;
-        this.paperState = paperState;
-        this.ranking = ranking;
-        this.totalNumber = totalNumber;
-        this.status = status;
-        this.getDate = getDate;
+    public String getProofMaterialId() {
+        return proofMaterialId;
+    }
+
+    public void setProofMaterialId(String proofMaterialId) {
+        this.proofMaterialId = proofMaterialId;
     }
 
     public Integer getId() {

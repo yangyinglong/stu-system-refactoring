@@ -2,22 +2,22 @@ package cn.hdu.fragmentTax.model.response;
 
 public class GetPrizesResp {
     private float honorScore;  // 荣誉总分
-    private Integer honorNum;  // 荣誉数量
+    private String honorNum;  // 荣誉数量
     private float paperScore;  // 论文总分
-    private Integer paperNum;  // 论文数量
+    private String paperNum;  // 论文数量
     private float patentScore;  // 专利总分
-    private Integer patentNum;  // 专利数量
+    private String patentNum;  // 专利数量
 
-    public GetPrizesResp(float honorScore, Integer honorNum, float paperScore, Integer paperNum, float patentScore, Integer patentNum) {
+    public GetPrizesResp() {
+    }
+
+    public GetPrizesResp(float honorScore, String honorNum, float paperScore, String paperNum, float patentScore, String patentNum) {
         this.honorScore = honorScore;
         this.honorNum = honorNum;
         this.paperScore = paperScore;
         this.paperNum = paperNum;
         this.patentScore = patentScore;
         this.patentNum = patentNum;
-    }
-
-    public GetPrizesResp() {
     }
 
     public float getHonorScore() {
@@ -28,11 +28,11 @@ public class GetPrizesResp {
         this.honorScore = honorScore;
     }
 
-    public Integer getHonorNum() {
+    public String getHonorNum() {
         return honorNum;
     }
 
-    public void setHonorNum(Integer honorNum) {
+    public void setHonorNum(String honorNum) {
         this.honorNum = honorNum;
     }
 
@@ -44,11 +44,11 @@ public class GetPrizesResp {
         this.paperScore = paperScore;
     }
 
-    public Integer getPaperNum() {
+    public String getPaperNum() {
         return paperNum;
     }
 
-    public void setPaperNum(Integer paperNum) {
+    public void setPaperNum(String paperNum) {
         this.paperNum = paperNum;
     }
 
@@ -60,11 +60,11 @@ public class GetPrizesResp {
         this.patentScore = patentScore;
     }
 
-    public Integer getPatentNum() {
+    public String getPatentNum() {
         return patentNum;
     }
 
-    public void setPatentNum(Integer patentNum) {
+    public void setPatentNum(String patentNum) {
         this.patentNum = patentNum;
     }
 }

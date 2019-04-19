@@ -28,8 +28,9 @@ public class PrizeModelImpl implements IPrizeModel {
         honorEntity.setHonorLevel(editHonorResp.getHonorLevel());
         honorEntity.setHonorType(editHonorResp.getHonorType());
         honorEntity.setCreatedTime(DateUtil.getCurrentDatetime());
-        honorEntity.setScore(10);
+        honorEntity.setScore(0);
         honorEntity.setState(1);
+        honorEntity.setProofMaterialId(editHonorResp.getProofMaterialId());
         return honorEntity;
     }
 
@@ -39,6 +40,7 @@ public class PrizeModelImpl implements IPrizeModel {
         getHonorResp.setId(honorEntity.getId());
         getHonorResp.setStuId(honorEntity.getStuId());
         getHonorResp.setScore(honorEntity.getScore());
+        getHonorResp.setProofMaterialId(honorEntity.getProofMaterialId());
         if (honorEntity.getHonorType() == 1) {
             getHonorResp.setHonorType("本科生奖学金");
         } else if (honorEntity.getHonorType() == 2) {
@@ -90,11 +92,8 @@ public class PrizeModelImpl implements IPrizeModel {
     @Override
     public GetPrizesResp createGetPrizesResp(AllPrizeEntity allPrizeEntity) {
         GetPrizesResp getPrizesResp = new GetPrizesResp();
-        getPrizesResp.setHonorNum(allPrizeEntity.getHonorNum());
         getPrizesResp.setHonorScore(allPrizeEntity.getHonorScore());
-        getPrizesResp.setPaperNum(allPrizeEntity.getPaperNum());
         getPrizesResp.setPaperScore(allPrizeEntity.getPaperSocre());
-        getPrizesResp.setPatentNum(allPrizeEntity.getPatentNum());
         getPrizesResp.setPatentScore(allPrizeEntity.getPatentScore());
         return getPrizesResp;
     }
@@ -103,6 +102,7 @@ public class PrizeModelImpl implements IPrizeModel {
     public PaperEntity createPaperEntity(EditPaperRequ editPaperRequ) throws ParseException {
         PaperEntity paperEntity = new PaperEntity();
         paperEntity.setStuId(editPaperRequ.getStuId());
+        paperEntity.setProofMaterialId(editPaperRequ.getProofMaterialId());
         paperEntity.setJournalTitle(editPaperRequ.getJournalTitle());
         paperEntity.setPaperTitle(editPaperRequ.getPaperTitle());
         paperEntity.setPaperGrade(editPaperRequ.getPaperGrade());
@@ -110,7 +110,7 @@ public class PrizeModelImpl implements IPrizeModel {
         paperEntity.setRanking(editPaperRequ.getRanking());
         paperEntity.setTotalNumber(editPaperRequ.getTotalNumber());
         paperEntity.setCreatedTime(DateUtil.getChinaDateTime(editPaperRequ.getGetDate()));
-        paperEntity.setScore(10);
+        paperEntity.setScore(0);
         paperEntity.setState(1);
         return paperEntity;
     }
@@ -126,6 +126,7 @@ public class PrizeModelImpl implements IPrizeModel {
         getPaperResp.setTotalNumber(paperEntity.getTotalNumber());
         getPaperResp.setGetDate(paperEntity.getCreatedTime().split(" ")[0]);
         getPaperResp.setScore(paperEntity.getScore());
+        getPaperResp.setProofMaterialId(paperEntity.getProofMaterialId());
         if (paperEntity.getPaperGrade() == 1) {
             getPaperResp.setPaperGrade("一般");
         } else if (paperEntity.getPaperGrade() == 2) {
@@ -176,6 +177,7 @@ public class PrizeModelImpl implements IPrizeModel {
     public PatentEntity createPatentEntity(EditPatentRequ editPatentRequ) throws ParseException {
         PatentEntity patentEntity = new PatentEntity();
         patentEntity.setStuId(editPatentRequ.getStuId());
+        patentEntity.setProofMaterialId(editPatentRequ.getProofMaterialId());
         patentEntity.setPatentName(editPatentRequ.getPatentName());
         patentEntity.setPatentType(editPatentRequ.getPatentType());
         patentEntity.setPatentState(editPatentRequ.getPatentState());
@@ -197,6 +199,7 @@ public class PrizeModelImpl implements IPrizeModel {
         getPatentResp.setTotalNumber(patentResp.getTotalNumber());
         getPatentResp.setGetDate(patentResp.getCreatedTime().split(" ")[0]);
         getPatentResp.setScore(patentResp.getScore());
+        getPatentResp.setProofMaterialId(patentResp.getProofMaterialId());
         if (patentResp.getState() == 1) {
             getPatentResp.setStatus("待审核");
         } else if (patentResp.getState() == 2) {

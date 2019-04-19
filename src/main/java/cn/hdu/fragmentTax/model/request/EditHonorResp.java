@@ -8,11 +8,12 @@ public class EditHonorResp {
     private Integer honorLevel;
     private Integer honorGrade;
     private String getDate;
+    private String proofMaterialId;
 
     public EditHonorResp() {
     }
 
-    public EditHonorResp(Integer id, String stuId, String name, Integer honorType, Integer honorLevel, Integer honorGrade, String getDate) {
+    public EditHonorResp(Integer id, String stuId, String name, Integer honorType, Integer honorLevel, Integer honorGrade, String getDate, String proofMaterialId) {
         this.id = id;
         this.stuId = stuId;
         this.name = name;
@@ -20,6 +21,15 @@ public class EditHonorResp {
         this.honorLevel = honorLevel;
         this.honorGrade = honorGrade;
         this.getDate = getDate;
+        this.proofMaterialId = proofMaterialId;
+    }
+
+    public String getProofMaterialId() {
+        return proofMaterialId;
+    }
+
+    public void setProofMaterialId(String proofMaterialId) {
+        this.proofMaterialId = proofMaterialId;
     }
 
     public String getStuId() {

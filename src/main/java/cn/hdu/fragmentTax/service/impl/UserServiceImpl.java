@@ -4,10 +4,7 @@ import cn.hdu.fragmentTax.dao.entity.CounsellorsEntity;
 import cn.hdu.fragmentTax.dao.entity.PasswordEntity;
 import cn.hdu.fragmentTax.dao.entity.StuBaseEntity;
 import cn.hdu.fragmentTax.dao.entity.TutorsEntity;
-import cn.hdu.fragmentTax.dao.mapper.ICounsellorsMapper;
-import cn.hdu.fragmentTax.dao.mapper.IPasswordMapper;
-import cn.hdu.fragmentTax.dao.mapper.IStuBaseMapper;
-import cn.hdu.fragmentTax.dao.mapper.ITutorsMapper;
+import cn.hdu.fragmentTax.dao.mapper.*;
 import cn.hdu.fragmentTax.model.request.EditBaseInfoRequ;
 import cn.hdu.fragmentTax.model.request.ForgetPassRequ;
 import cn.hdu.fragmentTax.model.request.RegisterRequ;
@@ -15,6 +12,7 @@ import cn.hdu.fragmentTax.model.request.StuLoginRequ;
 import cn.hdu.fragmentTax.model.response.LoginResp;
 import cn.hdu.fragmentTax.service.IUserService;
 import cn.hdu.fragmentTax.service.impl.model.IUserModel;
+import cn.hdu.fragmentTax.utils.DateUtil;
 import cn.hdu.fragmentTax.utils.FormatUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -35,6 +33,8 @@ public class UserServiceImpl implements IUserService {
     private ITutorsMapper tutorsMapper;
     @Autowired
     private ICounsellorsMapper counsellorsMapper;
+    @Autowired
+    private IAllPrizeMapper allPrizeMapper;
 
     @Autowired
     private IUserModel userModel;
@@ -55,6 +55,8 @@ public class UserServiceImpl implements IUserService {
         try {
             stuBaseMapper.insertBaseInfo(baseEntity);
             passwordMapper.insertAccPass(passwordEntity);
+//            在综合素质里面插入一条数据
+            allPrizeMapper.insertFirst(registerRequ.getStuId(), DateUtil.getCurrentDatetime());
             resp.put("c", 200);
             resp.put("r", "注册成功");
         } catch (Exception e) {
