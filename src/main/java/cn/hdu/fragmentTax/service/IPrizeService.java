@@ -1,5 +1,6 @@
 package cn.hdu.fragmentTax.service;
 
+import cn.hdu.fragmentTax.model.request.EditCompetitionRequ;
 import cn.hdu.fragmentTax.model.request.EditHonorResp;
 import cn.hdu.fragmentTax.model.request.EditPaperRequ;
 import cn.hdu.fragmentTax.model.request.EditPatentRequ;
@@ -21,4 +22,8 @@ public interface IPrizeService {
     Map<String,Object> editPatent(EditPatentRequ editPatentRequ);
 
     Map<String,Object> getPatents(String stuId);
+
+    Map<String,Object> editCompetition(EditCompetitionRequ editCompetitionRequ);
+
+    Map<String,Object> getCompetitions(String stuId);
 }

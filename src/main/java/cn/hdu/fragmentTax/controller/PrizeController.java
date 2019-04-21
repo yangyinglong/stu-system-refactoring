@@ -1,5 +1,6 @@
 package cn.hdu.fragmentTax.controller;
 
+import cn.hdu.fragmentTax.model.request.EditCompetitionRequ;
 import cn.hdu.fragmentTax.model.request.EditHonorResp;
 import cn.hdu.fragmentTax.model.request.EditPaperRequ;
 import cn.hdu.fragmentTax.model.request.EditPatentRequ;
@@ -101,11 +102,42 @@ public class PrizeController {
         return resp;
     }
 
+    /**
+     * 获取发明专利
+     * @param stuId
+     * @return
+     */
     @Path("/getPatents")
     @POST
     @Produces(MediaType.APPLICATION_JSON)
     public Map<String, Object> getPatents(String stuId){
         Map<String, Object> resp = prizeService.getPatents(stuId);
+        return resp;
+    }
+
+    /**
+     * 增加或者更新学科竞赛
+     * @param editCompetitionRequ
+     * @return
+     */
+    @Path("/editCompetition")
+    @POST
+    @Produces(MediaType.APPLICATION_JSON)
+    public Map<String, Object> editCompetition(EditCompetitionRequ editCompetitionRequ){
+        Map<String, Object> resp = prizeService.editCompetition(editCompetitionRequ);
+        return resp;
+    }
+
+    /**
+     * 根据学号获取竞赛
+     * @param stuId
+     * @return
+     */
+    @Path("/getCompetitions")
+    @POST
+    @Produces(MediaType.APPLICATION_JSON)
+    public Map<String, Object> getCompetitions(String stuId){
+        Map<String, Object> resp = prizeService.getCompetitions(stuId);
         return resp;
     }
 

@@ -1,20 +1,12 @@
 package cn.hdu.fragmentTax.service.impl;
 
-import cn.hdu.fragmentTax.dao.entity.AllPrizeEntity;
-import cn.hdu.fragmentTax.dao.entity.HonorEntity;
-import cn.hdu.fragmentTax.dao.entity.PaperEntity;
-import cn.hdu.fragmentTax.dao.entity.PatentEntity;
-import cn.hdu.fragmentTax.dao.mapper.IAllPrizeMapper;
-import cn.hdu.fragmentTax.dao.mapper.IHonorMapper;
-import cn.hdu.fragmentTax.dao.mapper.IPaperMapper;
-import cn.hdu.fragmentTax.dao.mapper.IPatentMapper;
+import cn.hdu.fragmentTax.dao.entity.*;
+import cn.hdu.fragmentTax.dao.mapper.*;
+import cn.hdu.fragmentTax.model.request.EditCompetitionRequ;
 import cn.hdu.fragmentTax.model.request.EditHonorResp;
 import cn.hdu.fragmentTax.model.request.EditPaperRequ;
 import cn.hdu.fragmentTax.model.request.EditPatentRequ;
-import cn.hdu.fragmentTax.model.response.GetHonorResp;
-import cn.hdu.fragmentTax.model.response.GetPaperResp;
-import cn.hdu.fragmentTax.model.response.GetPatentResp;
-import cn.hdu.fragmentTax.model.response.GetPrizesResp;
+import cn.hdu.fragmentTax.model.response.*;
 import cn.hdu.fragmentTax.service.IPrizeService;
 import cn.hdu.fragmentTax.service.impl.model.IPrizeModel;
 import cn.hdu.fragmentTax.utils.DateUtil;
@@ -23,10 +15,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.text.ParseException;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 @Service
 public class PrizeServiceImpl implements IPrizeService {
@@ -45,6 +34,9 @@ public class PrizeServiceImpl implements IPrizeService {
 
     @Autowired
     private IPatentMapper patentMapper;
+
+    @Autowired
+    private ICompetitionMapper competitionMapper;
 
     @Override
     public Map<String, Object> editHonor(EditHonorResp editHonorResp) {
@@ -196,6 +188,50 @@ public class PrizeServiceImpl implements IPrizeService {
         }
         resp.put("c", 200);
         resp.put("r", getPatentResps);
+        return resp;
+    }
+
+    @Override
+    public Map<String, Object> editCompetition(EditCompetitionRequ editCompetitionRequ) {
+        Map<String, Object> resp = new HashMap<>();
+        if (!FormatUtil.isEmpty(editCompetitionRequ.getId())) {
+            // 更新
+            try {
+                CompetitionEntity competitionEntity = prizeModel.createCompetitionEntity(editCompetitionRequ);
+                competitionEntity.setId(editCompetitionRequ.getId());
+                competitionMapper.update(competitionEntity);
+                resp.put("c", 200);
+                resp.put("r", "修改成功");
+            } catch (Exception e) {
+                resp.put("c", 401);
+                resp.put("r", "数据库错误");
+            }
+        } else {
+            // 插入
+            try {
+                CompetitionEntity competitionEntity = prizeModel.createCompetitionEntity(editCompetitionRequ);
+                competitionMapper.insert(competitionEntity);
+                resp.put("c", 200);
+                resp.put("r", "插入成功");
+            } catch (Exception e) {
+                resp.put("c", 401);
+                resp.put("r", "数据库错误");
+            }
+        }
+        return resp;
+    }
+
+    @Override
+    public Map<String, Object> getCompetitions(String stuId) {
+        Map<String, Object> resp = new HashMap<>();
+        List<CompetitionEntity> competitionEntities = competitionMapper.queryByStuId(stuId);
+        List<GetCompetitionResp> getCompetitionResps = new ArrayList<GetCompetitionResp>();
+        for (CompetitionEntity competitionEntity : competitionEntities) {
+            GetCompetitionResp getCompetitionResp = prizeModel.createGetCompetitionResp(competitionEntity);
+            getCompetitionResps.add(getCompetitionResp);
+        }
+        resp.put("c", 200);
+        resp.put("r", getCompetitionResps);
         return resp;
     }
 

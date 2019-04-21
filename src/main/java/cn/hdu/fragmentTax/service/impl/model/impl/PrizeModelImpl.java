@@ -1,18 +1,14 @@
 package cn.hdu.fragmentTax.service.impl.model.impl;
 
-import cn.hdu.fragmentTax.dao.entity.AllPrizeEntity;
-import cn.hdu.fragmentTax.dao.entity.HonorEntity;
-import cn.hdu.fragmentTax.dao.entity.PaperEntity;
-import cn.hdu.fragmentTax.dao.entity.PatentEntity;
+import cn.hdu.fragmentTax.dao.entity.*;
+import cn.hdu.fragmentTax.model.request.EditCompetitionRequ;
 import cn.hdu.fragmentTax.model.request.EditHonorResp;
 import cn.hdu.fragmentTax.model.request.EditPaperRequ;
 import cn.hdu.fragmentTax.model.request.EditPatentRequ;
-import cn.hdu.fragmentTax.model.response.GetHonorResp;
-import cn.hdu.fragmentTax.model.response.GetPaperResp;
-import cn.hdu.fragmentTax.model.response.GetPatentResp;
-import cn.hdu.fragmentTax.model.response.GetPrizesResp;
+import cn.hdu.fragmentTax.model.response.*;
 import cn.hdu.fragmentTax.service.impl.model.IPrizeModel;
 import cn.hdu.fragmentTax.utils.DateUtil;
+import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
 import sun.security.krb5.internal.PAData;
 
@@ -231,5 +227,39 @@ public class PrizeModelImpl implements IPrizeModel {
         }
 
         return getPatentResp;
+    }
+
+    @Override
+    public CompetitionEntity createCompetitionEntity(EditCompetitionRequ editCompetitionRequ) throws ParseException {
+        CompetitionEntity competitionEntity = new CompetitionEntity();
+        competitionEntity.setStuId(editCompetitionRequ.getStuId());
+        competitionEntity.setCompetitionName(editCompetitionRequ.getCompetitionName());
+        competitionEntity.setCompetitionType(editCompetitionRequ.getCompetitionType());
+        competitionEntity.setCompetitionLevel(editCompetitionRequ.getCompetitionLevel());
+        competitionEntity.setCompetitionPrize(editCompetitionRequ.getCompetitionPrize());
+        competitionEntity.setCompetitionState(editCompetitionRequ.getCompetitionState());
+        competitionEntity.setCreatedTime(DateUtil.getChinaDateTime(editCompetitionRequ.getGetDate()));
+        competitionEntity.setProofMaterialId(editCompetitionRequ.getProofMaterialId());
+        competitionEntity.setRanking(editCompetitionRequ.getRanking());
+        competitionEntity.setTotalNumber(editCompetitionRequ.getTotalNumber());
+        competitionEntity.setScore(0);
+        competitionEntity.setState(1);
+        competitionEntity.setTeacher(editCompetitionRequ.getTeacher());
+        return competitionEntity;
+    }
+
+    @Override
+    public GetCompetitionResp createGetCompetitionResp(CompetitionEntity competitionEntity) {
+        GetCompetitionResp getCompetitionResp = new GetCompetitionResp();
+        BeanUtils.copyProperties(competitionEntity, getCompetitionResp);
+        getCompetitionResp.setGetDate(competitionEntity.getCreatedTime().split(" ")[0]);
+        if (competitionEntity.getState() == 1) {
+            getCompetitionResp.setStatus("待审核");
+        } else if (competitionEntity.getState() == 2) {
+            getCompetitionResp.setStatus("已通过");
+        } else {
+            getCompetitionResp.setStatus("已删除");
+        }
+        return getCompetitionResp;
     }
 }

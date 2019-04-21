@@ -2,44 +2,43 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ab7266a4-c91e-4b30-b3a2-f192191dfd0d" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/cn/hdu/fragmentTax/controller/AdminController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/cn/hdu/fragmentTax/model/request/AdminExamRequ.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/cn/hdu/fragmentTax/model/request/AdminQueryRequ.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/cn/hdu/fragmentTax/service/IAdminService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/cn/hdu/fragmentTax/service/impl/AdminServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/cn/hdu/fragmentTax/service/impl/model/IAdminModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/cn/hdu/fragmentTax/service/impl/model/impl/AdminModelImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/cn/hdu/fragmentTax/dao/entity/AcademicExchangeEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/cn/hdu/fragmentTax/dao/entity/CompetitionEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/cn/hdu/fragmentTax/dao/entity/EngineeringProEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/cn/hdu/fragmentTax/dao/entity/EntrepreneurialProEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/cn/hdu/fragmentTax/dao/entity/InnovativeProEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/cn/hdu/fragmentTax/dao/entity/MasterPaperEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/cn/hdu/fragmentTax/dao/entity/WorkEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/cn/hdu/fragmentTax/dao/mapper/IAcademicExchangeMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/cn/hdu/fragmentTax/dao/mapper/ICompetitionMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/cn/hdu/fragmentTax/dao/mapper/IEngineeringProMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/cn/hdu/fragmentTax/dao/mapper/IEntrepreneurialProMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/cn/hdu/fragmentTax/dao/mapper/IInnovativeProMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/cn/hdu/fragmentTax/dao/mapper/IMasterPaperMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/cn/hdu/fragmentTax/dao/mapper/IWorkMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/cn/hdu/fragmentTax/model/request/EditCompetitionRequ.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/cn/hdu/fragmentTax/model/response/GetCompetitionResp.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/hdu/fragmentTax/controller/FileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/hdu/fragmentTax/controller/FileController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/hdu/fragmentTax/controller/config/JerseyConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/hdu/fragmentTax/controller/config/JerseyConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/hdu/fragmentTax/controller/PrizeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/hdu/fragmentTax/controller/PrizeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/hdu/fragmentTax/dao/entity/AllPrizeEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/hdu/fragmentTax/dao/entity/AllPrizeEntity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/cn/hdu/fragmentTax/dao/mapper/IAllPrizeMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/hdu/fragmentTax/dao/mapper/IAllPrizeMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/hdu/fragmentTax/dao/mapper/IHonorMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/hdu/fragmentTax/dao/mapper/IHonorMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/hdu/fragmentTax/dao/mapper/IPaperMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/hdu/fragmentTax/dao/mapper/IPaperMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/hdu/fragmentTax/dao/mapper/IPatentMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/hdu/fragmentTax/dao/mapper/IPatentMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/hdu/fragmentTax/model/request/EditHonorResp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/hdu/fragmentTax/model/request/EditHonorResp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/hdu/fragmentTax/model/request/EditPaperRequ.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/hdu/fragmentTax/model/request/EditPaperRequ.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/hdu/fragmentTax/model/request/EditPatentRequ.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/hdu/fragmentTax/model/request/EditPatentRequ.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/hdu/fragmentTax/model/response/GetHonorResp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/hdu/fragmentTax/model/response/GetHonorResp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/hdu/fragmentTax/model/response/GetPaperResp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/hdu/fragmentTax/model/response/GetPaperResp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/hdu/fragmentTax/model/response/GetPatentResp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/hdu/fragmentTax/model/response/GetPatentResp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/hdu/fragmentTax/model/response/GetPrizesResp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/hdu/fragmentTax/model/response/GetPrizesResp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/hdu/fragmentTax/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/hdu/fragmentTax/service/impl/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/hdu/fragmentTax/service/IPrizeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/hdu/fragmentTax/service/IPrizeService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/hdu/fragmentTax/service/impl/PrizeServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/hdu/fragmentTax/service/impl/PrizeServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/hdu/fragmentTax/service/impl/model/IPrizeModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/hdu/fragmentTax/service/impl/model/IPrizeModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/cn/hdu/fragmentTax/service/impl/model/impl/PrizeModelImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/hdu/fragmentTax/service/impl/model/impl/PrizeModelImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/cn/hdu/fragmentTax/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/cn/hdu/fragmentTax/controller/UserController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/cn/hdu/fragmentTax/controller/config/JerseyConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/cn/hdu/fragmentTax/controller/config/JerseyConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/hdu/fragmentTax/controller/FileController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/cn/hdu/fragmentTax/controller/FileController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/hdu/fragmentTax/controller/PrizeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/cn/hdu/fragmentTax/controller/PrizeController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/hdu/fragmentTax/dao/entity/AllPrizeEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/cn/hdu/fragmentTax/dao/entity/AllPrizeEntity.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/cn/hdu/fragmentTax/dao/mapper/IAllPrizeMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/cn/hdu/fragmentTax/dao/mapper/IAllPrizeMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/cn/hdu/fragmentTax/dao/mapper/ICounsellorsMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/cn/hdu/fragmentTax/dao/mapper/ICounsellorsMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/cn/hdu/fragmentTax/dao/mapper/IHonorMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/cn/hdu/fragmentTax/dao/mapper/IHonorMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/cn/hdu/fragmentTax/dao/mapper/ITutorsMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/cn/hdu/fragmentTax/dao/mapper/ITutorsMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/cn/hdu/fragmentTax/model/request/StuLoginRequ.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/cn/hdu/fragmentTax/model/request/StuLoginRequ.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/cn/hdu/fragmentTax/model/response/GetHonorResp.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/cn/hdu/fragmentTax/model/response/GetHonorResp.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/cn/hdu/fragmentTax/model/response/GetPrizesResp.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/cn/hdu/fragmentTax/model/response/GetPrizesResp.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/cn/hdu/fragmentTax/model/response/LoginResp.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/cn/hdu/fragmentTax/model/response/LoginResp.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/cn/hdu/fragmentTax/service/IUserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/cn/hdu/fragmentTax/service/IUserService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/cn/hdu/fragmentTax/service/impl/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/cn/hdu/fragmentTax/service/impl/UserServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/cn/hdu/fragmentTax/service/impl/model/IUserModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/cn/hdu/fragmentTax/service/impl/model/IUserModel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/hdu/fragmentTax/dao/mapper/IPaperMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/cn/hdu/fragmentTax/dao/mapper/IPaperMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/hdu/fragmentTax/dao/mapper/IPatentMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/cn/hdu/fragmentTax/dao/mapper/IPatentMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/hdu/fragmentTax/model/request/EditHonorResp.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/cn/hdu/fragmentTax/model/request/EditHonorResp.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/hdu/fragmentTax/model/request/EditPaperRequ.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/cn/hdu/fragmentTax/model/request/EditPaperRequ.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/hdu/fragmentTax/model/response/GetPaperResp.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/cn/hdu/fragmentTax/model/response/GetPaperResp.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/hdu/fragmentTax/service/IPrizeService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/cn/hdu/fragmentTax/service/IPrizeService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/hdu/fragmentTax/service/impl/PrizeServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/cn/hdu/fragmentTax/service/impl/PrizeServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/hdu/fragmentTax/service/impl/model/IPrizeModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/cn/hdu/fragmentTax/service/impl/model/IPrizeModel.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/cn/hdu/fragmentTax/service/impl/model/impl/PrizeModelImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/cn/hdu/fragmentTax/service/impl/model/impl/PrizeModelImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/cn/hdu/fragmentTax/service/impl/model/impl/UserModelImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/cn/hdu/fragmentTax/service/impl/model/impl/UserModelImpl.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -55,8 +54,8 @@
       <file leaf-file-name="IPrizeModel.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/cn/hdu/fragmentTax/service/impl/model/IPrizeModel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
-              <caret line="29" column="18" selection-start-line="29" selection-start-column="18" selection-end-line="29" selection-end-column="18" />
+            <state relative-caret-position="75">
+              <caret line="28" column="23" selection-start-line="28" selection-start-column="23" selection-end-line="28" selection-end-column="23" />
             </state>
           </provider>
         </entry>
@@ -64,22 +63,175 @@
       <file leaf-file-name="PrizeModelImpl.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/cn/hdu/fragmentTax/service/impl/model/impl/PrizeModelImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="217">
-              <caret line="192" column="36" lean-forward="true" selection-start-line="192" selection-start-column="36" selection-end-line="192" selection-end-column="36" />
+            <state relative-caret-position="75">
+              <caret line="254" column="85" selection-start-line="254" selection-start-column="85" selection-end-line="254" selection-end-column="85" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PrizeServiceImpl.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="PrizeServiceImpl.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/cn/hdu/fragmentTax/service/impl/PrizeServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="81">
-              <caret line="86" selection-start-line="86" selection-end-line="86" />
+            <state relative-caret-position="157">
+              <caret line="225" selection-start-line="225" selection-end-line="225" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#2830#2844#0" expanded="true" />
-                <element signature="e#5278#5292#0" expanded="true" />
-                <element signature="e#6917#6932#0" expanded="true" />
+                <element signature="e#8222#8242#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ICompetitionMapper.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/cn/hdu/fragmentTax/dao/mapper/ICompetitionMapper.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-299">
+              <caret line="57" column="292" selection-start-line="57" selection-start-column="292" selection-end-line="57" selection-end-column="292" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GetCompetitionResp.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/cn/hdu/fragmentTax/model/response/GetCompetitionResp.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="534">
+              <caret line="38" column="28" selection-start-line="38" selection-start-column="28" selection-end-line="38" selection-end-column="28" />
+              <folding>
+                <element signature="e#1459#1460#0" expanded="true" />
+                <element signature="e#1496#1497#0" expanded="true" />
+                <element signature="e#1524#1525#0" expanded="true" />
+                <element signature="e#1556#1557#0" expanded="true" />
+                <element signature="e#1584#1585#0" expanded="true" />
+                <element signature="e#1626#1627#0" expanded="true" />
+                <element signature="e#1660#1661#0" expanded="true" />
+                <element signature="e#1702#1703#0" expanded="true" />
+                <element signature="e#1740#1741#0" expanded="true" />
+                <element signature="e#1802#1803#0" expanded="true" />
+                <element signature="e#1856#1857#0" expanded="true" />
+                <element signature="e#1898#1899#0" expanded="true" />
+                <element signature="e#1936#1937#0" expanded="true" />
+                <element signature="e#1998#1999#0" expanded="true" />
+                <element signature="e#2052#2053#0" expanded="true" />
+                <element signature="e#2087#2088#0" expanded="true" />
+                <element signature="e#2117#2118#0" expanded="true" />
+                <element signature="e#2164#2165#0" expanded="true" />
+                <element signature="e#2202#2203#0" expanded="true" />
+                <element signature="e#2241#2242#0" expanded="true" />
+                <element signature="e#2275#2276#0" expanded="true" />
+                <element signature="e#2330#2331#0" expanded="true" />
+                <element signature="e#2376#2377#0" expanded="true" />
+                <element signature="e#2419#2420#0" expanded="true" />
+                <element signature="e#2458#2459#0" expanded="true" />
+                <element signature="e#2522#2523#0" expanded="true" />
+                <element signature="e#2578#2579#0" expanded="true" />
+                <element signature="e#2621#2622#0" expanded="true" />
+                <element signature="e#2660#2661#0" expanded="true" />
+                <element signature="e#2724#2725#0" expanded="true" />
+                <element signature="e#2780#2781#0" expanded="true" />
+                <element signature="e#2823#2824#0" expanded="true" />
+                <element signature="e#2862#2863#0" expanded="true" />
+                <element signature="e#2926#2927#0" expanded="true" />
+                <element signature="e#2982#2983#0" expanded="true" />
+                <element signature="e#3016#3017#0" expanded="true" />
+                <element signature="e#3046#3047#0" expanded="true" />
+                <element signature="e#3092#3093#0" expanded="true" />
+                <element signature="e#3130#3131#0" expanded="true" />
+                <element signature="e#3164#3165#0" expanded="true" />
+                <element signature="e#3194#3195#0" expanded="true" />
+                <element signature="e#3240#3241#0" expanded="true" />
+                <element signature="e#3278#3279#0" expanded="true" />
+                <element signature="e#3320#3321#0" expanded="true" />
+                <element signature="e#3358#3359#0" expanded="true" />
+                <element signature="e#3420#3421#0" expanded="true" />
+                <element signature="e#3474#3475#0" expanded="true" />
+                <element signature="e#3507#3508#0" expanded="true" />
+                <element signature="e#3536#3537#0" expanded="true" />
+                <element signature="e#3580#3581#0" expanded="true" />
+                <element signature="e#3616#3617#0" expanded="true" />
+                <element signature="e#3647#3648#0" expanded="true" />
+                <element signature="e#3675#3676#0" expanded="true" />
+                <element signature="e#3716#3717#0" expanded="true" />
+                <element signature="e#3750#3751#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="IInnovativeProMapper.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/cn/hdu/fragmentTax/dao/mapper/IInnovativeProMapper.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="416">
+              <caret line="20" selection-start-line="20" selection-end-line="20" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="InnovativeProEntity.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/cn/hdu/fragmentTax/dao/entity/InnovativeProEntity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="466">
+              <caret line="40" column="27" selection-start-line="40" selection-start-column="19" selection-end-line="40" selection-end-column="27" />
+              <folding>
+                <element signature="e#1698#1699#0" expanded="true" />
+                <element signature="e#1723#1724#0" expanded="true" />
+                <element signature="e#1760#1761#0" expanded="true" />
+                <element signature="e#1788#1789#0" expanded="true" />
+                <element signature="e#1820#1821#0" expanded="true" />
+                <element signature="e#1848#1849#0" expanded="true" />
+                <element signature="e#1890#1891#0" expanded="true" />
+                <element signature="e#1924#1925#0" expanded="true" />
+                <element signature="e#1958#1959#0" expanded="true" />
+                <element signature="e#1988#1989#0" expanded="true" />
+                <element signature="e#2034#2035#0" expanded="true" />
+                <element signature="e#2072#2073#0" expanded="true" />
+                <element signature="e#2106#2107#0" expanded="true" />
+                <element signature="e#2136#2137#0" expanded="true" />
+                <element signature="e#2182#2183#0" expanded="true" />
+                <element signature="e#2220#2221#0" expanded="true" />
+                <element signature="e#2254#2255#0" expanded="true" />
+                <element signature="e#2284#2285#0" expanded="true" />
+                <element signature="e#2330#2331#0" expanded="true" />
+                <element signature="e#2368#2369#0" expanded="true" />
+                <element signature="e#2403#2404#0" expanded="true" />
+                <element signature="e#2433#2434#0" expanded="true" />
+                <element signature="e#2480#2481#0" expanded="true" />
+                <element signature="e#2518#2519#0" expanded="true" />
+                <element signature="e#2557#2558#0" expanded="true" />
+                <element signature="e#2591#2592#0" expanded="true" />
+                <element signature="e#2646#2647#0" expanded="true" />
+                <element signature="e#2692#2693#0" expanded="true" />
+                <element signature="e#2727#2728#0" expanded="true" />
+                <element signature="e#2758#2759#0" expanded="true" />
+                <element signature="e#2806#2807#0" expanded="true" />
+                <element signature="e#2846#2847#0" expanded="true" />
+                <element signature="e#2882#2883#0" expanded="true" />
+                <element signature="e#2914#2915#0" expanded="true" />
+                <element signature="e#2964#2965#0" expanded="true" />
+                <element signature="e#3006#3007#0" expanded="true" />
+                <element signature="e#3048#3049#0" expanded="true" />
+                <element signature="e#3086#3087#0" expanded="true" />
+                <element signature="e#3148#3149#0" expanded="true" />
+                <element signature="e#3202#3203#0" expanded="true" />
+                <element signature="e#3236#3237#0" expanded="true" />
+                <element signature="e#3266#3267#0" expanded="true" />
+                <element signature="e#3312#3313#0" expanded="true" />
+                <element signature="e#3350#3351#0" expanded="true" />
+                <element signature="e#3381#3382#0" expanded="true" />
+                <element signature="e#3409#3410#0" expanded="true" />
+                <element signature="e#3450#3451#0" expanded="true" />
+                <element signature="e#3484#3485#0" expanded="true" />
+                <element signature="e#3517#3518#0" expanded="true" />
+                <element signature="e#3545#3546#0" expanded="true" />
+                <element signature="e#3588#3589#0" expanded="true" />
+                <element signature="e#3622#3623#0" expanded="true" />
+                <element signature="e#3660#3661#0" expanded="true" />
+                <element signature="e#3694#3695#0" expanded="true" />
+                <element signature="e#3748#3749#0" expanded="true" />
+                <element signature="e#3794#3795#0" expanded="true" />
+                <element signature="e#3829#3830#0" expanded="true" />
+                <element signature="e#3860#3861#0" expanded="true" />
+                <element signature="e#3908#3909#0" expanded="true" />
+                <element signature="e#3948#3949#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -88,7 +240,7 @@
       <file leaf-file-name="FileController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/cn/hdu/fragmentTax/controller/FileController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="81">
+            <state relative-caret-position="73">
               <caret line="34" selection-start-line="34" selection-end-line="34" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -97,74 +249,20 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="IPrizeService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/cn/hdu/fragmentTax/service/IPrizeService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="378">
+              <caret line="27" column="23" selection-start-line="27" selection-start-column="23" selection-end-line="27" selection-end-column="23" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="PrizeController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/cn/hdu/fragmentTax/controller/PrizeController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="173">
-              <caret line="73" selection-start-line="73" selection-end-line="73" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="IPatentMapper.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/cn/hdu/fragmentTax/dao/mapper/IPatentMapper.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="389">
-              <caret line="48" column="12" lean-forward="true" selection-start-line="48" selection-start-column="12" selection-end-line="48" selection-end-column="12" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="EditPatentRequ.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/cn/hdu/fragmentTax/model/request/EditPatentRequ.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="521">
-              <caret line="32" column="40" selection-start-line="32" selection-start-column="40" selection-end-line="32" selection-end-column="40" />
-              <folding>
-                <element signature="e#1107#1108#0" expanded="true" />
-                <element signature="e#1169#1170#0" expanded="true" />
-                <element signature="e#1223#1224#0" expanded="true" />
-                <element signature="e#949#950#0" expanded="true" />
-                <element signature="e#974#975#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GetPatentResp.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/cn/hdu/fragmentTax/model/response/GetPatentResp.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="495">
-              <caret line="34" column="40" selection-start-line="34" selection-start-column="40" selection-end-line="34" selection-end-column="40" />
-              <folding>
-                <element signature="e#1173#1174#0" expanded="true" />
-                <element signature="e#1235#1236#0" expanded="true" />
-                <element signature="e#1289#1290#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="IPaperMapper.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/cn/hdu/fragmentTax/dao/mapper/IPaperMapper.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="50" column="13" selection-start-line="50" selection-start-column="13" selection-end-line="50" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GetPaperResp.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/cn/hdu/fragmentTax/model/response/GetPaperResp.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="52">
-              <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-              <folding>
-                <element signature="e#1358#1359#0" expanded="true" />
-                <element signature="e#1396#1397#0" expanded="true" />
-                <element signature="e#1458#1459#0" expanded="true" />
-                <element signature="e#1512#1513#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="86">
+              <caret line="139" selection-start-line="139" selection-end-line="139" />
             </state>
           </provider>
         </entry>
@@ -185,14 +283,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/cn/hdu/fragmentTax/service/impl/ScoreServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/hdu/fragmentTax/service/impl/model/impl/ScoreModelImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/hdu/fragmentTax/service/impl/model/IScoreModel.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/hdu/fragmentTax/model/response/GetHonorByStuIdResp.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/hdu/fragmentTax/controller/ScoreController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/hdu/fragmentTax/service/impl/model/IHonorModel.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/hdu/fragmentTax/dao/entity/PaperEntity.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/hdu/fragmentTax/controller/HonorController.java" />
         <option value="$PROJECT_DIR$/src/main/java/cn/hdu/fragmentTax/service/IHonorService.java" />
         <option value="$PROJECT_DIR$/src/main/java/cn/hdu/fragmentTax/service/impl/HonorServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/cn/hdu/fragmentTax/service/impl/model/impl/HonorModelImpl.java" />
@@ -201,10 +291,6 @@
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/cn/hdu/fragmentTax/common/FileStream.java" />
         <option value="$PROJECT_DIR$/src/resources/application.properties" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/hdu/fragmentTax/controller/PrizeController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/hdu/fragmentTax/service/IPrizeService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/hdu/fragmentTax/service/impl/PrizeServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/hdu/fragmentTax/service/impl/model/IPrizeModel.java" />
         <option value="$PROJECT_DIR$/src/main/java/cn/hdu/fragmentTax/service/impl/model/IUserModel.java" />
         <option value="$PROJECT_DIR$/src/main/java/cn/hdu/fragmentTax/service/impl/model/impl/UserModelImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/cn/hdu/fragmentTax/dao/mapper/ICounsellorsMapper.java" />
@@ -223,7 +309,6 @@
         <option value="$PROJECT_DIR$/src/main/java/cn/hdu/fragmentTax/model/request/AdminExamRequ.java" />
         <option value="$PROJECT_DIR$/src/main/java/cn/hdu/fragmentTax/model/response/GetPrizesResp.java" />
         <option value="$PROJECT_DIR$/src/main/java/cn/hdu/fragmentTax/service/impl/UserServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/hdu/fragmentTax/dao/mapper/IAllPrizeMapper.java" />
         <option value="$PROJECT_DIR$/src/main/java/cn/hdu/fragmentTax/service/impl/AdminServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/cn/hdu/fragmentTax/model/request/EditHonorResp.java" />
         <option value="$PROJECT_DIR$/src/main/java/cn/hdu/fragmentTax/model/response/GetHonorResp.java" />
@@ -235,7 +320,20 @@
         <option value="$PROJECT_DIR$/src/main/java/cn/hdu/fragmentTax/model/request/EditPatentRequ.java" />
         <option value="$PROJECT_DIR$/src/main/java/cn/hdu/fragmentTax/model/response/GetPatentResp.java" />
         <option value="$PROJECT_DIR$/src/main/java/cn/hdu/fragmentTax/dao/mapper/IPatentMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/hdu/fragmentTax/dao/entity/AllPrizeEntity.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/hdu/fragmentTax/dao/mapper/IAllPrizeMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/hdu/fragmentTax/dao/entity/CompetitionEntity.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/hdu/fragmentTax/model/request/EditCompetitionRequ.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/hdu/fragmentTax/controller/PrizeController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/hdu/fragmentTax/service/IPrizeService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/hdu/fragmentTax/model/response/GetCompettionResp.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/hdu/fragmentTax/model/response/GetCompetitionResp.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/hdu/fragmentTax/service/impl/PrizeServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/hdu/fragmentTax/service/impl/model/IPrizeModel.java" />
         <option value="$PROJECT_DIR$/src/main/java/cn/hdu/fragmentTax/service/impl/model/impl/PrizeModelImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/hdu/fragmentTax/dao/mapper/ICompetitionMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/hdu/fragmentTax/dao/mapper/IInnovativeProMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/hdu/fragmentTax/dao/entity/InnovativeProEntity.java" />
       </list>
     </option>
   </component>
@@ -251,10 +349,9 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-10" />
-    <option name="y" value="-10" />
-    <option name="width" value="1939" />
-    <option name="height" value="1049" />
+    <option name="x" value="-8" />
+    <option name="width" value="977" />
+    <option name="height" value="1038" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -263,7 +360,6 @@
     </navigator>
     <panes>
       <pane id="AndroidView" />
-      <pane id="Scope" />
       <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
@@ -465,6 +561,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -479,8 +576,8 @@
       <recent name="cn.hdu.fragmentTax.controller.config" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\projects\stu_system\stu_system\src\main\java\cn\hdu\fragmentTax\dao\mapper" />
       <recent name="D:\projects\stu_system\stu_system\src\main\java\cn\hdu\fragmentTax\dao\entity" />
+      <recent name="D:\projects\stu_system\stu_system\src\main\java\cn\hdu\fragmentTax\dao\mapper" />
       <recent name="D:\projects\stu_system\stu_system\src\main\java\cn\hdu\fragmentTax\common" />
       <recent name="D:\projects\stu_system\stu_system\src\main\java\cn\hdu\fragmentTax\controller" />
       <recent name="D:\projects\stu_system\stu_system\src\main\java\cn\hdu\fragmentTax\utils" />
@@ -591,15 +688,23 @@
       <option name="project" value="LOCAL" />
       <updated>1555560391791</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="增加添加佐证材料">
+      <created>1555656325128</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1555656325128</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Messages" order="7" weight="0.46438748" />
+      <window_info anchor="bottom" id="Messages" order="7" weight="0.14122681" />
       <window_info anchor="right" id="Palette&#9;" order="3" />
       <window_info id="Image Layers" order="2" />
       <window_info anchor="right" id="Capture Analysis" order="3" />
@@ -610,19 +715,19 @@
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.28753352" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.308311" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32905984" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="2" />
       <window_info anchor="right" id="Theme Preview" order="3" />
       <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.5805991" />
+      <window_info anchor="bottom" id="Debug" order="3" visible="true" weight="0.078459345" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32905984" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -630,7 +735,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="增加管理员的后端" />
-    <option name="LAST_COMMIT_MESSAGE" value="增加管理员的后端" />
+    <MESSAGE value="增加添加佐证材料" />
+    <option name="LAST_COMMIT_MESSAGE" value="增加添加佐证材料" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -661,19 +767,13 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/cn/hdu/fragmentTax/controller/PrizeController.java</url>
-          <line>34</line>
+          <line>35</line>
           <properties />
           <option name="timeStamp" value="31" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/cn/hdu/fragmentTax/service/impl/PrizeServiceImpl.java</url>
-          <line>42</line>
-          <properties />
-          <option name="timeStamp" value="32" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/cn/hdu/fragmentTax/controller/PrizeController.java</url>
-          <line>73</line>
+          <line>74</line>
           <properties />
           <option name="timeStamp" value="38" />
         </line-breakpoint>
@@ -685,15 +785,9 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/cn/hdu/fragmentTax/controller/PrizeController.java</url>
-          <line>99</line>
+          <line>100</line>
           <properties />
           <option name="timeStamp" value="45" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/cn/hdu/fragmentTax/service/impl/PrizeServiceImpl.java</url>
-          <line>158</line>
-          <properties />
-          <option name="timeStamp" value="46" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/cn/hdu/fragmentTax/service/impl/UserServiceImpl.java</url>
@@ -720,96 +814,16 @@
           <option name="timeStamp" value="60" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/cn/hdu/fragmentTax/service/impl/PrizeServiceImpl.java</url>
-          <line>50</line>
-          <properties />
-          <option name="timeStamp" value="61" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/cn/hdu/fragmentTax/service/impl/PrizeServiceImpl.java</url>
-          <line>80</line>
-          <properties />
-          <option name="timeStamp" value="62" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/cn/hdu/fragmentTax/service/impl/PrizeServiceImpl.java</url>
-          <line>86</line>
-          <properties />
-          <option name="timeStamp" value="63" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/cn/hdu/fragmentTax/controller/FileController.java</url>
           <line>48</line>
           <properties />
           <option name="timeStamp" value="65" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/cn/hdu/fragmentTax/service/impl/PrizeServiceImpl.java</url>
-          <line>113</line>
-          <properties />
-          <option name="timeStamp" value="66" />
-        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="67" />
+      <option name="time" value="72" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/hdu/fragmentTax/common/FileStream.java">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/prizeimg/hello—1.jpg" />
-    <entry file="file://$PROJECT_DIR$/src/resources/prizeimg/hello—1.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/resources/application.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="78">
-          <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/hdu/fragmentTax/utils/DateUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="26">
-          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/hdu/fragmentTax/Application.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="149">
-          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/hdu/fragmentTax/dao/entity/PaperEntity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="572">
-          <caret line="24" column="31" selection-start-line="24" selection-start-column="20" selection-end-line="24" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/hdu/fragmentTax/dao/entity/PatentEntity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="364">
-          <caret line="16" column="52" selection-start-line="16" selection-start-column="37" selection-end-line="16" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/hdu/fragmentTax/dao/entity/CounsellorsEntity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="156">
-          <caret line="14" column="31" selection-start-line="14" selection-start-column="19" selection-end-line="14" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/hdu/fragmentTax/model/request/RegisterRequ.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="52">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/cn/hdu/fragmentTax/model/request/StuLoginRequ.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
@@ -890,15 +904,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="364">
           <caret line="14" column="31" selection-start-line="14" selection-start-column="31" selection-end-line="14" selection-end-column="31" />
-          <folding>
-            <element signature="e#353#354#0" expanded="true" />
-            <element signature="e#397#398#0" expanded="true" />
-            <element signature="e#433#434#0" expanded="true" />
-            <element signature="e#468#469#0" expanded="true" />
-            <element signature="e#497#498#0" expanded="true" />
-            <element signature="e#543#544#0" expanded="true" />
-            <element signature="e#579#580#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -962,32 +967,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="208">
           <caret line="8" column="10" selection-start-line="8" selection-start-column="10" selection-end-line="8" selection-end-column="10" />
-          <folding>
-            <element signature="e#737#738#0" expanded="true" />
-            <element signature="e#770#771#0" expanded="true" />
-            <element signature="e#821#822#0" expanded="true" />
-            <element signature="e#865#866#0" expanded="true" />
-            <element signature="e#900#901#0" expanded="true" />
-            <element signature="e#931#932#0" expanded="true" />
-            <element signature="e#979#980#0" expanded="true" />
-            <element signature="e#1019#1020#0" expanded="true" />
-            <element signature="e#1055#1056#0" expanded="true" />
-            <element signature="e#1088#1089#0" expanded="true" />
-            <element signature="e#1139#1140#0" expanded="true" />
-            <element signature="e#1183#1184#0" expanded="true" />
-            <element signature="e#1218#1219#0" expanded="true" />
-            <element signature="e#1249#1250#0" expanded="true" />
-            <element signature="e#1297#1298#0" expanded="true" />
-            <element signature="e#1337#1338#0" expanded="true" />
-            <element signature="e#1374#1375#0" expanded="true" />
-            <element signature="e#1408#1409#0" expanded="true" />
-            <element signature="e#1461#1462#0" expanded="true" />
-            <element signature="e#1507#1508#0" expanded="true" />
-            <element signature="e#1543#1544#0" expanded="true" />
-            <element signature="e#1575#1576#0" expanded="true" />
-            <element signature="e#1625#1626#0" expanded="true" />
-            <element signature="e#1667#1668#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1002,26 +981,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="338">
           <caret line="19" column="26" selection-start-line="19" selection-start-column="21" selection-end-line="19" selection-end-column="26" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/hdu/fragmentTax/dao/mapper/IAllPrizeMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2262">
-          <caret line="90" column="18" selection-start-line="90" selection-start-column="18" selection-end-line="90" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/hdu/fragmentTax/controller/AdminController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="910">
-          <caret line="46" selection-start-line="46" selection-end-line="46" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1032,30 +991,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/hdu/fragmentTax/model/request/EditHonorResp.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="26" column="40" selection-start-line="26" selection-start-column="40" selection-end-line="26" selection-end-column="40" />
-          <folding>
-            <element signature="e#860#861#0" expanded="true" />
-            <element signature="e#922#923#0" expanded="true" />
-            <element signature="e#976#977#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/hdu/fragmentTax/model/response/GetHonorResp.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="30" column="40" selection-start-line="30" selection-start-column="40" selection-end-line="30" selection-end-column="40" />
-          <folding>
-            <element signature="e#1030#1031#0" expanded="true" />
-            <element signature="e#1092#1093#0" expanded="true" />
-            <element signature="e#1146#1147#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/cn/hdu/fragmentTax/dao/mapper/IHonorMapper.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-819">
@@ -1063,22 +998,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/hdu/fragmentTax/service/IPrizeService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="130">
-          <caret line="10" column="23" selection-start-line="10" selection-start-column="23" selection-end-line="10" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/cn/hdu/fragmentTax/model/request/EditPaperRequ.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="312">
           <caret line="32" column="40" selection-start-line="32" selection-start-column="40" selection-end-line="32" selection-end-column="40" />
-          <folding>
-            <element signature="e#1130#1131#0" expanded="true" />
-            <element signature="e#1192#1193#0" expanded="true" />
-            <element signature="e#1246#1247#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1103,32 +1026,24 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="52">
           <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-          <folding>
-            <element signature="e#1358#1359#0" expanded="true" />
-            <element signature="e#1396#1397#0" expanded="true" />
-            <element signature="e#1458#1459#0" expanded="true" />
-            <element signature="e#1512#1513#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/cn/hdu/fragmentTax/model/request/EditPatentRequ.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="521">
+        <state relative-caret-position="832">
           <caret line="32" column="40" selection-start-line="32" selection-start-column="40" selection-end-line="32" selection-end-column="40" />
           <folding>
             <element signature="e#1107#1108#0" expanded="true" />
             <element signature="e#1169#1170#0" expanded="true" />
             <element signature="e#1223#1224#0" expanded="true" />
-            <element signature="e#949#950#0" expanded="true" />
-            <element signature="e#974#975#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/cn/hdu/fragmentTax/model/response/GetPatentResp.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
+        <state relative-caret-position="884">
           <caret line="34" column="40" selection-start-line="34" selection-start-column="40" selection-end-line="34" selection-end-column="40" />
           <folding>
             <element signature="e#1173#1174#0" expanded="true" />
@@ -1140,28 +1055,315 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/cn/hdu/fragmentTax/dao/mapper/IPatentMapper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="389">
-          <caret line="48" column="12" lean-forward="true" selection-start-line="48" selection-start-column="12" selection-end-line="48" selection-end-column="12" />
+        <state relative-caret-position="1170">
+          <caret line="48" column="12" selection-start-line="48" selection-start-column="12" selection-end-line="48" selection-end-column="12" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/hdu/fragmentTax/service/impl/model/IPrizeModel.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/hdu/fragmentTax/controller/AdminController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="29" column="18" selection-start-line="29" selection-start-column="18" selection-end-line="29" selection-end-column="18" />
+        <state relative-caret-position="910">
+          <caret line="46" selection-start-line="46" selection-end-line="46" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/hdu/fragmentTax/service/impl/model/impl/PrizeModelImpl.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/hdu/fragmentTax/dao/entity/AllPrizeEntity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="217">
-          <caret line="192" column="36" lean-forward="true" selection-start-line="192" selection-start-column="36" selection-end-line="192" selection-end-column="36" />
+        <state relative-caret-position="-182">
+          <caret line="19" column="11" selection-start-line="19" selection-start-column="11" selection-end-line="19" selection-end-column="11" />
+          <folding>
+            <element signature="e#3098#3099#0" expanded="true" />
+            <element signature="e#3123#3124#0" expanded="true" />
+            <element signature="e#3160#3161#0" expanded="true" />
+            <element signature="e#3188#3189#0" expanded="true" />
+            <element signature="e#3220#3221#0" expanded="true" />
+            <element signature="e#3248#3249#0" expanded="true" />
+            <element signature="e#3290#3291#0" expanded="true" />
+            <element signature="e#3324#3325#0" expanded="true" />
+            <element signature="e#3360#3361#0" expanded="true" />
+            <element signature="e#3393#3394#0" expanded="true" />
+            <element signature="e#3444#3445#0" expanded="true" />
+            <element signature="e#3488#3489#0" expanded="true" />
+            <element signature="e#3524#3525#0" expanded="true" />
+            <element signature="e#3555#3556#0" expanded="true" />
+            <element signature="e#3604#3605#0" expanded="true" />
+            <element signature="e#3644#3645#0" expanded="true" />
+            <element signature="e#3680#3681#0" expanded="true" />
+            <element signature="e#3713#3714#0" expanded="true" />
+            <element signature="e#3764#3765#0" expanded="true" />
+            <element signature="e#3808#3809#0" expanded="true" />
+            <element signature="e#3844#3845#0" expanded="true" />
+            <element signature="e#3875#3876#0" expanded="true" />
+            <element signature="e#3924#3925#0" expanded="true" />
+            <element signature="e#3964#3965#0" expanded="true" />
+            <element signature="e#4001#4002#0" expanded="true" />
+            <element signature="e#4035#4036#0" expanded="true" />
+            <element signature="e#4088#4089#0" expanded="true" />
+            <element signature="e#4134#4135#0" expanded="true" />
+            <element signature="e#4171#4172#0" expanded="true" />
+            <element signature="e#4203#4204#0" expanded="true" />
+            <element signature="e#4254#4255#0" expanded="true" />
+            <element signature="e#4296#4297#0" expanded="true" />
+            <element signature="e#4329#4330#0" expanded="true" />
+            <element signature="e#4357#4358#0" expanded="true" />
+            <element signature="e#4400#4401#0" expanded="true" />
+            <element signature="e#4434#4435#0" expanded="true" />
+            <element signature="e#4472#4473#0" expanded="true" />
+            <element signature="e#4506#4507#0" expanded="true" />
+            <element signature="e#4560#4561#0" expanded="true" />
+            <element signature="e#4606#4607#0" expanded="true" />
+            <element signature="e#4644#4645#0" expanded="true" />
+            <element signature="e#4678#4679#0" expanded="true" />
+            <element signature="e#4732#4733#0" expanded="true" />
+            <element signature="e#4778#4779#0" expanded="true" />
+            <element signature="e#4820#4821#0" expanded="true" />
+            <element signature="e#4859#4860#0" expanded="true" />
+            <element signature="e#4922#4923#0" expanded="true" />
+            <element signature="e#4978#4979#0" expanded="true" />
+            <element signature="e#5020#5021#0" expanded="true" />
+            <element signature="e#5057#5058#0" expanded="true" />
+            <element signature="e#5118#5119#0" expanded="true" />
+            <element signature="e#5170#5171#0" expanded="true" />
+            <element signature="e#5205#5206#0" expanded="true" />
+            <element signature="e#5237#5238#0" expanded="true" />
+            <element signature="e#5286#5287#0" expanded="true" />
+            <element signature="e#5328#5329#0" expanded="true" />
+            <element signature="e#5363#5364#0" expanded="true" />
+            <element signature="e#5393#5394#0" expanded="true" />
+            <element signature="e#5440#5441#0" expanded="true" />
+            <element signature="e#5478#5479#0" expanded="true" />
+            <element signature="e#5513#5514#0" expanded="true" />
+            <element signature="e#5545#5546#0" expanded="true" />
+            <element signature="e#5594#5595#0" expanded="true" />
+            <element signature="e#5636#5637#0" expanded="true" />
+            <element signature="e#5671#5672#0" expanded="true" />
+            <element signature="e#5701#5702#0" expanded="true" />
+            <element signature="e#5748#5749#0" expanded="true" />
+            <element signature="e#5786#5787#0" expanded="true" />
+            <element signature="e#5821#5822#0" expanded="true" />
+            <element signature="e#5853#5854#0" expanded="true" />
+            <element signature="e#5902#5903#0" expanded="true" />
+            <element signature="e#5944#5945#0" expanded="true" />
+            <element signature="e#5979#5980#0" expanded="true" />
+            <element signature="e#6009#6010#0" expanded="true" />
+            <element signature="e#6056#6057#0" expanded="true" />
+            <element signature="e#6094#6095#0" expanded="true" />
+            <element signature="e#6129#6130#0" expanded="true" />
+            <element signature="e#6161#6162#0" expanded="true" />
+            <element signature="e#6210#6211#0" expanded="true" />
+            <element signature="e#6252#6253#0" expanded="true" />
+            <element signature="e#6287#6288#0" expanded="true" />
+            <element signature="e#6317#6318#0" expanded="true" />
+            <element signature="e#6364#6365#0" expanded="true" />
+            <element signature="e#6402#6403#0" expanded="true" />
+            <element signature="e#6437#6438#0" expanded="true" />
+            <element signature="e#6469#6470#0" expanded="true" />
+            <element signature="e#6518#6519#0" expanded="true" />
+            <element signature="e#6560#6561#0" expanded="true" />
+            <element signature="e#6595#6596#0" expanded="true" />
+            <element signature="e#6625#6626#0" expanded="true" />
+            <element signature="e#6672#6673#0" expanded="true" />
+            <element signature="e#6710#6711#0" expanded="true" />
+            <element signature="e#6747#6748#0" expanded="true" />
+            <element signature="e#6781#6782#0" expanded="true" />
+            <element signature="e#6834#6835#0" expanded="true" />
+            <element signature="e#6880#6881#0" expanded="true" />
+            <element signature="e#6917#6918#0" expanded="true" />
+            <element signature="e#6949#6950#0" expanded="true" />
+            <element signature="e#7000#7001#0" expanded="true" />
+            <element signature="e#7042#7043#0" expanded="true" />
+            <element signature="e#7076#7077#0" expanded="true" />
+            <element signature="e#7107#7108#0" expanded="true" />
+            <element signature="e#7154#7155#0" expanded="true" />
+            <element signature="e#7194#7195#0" expanded="true" />
+            <element signature="e#7228#7229#0" expanded="true" />
+            <element signature="e#7257#7258#0" expanded="true" />
+            <element signature="e#7302#7303#0" expanded="true" />
+            <element signature="e#7338#7339#0" expanded="true" />
+            <element signature="e#7376#7377#0" expanded="true" />
+            <element signature="e#7409#7410#0" expanded="true" />
+            <element signature="e#7462#7463#0" expanded="true" />
+            <element signature="e#7506#7507#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/hdu/fragmentTax/dao/mapper/IAllPrizeMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2184">
+          <caret line="87" column="444" selection-start-line="87" selection-start-column="444" selection-end-line="87" selection-end-column="444" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/hdu/fragmentTax/dao/mapper/IAcademicExchangeMapper.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/hdu/fragmentTax/dao/entity/CompetitionEntity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="468">
+          <caret line="35" column="11" lean-forward="true" selection-start-line="35" selection-start-column="11" selection-end-line="35" selection-end-column="11" />
+          <folding>
+            <element signature="e#1744#1745#0" expanded="true" />
+            <element signature="e#1769#1770#0" expanded="true" />
+            <element signature="e#1806#1807#0" expanded="true" />
+            <element signature="e#1834#1835#0" expanded="true" />
+            <element signature="e#1866#1867#0" expanded="true" />
+            <element signature="e#1894#1895#0" expanded="true" />
+            <element signature="e#1936#1937#0" expanded="true" />
+            <element signature="e#1970#1971#0" expanded="true" />
+            <element signature="e#2012#2013#0" expanded="true" />
+            <element signature="e#2050#2051#0" expanded="true" />
+            <element signature="e#2112#2113#0" expanded="true" />
+            <element signature="e#2166#2167#0" expanded="true" />
+            <element signature="e#2208#2209#0" expanded="true" />
+            <element signature="e#2246#2247#0" expanded="true" />
+            <element signature="e#2308#2309#0" expanded="true" />
+            <element signature="e#2362#2363#0" expanded="true" />
+            <element signature="e#2397#2398#0" expanded="true" />
+            <element signature="e#2427#2428#0" expanded="true" />
+            <element signature="e#2474#2475#0" expanded="true" />
+            <element signature="e#2512#2513#0" expanded="true" />
+            <element signature="e#2551#2552#0" expanded="true" />
+            <element signature="e#2585#2586#0" expanded="true" />
+            <element signature="e#2640#2641#0" expanded="true" />
+            <element signature="e#2686#2687#0" expanded="true" />
+            <element signature="e#2729#2730#0" expanded="true" />
+            <element signature="e#2768#2769#0" expanded="true" />
+            <element signature="e#2832#2833#0" expanded="true" />
+            <element signature="e#2888#2889#0" expanded="true" />
+            <element signature="e#2931#2932#0" expanded="true" />
+            <element signature="e#2970#2971#0" expanded="true" />
+            <element signature="e#3034#3035#0" expanded="true" />
+            <element signature="e#3090#3091#0" expanded="true" />
+            <element signature="e#3133#3134#0" expanded="true" />
+            <element signature="e#3172#3173#0" expanded="true" />
+            <element signature="e#3236#3237#0" expanded="true" />
+            <element signature="e#3292#3293#0" expanded="true" />
+            <element signature="e#3326#3327#0" expanded="true" />
+            <element signature="e#3356#3357#0" expanded="true" />
+            <element signature="e#3402#3403#0" expanded="true" />
+            <element signature="e#3440#3441#0" expanded="true" />
+            <element signature="e#3482#3483#0" expanded="true" />
+            <element signature="e#3520#3521#0" expanded="true" />
+            <element signature="e#3582#3583#0" expanded="true" />
+            <element signature="e#3636#3637#0" expanded="true" />
+            <element signature="e#3667#3668#0" expanded="true" />
+            <element signature="e#3695#3696#0" expanded="true" />
+            <element signature="e#3736#3737#0" expanded="true" />
+            <element signature="e#3770#3771#0" expanded="true" />
+            <element signature="e#3803#3804#0" expanded="true" />
+            <element signature="e#3831#3832#0" expanded="true" />
+            <element signature="e#3874#3875#0" expanded="true" />
+            <element signature="e#3908#3909#0" expanded="true" />
+            <element signature="e#3946#3947#0" expanded="true" />
+            <element signature="e#3980#3981#0" expanded="true" />
+            <element signature="e#4034#4035#0" expanded="true" />
+            <element signature="e#4080#4081#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/hdu/fragmentTax/model/request/EditHonorResp.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="78">
+          <caret line="3" column="4" selection-start-line="3" selection-start-column="4" selection-end-line="10" selection-end-column="35" />
+          <folding>
+            <element signature="e#822#823#0" expanded="true" />
+            <element signature="e#860#861#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/hdu/fragmentTax/dao/entity/MasterPaperEntity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="494">
+          <caret line="21" column="7" selection-start-line="21" selection-start-column="7" selection-end-line="21" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/hdu/fragmentTax/dao/mapper/IMasterPaperMapper.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/hdu/fragmentTax/model/response/GetHonorResp.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="780">
+          <caret line="30" column="40" selection-start-line="30" selection-start-column="40" selection-end-line="30" selection-end-column="40" />
+          <folding>
+            <element signature="e#1030#1031#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/hdu/fragmentTax/model/request/EditCompetitionRequ.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="15" column="35" lean-forward="true" selection-start-line="4" selection-start-column="3" selection-end-line="15" selection-end-column="35" />
+          <folding>
+            <element signature="e#1299#1300#0" expanded="true" />
+            <element signature="e#1324#1325#0" expanded="true" />
+            <element signature="e#1361#1362#0" expanded="true" />
+            <element signature="e#1389#1390#0" expanded="true" />
+            <element signature="e#1421#1422#0" expanded="true" />
+            <element signature="e#1449#1450#0" expanded="true" />
+            <element signature="e#1491#1492#0" expanded="true" />
+            <element signature="e#1525#1526#0" expanded="true" />
+            <element signature="e#1567#1568#0" expanded="true" />
+            <element signature="e#1605#1606#0" expanded="true" />
+            <element signature="e#1667#1668#0" expanded="true" />
+            <element signature="e#1721#1722#0" expanded="true" />
+            <element signature="e#1763#1764#0" expanded="true" />
+            <element signature="e#1801#1802#0" expanded="true" />
+            <element signature="e#1863#1864#0" expanded="true" />
+            <element signature="e#1917#1918#0" expanded="true" />
+            <element signature="e#1952#1953#0" expanded="true" />
+            <element signature="e#1982#1983#0" expanded="true" />
+            <element signature="e#2029#2030#0" expanded="true" />
+            <element signature="e#2067#2068#0" expanded="true" />
+            <element signature="e#2106#2107#0" expanded="true" />
+            <element signature="e#2140#2141#0" expanded="true" />
+            <element signature="e#2195#2196#0" expanded="true" />
+            <element signature="e#2241#2242#0" expanded="true" />
+            <element signature="e#2284#2285#0" expanded="true" />
+            <element signature="e#2323#2324#0" expanded="true" />
+            <element signature="e#2387#2388#0" expanded="true" />
+            <element signature="e#2443#2444#0" expanded="true" />
+            <element signature="e#2486#2487#0" expanded="true" />
+            <element signature="e#2525#2526#0" expanded="true" />
+            <element signature="e#2589#2590#0" expanded="true" />
+            <element signature="e#2645#2646#0" expanded="true" />
+            <element signature="e#2688#2689#0" expanded="true" />
+            <element signature="e#2727#2728#0" expanded="true" />
+            <element signature="e#2791#2792#0" expanded="true" />
+            <element signature="e#2847#2848#0" expanded="true" />
+            <element signature="e#2881#2882#0" expanded="true" />
+            <element signature="e#2911#2912#0" expanded="true" />
+            <element signature="e#2957#2958#0" expanded="true" />
+            <element signature="e#2995#2996#0" expanded="true" />
+            <element signature="e#3029#3030#0" expanded="true" />
+            <element signature="e#3059#3060#0" expanded="true" />
+            <element signature="e#3105#3106#0" expanded="true" />
+            <element signature="e#3143#3144#0" expanded="true" />
+            <element signature="e#3185#3186#0" expanded="true" />
+            <element signature="e#3223#3224#0" expanded="true" />
+            <element signature="e#3285#3286#0" expanded="true" />
+            <element signature="e#3339#3340#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/hdu/fragmentTax/service/IPrizeService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="27" column="23" selection-start-line="27" selection-start-column="23" selection-end-line="27" selection-end-column="23" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/cn/hdu/fragmentTax/controller/FileController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="81">
+        <state relative-caret-position="73">
           <caret line="34" selection-start-line="34" selection-end-line="34" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1169,22 +1371,181 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/hdu/fragmentTax/service/impl/model/IPrizeModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="28" column="23" selection-start-line="28" selection-start-column="23" selection-end-line="28" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/hdu/fragmentTax/service/impl/model/impl/PrizeModelImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="254" column="85" selection-start-line="254" selection-start-column="85" selection-end-line="254" selection-end-column="85" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/hdu/fragmentTax/dao/mapper/ICompetitionMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-299">
+          <caret line="57" column="292" selection-start-line="57" selection-start-column="292" selection-end-line="57" selection-end-column="292" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/cn/hdu/fragmentTax/controller/PrizeController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="173">
-          <caret line="73" selection-start-line="73" selection-end-line="73" />
+        <state relative-caret-position="86">
+          <caret line="139" selection-start-line="139" selection-end-line="139" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/cn/hdu/fragmentTax/service/impl/PrizeServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="81">
-          <caret line="86" selection-start-line="86" selection-end-line="86" />
+        <state relative-caret-position="157">
+          <caret line="225" selection-start-line="225" selection-end-line="225" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#2830#2844#0" expanded="true" />
-            <element signature="e#5278#5292#0" expanded="true" />
-            <element signature="e#6917#6932#0" expanded="true" />
+            <element signature="e#8222#8242#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/hdu/fragmentTax/model/response/GetCompetitionResp.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="534">
+          <caret line="38" column="28" selection-start-line="38" selection-start-column="28" selection-end-line="38" selection-end-column="28" />
+          <folding>
+            <element signature="e#1459#1460#0" expanded="true" />
+            <element signature="e#1496#1497#0" expanded="true" />
+            <element signature="e#1524#1525#0" expanded="true" />
+            <element signature="e#1556#1557#0" expanded="true" />
+            <element signature="e#1584#1585#0" expanded="true" />
+            <element signature="e#1626#1627#0" expanded="true" />
+            <element signature="e#1660#1661#0" expanded="true" />
+            <element signature="e#1702#1703#0" expanded="true" />
+            <element signature="e#1740#1741#0" expanded="true" />
+            <element signature="e#1802#1803#0" expanded="true" />
+            <element signature="e#1856#1857#0" expanded="true" />
+            <element signature="e#1898#1899#0" expanded="true" />
+            <element signature="e#1936#1937#0" expanded="true" />
+            <element signature="e#1998#1999#0" expanded="true" />
+            <element signature="e#2052#2053#0" expanded="true" />
+            <element signature="e#2087#2088#0" expanded="true" />
+            <element signature="e#2117#2118#0" expanded="true" />
+            <element signature="e#2164#2165#0" expanded="true" />
+            <element signature="e#2202#2203#0" expanded="true" />
+            <element signature="e#2241#2242#0" expanded="true" />
+            <element signature="e#2275#2276#0" expanded="true" />
+            <element signature="e#2330#2331#0" expanded="true" />
+            <element signature="e#2376#2377#0" expanded="true" />
+            <element signature="e#2419#2420#0" expanded="true" />
+            <element signature="e#2458#2459#0" expanded="true" />
+            <element signature="e#2522#2523#0" expanded="true" />
+            <element signature="e#2578#2579#0" expanded="true" />
+            <element signature="e#2621#2622#0" expanded="true" />
+            <element signature="e#2660#2661#0" expanded="true" />
+            <element signature="e#2724#2725#0" expanded="true" />
+            <element signature="e#2780#2781#0" expanded="true" />
+            <element signature="e#2823#2824#0" expanded="true" />
+            <element signature="e#2862#2863#0" expanded="true" />
+            <element signature="e#2926#2927#0" expanded="true" />
+            <element signature="e#2982#2983#0" expanded="true" />
+            <element signature="e#3016#3017#0" expanded="true" />
+            <element signature="e#3046#3047#0" expanded="true" />
+            <element signature="e#3092#3093#0" expanded="true" />
+            <element signature="e#3130#3131#0" expanded="true" />
+            <element signature="e#3164#3165#0" expanded="true" />
+            <element signature="e#3194#3195#0" expanded="true" />
+            <element signature="e#3240#3241#0" expanded="true" />
+            <element signature="e#3278#3279#0" expanded="true" />
+            <element signature="e#3320#3321#0" expanded="true" />
+            <element signature="e#3358#3359#0" expanded="true" />
+            <element signature="e#3420#3421#0" expanded="true" />
+            <element signature="e#3474#3475#0" expanded="true" />
+            <element signature="e#3507#3508#0" expanded="true" />
+            <element signature="e#3536#3537#0" expanded="true" />
+            <element signature="e#3580#3581#0" expanded="true" />
+            <element signature="e#3616#3617#0" expanded="true" />
+            <element signature="e#3647#3648#0" expanded="true" />
+            <element signature="e#3675#3676#0" expanded="true" />
+            <element signature="e#3716#3717#0" expanded="true" />
+            <element signature="e#3750#3751#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/hdu/fragmentTax/dao/mapper/IInnovativeProMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="416">
+          <caret line="20" selection-start-line="20" selection-end-line="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/hdu/fragmentTax/dao/entity/InnovativeProEntity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="466">
+          <caret line="40" column="27" selection-start-line="40" selection-start-column="19" selection-end-line="40" selection-end-column="27" />
+          <folding>
+            <element signature="e#1698#1699#0" expanded="true" />
+            <element signature="e#1723#1724#0" expanded="true" />
+            <element signature="e#1760#1761#0" expanded="true" />
+            <element signature="e#1788#1789#0" expanded="true" />
+            <element signature="e#1820#1821#0" expanded="true" />
+            <element signature="e#1848#1849#0" expanded="true" />
+            <element signature="e#1890#1891#0" expanded="true" />
+            <element signature="e#1924#1925#0" expanded="true" />
+            <element signature="e#1958#1959#0" expanded="true" />
+            <element signature="e#1988#1989#0" expanded="true" />
+            <element signature="e#2034#2035#0" expanded="true" />
+            <element signature="e#2072#2073#0" expanded="true" />
+            <element signature="e#2106#2107#0" expanded="true" />
+            <element signature="e#2136#2137#0" expanded="true" />
+            <element signature="e#2182#2183#0" expanded="true" />
+            <element signature="e#2220#2221#0" expanded="true" />
+            <element signature="e#2254#2255#0" expanded="true" />
+            <element signature="e#2284#2285#0" expanded="true" />
+            <element signature="e#2330#2331#0" expanded="true" />
+            <element signature="e#2368#2369#0" expanded="true" />
+            <element signature="e#2403#2404#0" expanded="true" />
+            <element signature="e#2433#2434#0" expanded="true" />
+            <element signature="e#2480#2481#0" expanded="true" />
+            <element signature="e#2518#2519#0" expanded="true" />
+            <element signature="e#2557#2558#0" expanded="true" />
+            <element signature="e#2591#2592#0" expanded="true" />
+            <element signature="e#2646#2647#0" expanded="true" />
+            <element signature="e#2692#2693#0" expanded="true" />
+            <element signature="e#2727#2728#0" expanded="true" />
+            <element signature="e#2758#2759#0" expanded="true" />
+            <element signature="e#2806#2807#0" expanded="true" />
+            <element signature="e#2846#2847#0" expanded="true" />
+            <element signature="e#2882#2883#0" expanded="true" />
+            <element signature="e#2914#2915#0" expanded="true" />
+            <element signature="e#2964#2965#0" expanded="true" />
+            <element signature="e#3006#3007#0" expanded="true" />
+            <element signature="e#3048#3049#0" expanded="true" />
+            <element signature="e#3086#3087#0" expanded="true" />
+            <element signature="e#3148#3149#0" expanded="true" />
+            <element signature="e#3202#3203#0" expanded="true" />
+            <element signature="e#3236#3237#0" expanded="true" />
+            <element signature="e#3266#3267#0" expanded="true" />
+            <element signature="e#3312#3313#0" expanded="true" />
+            <element signature="e#3350#3351#0" expanded="true" />
+            <element signature="e#3381#3382#0" expanded="true" />
+            <element signature="e#3409#3410#0" expanded="true" />
+            <element signature="e#3450#3451#0" expanded="true" />
+            <element signature="e#3484#3485#0" expanded="true" />
+            <element signature="e#3517#3518#0" expanded="true" />
+            <element signature="e#3545#3546#0" expanded="true" />
+            <element signature="e#3588#3589#0" expanded="true" />
+            <element signature="e#3622#3623#0" expanded="true" />
+            <element signature="e#3660#3661#0" expanded="true" />
+            <element signature="e#3694#3695#0" expanded="true" />
+            <element signature="e#3748#3749#0" expanded="true" />
+            <element signature="e#3794#3795#0" expanded="true" />
+            <element signature="e#3829#3830#0" expanded="true" />
+            <element signature="e#3860#3861#0" expanded="true" />
+            <element signature="e#3908#3909#0" expanded="true" />
+            <element signature="e#3948#3949#0" expanded="true" />
           </folding>
         </state>
       </provider>

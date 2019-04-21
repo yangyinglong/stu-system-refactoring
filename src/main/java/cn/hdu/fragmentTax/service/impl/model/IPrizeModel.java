@@ -1,16 +1,11 @@
 package cn.hdu.fragmentTax.service.impl.model;
 
-import cn.hdu.fragmentTax.dao.entity.AllPrizeEntity;
-import cn.hdu.fragmentTax.dao.entity.HonorEntity;
-import cn.hdu.fragmentTax.dao.entity.PaperEntity;
-import cn.hdu.fragmentTax.dao.entity.PatentEntity;
+import cn.hdu.fragmentTax.dao.entity.*;
+import cn.hdu.fragmentTax.model.request.EditCompetitionRequ;
 import cn.hdu.fragmentTax.model.request.EditHonorResp;
 import cn.hdu.fragmentTax.model.request.EditPaperRequ;
 import cn.hdu.fragmentTax.model.request.EditPatentRequ;
-import cn.hdu.fragmentTax.model.response.GetHonorResp;
-import cn.hdu.fragmentTax.model.response.GetPaperResp;
-import cn.hdu.fragmentTax.model.response.GetPatentResp;
-import cn.hdu.fragmentTax.model.response.GetPrizesResp;
+import cn.hdu.fragmentTax.model.response.*;
 
 import java.text.ParseException;
 
@@ -28,4 +23,8 @@ public interface IPrizeModel {
     PatentEntity createPatentEntity(EditPatentRequ editPatentRequ) throws ParseException;
 
     GetPatentResp createGetPatentResp(PatentEntity patentResp);
+
+    CompetitionEntity createCompetitionEntity(EditCompetitionRequ editCompetitionRequ) throws ParseException;
+
+    GetCompetitionResp createGetCompetitionResp(CompetitionEntity competitionEntity);
 }
