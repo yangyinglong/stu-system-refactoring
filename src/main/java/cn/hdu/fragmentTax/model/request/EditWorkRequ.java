@@ -1,43 +1,25 @@
-package cn.hdu.fragmentTax.dao.entity;
+package cn.hdu.fragmentTax.model.request;
 
-import javax.persistence.*;
-import java.io.Serializable;
-import java.sql.Timestamp;
-
-
-@Entity
-public class WorkEntity implements Serializable {
-
-    @Id
-    @GeneratedValue
+public class EditWorkRequ {
     private Integer id;
-    @Column
     private String stuId;
-    @Column
     private String companyName;
-    @Column
     private String companyType;
-    @Column
     private String workType;
-    @Column
-    private float score;
-    @Column
-    private Integer state;
-    @Column
-    private String createdTime;
+    private String getDate;
+    private String proofMaterialId;
 
-    public WorkEntity() {
+    public EditWorkRequ() {
     }
 
-    public WorkEntity(Integer id, String stuId, String companyName, String companyType, String workType, float score, Integer state, String createdTime) {
+    public EditWorkRequ(Integer id, String stuId, String companyName, String companyType, String workType, String getDate, String proofMaterialId) {
         this.id = id;
         this.stuId = stuId;
         this.companyName = companyName;
         this.companyType = companyType;
         this.workType = workType;
-        this.score = score;
-        this.state = state;
-        this.createdTime = createdTime;
+        this.getDate = getDate;
+        this.proofMaterialId = proofMaterialId;
     }
 
     public Integer getId() {
@@ -80,28 +62,19 @@ public class WorkEntity implements Serializable {
         this.workType = workType;
     }
 
-    public float getScore() {
-        return score;
+    public String getGetDate() {
+        return getDate;
     }
 
-    public void setScore(float score) {
-        this.score = score;
+    public void setGetDate(String getDate) {
+        this.getDate = getDate;
     }
 
-    public Integer getState() {
-        return state;
+    public String getProofMaterialId() {
+        return proofMaterialId;
     }
 
-    public void setState(Integer state) {
-        this.state = state;
+    public void setProofMaterialId(String proofMaterialId) {
+        this.proofMaterialId = proofMaterialId;
     }
-
-    public String getCreatedTime() {
-        return createdTime;
-    }
-
-    public void setCreatedTime(String createdTime) {
-        this.createdTime = createdTime;
-    }
-
 }

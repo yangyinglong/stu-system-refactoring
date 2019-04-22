@@ -1,9 +1,6 @@
 package cn.hdu.fragmentTax.controller;
 
-import cn.hdu.fragmentTax.model.request.EditCompetitionRequ;
-import cn.hdu.fragmentTax.model.request.EditHonorResp;
-import cn.hdu.fragmentTax.model.request.EditPaperRequ;
-import cn.hdu.fragmentTax.model.request.EditPatentRequ;
+import cn.hdu.fragmentTax.model.request.*;
 import cn.hdu.fragmentTax.service.IPrizeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -138,6 +135,163 @@ public class PrizeController {
     @Produces(MediaType.APPLICATION_JSON)
     public Map<String, Object> getCompetitions(String stuId){
         Map<String, Object> resp = prizeService.getCompetitions(stuId);
+        return resp;
+    }
+
+    /**
+     * 修改或者插入创新项目
+     * @param editInnoProRequ
+     * @return
+     */
+    @Path("/editInnoPro")
+    @POST
+    @Produces(MediaType.APPLICATION_JSON)
+    public Map<String, Object> editInnoPro(EditInnoProRequ editInnoProRequ){
+        Map<String, Object> resp = prizeService.editInnoPro(editInnoProRequ);
+        return resp;
+    }
+
+    /**
+     * 根据学号查询创想项目
+     * @param stuId
+     * @return
+     */
+    @Path("/getInnoPros")
+    @POST
+    @Produces(MediaType.APPLICATION_JSON)
+    public Map<String, Object> getInnoPros(String stuId){
+        Map<String, Object> resp = prizeService.getInnoPros(stuId);
+        return resp;
+    }
+
+    /**
+     * 插入或者更新创业项目，用的requ 还是与创新项目相同
+     * @param editInnoProRequ
+     * @return
+     */
+    @Path("/editEntrPro")
+    @POST
+    @Produces(MediaType.APPLICATION_JSON)
+    public Map<String, Object> editEntrPro(EditInnoProRequ editInnoProRequ){
+        Map<String, Object> resp = prizeService.editEntrPro(editInnoProRequ);
+        return resp;
+    }
+
+    /**
+     * 根据学号获取创业项目
+     * @param stuId
+     * @return
+     */
+    @Path("/getEntrPros")
+    @POST
+    @Produces(MediaType.APPLICATION_JSON)
+    public Map<String, Object> getEntrPros(String stuId){
+        Map<String, Object> resp = prizeService.getEntrPros(stuId);
+        return resp;
+    }
+
+    /**
+     * 更新或者插入工程项目
+     * @param editEngiProRequ
+     * @return
+     */
+    @Path("/editEngiPro")
+    @POST
+    @Produces(MediaType.APPLICATION_JSON)
+    public Map<String, Object> editEngiPro(EditEngiProRequ editEngiProRequ){
+        Map<String, Object> resp = prizeService.editEngiPro(editEngiProRequ);
+        return resp;
+    }
+
+    /**
+     * 根据学号获取
+     * @param stuId
+     * @return
+     */
+    @Path("/getEngiPros")
+    @POST
+    @Produces(MediaType.APPLICATION_JSON)
+    public Map<String, Object> getEngiPros(String stuId){
+        Map<String, Object> resp = prizeService.getEngiPros(stuId);
+        return resp;
+    }
+
+    /**
+     * 更新或者插入学术交流
+     * @param editAcadExchRequ
+     * @return
+     */
+    @Path("/editAcadExch")
+    @POST
+    @Produces(MediaType.APPLICATION_JSON)
+    public Map<String, Object> editAcadExch(EditAcadExchRequ editAcadExchRequ){
+        Map<String, Object> resp = prizeService.editAcadExch(editAcadExchRequ);
+        return resp;
+    }
+
+    /**
+     * 根据学号获取学术交流
+     * @param stuId
+     * @return
+     */
+    @Path("/getAcadExchs")
+    @POST
+    @Produces(MediaType.APPLICATION_JSON)
+    public Map<String, Object> getAcadExchs(String stuId){
+        Map<String, Object> resp = prizeService.getAcadExchs(stuId);
+        return resp;
+    }
+
+
+    /**
+     * 插入或者更新就业深造
+     * @param editWorkRequ
+     * @return
+     */
+    @Path("/editWork")
+    @POST
+    @Produces(MediaType.APPLICATION_JSON)
+    public Map<String, Object> editWork(EditWorkRequ editWorkRequ){
+        Map<String, Object> resp = prizeService.editWork(editWorkRequ);
+        return resp;
+    }
+
+    /**
+     * 根据学号获取硕士论文
+     * @param stuId
+     * @return
+     */
+    @Path("/getWorks")
+    @POST
+    @Produces(MediaType.APPLICATION_JSON)
+    public Map<String, Object> getWorks(String stuId){
+        Map<String, Object> resp = prizeService.getWorks(stuId);
+        return resp;
+    }
+
+    /**
+     * 插入或者更新硕士论文
+     * @param editMasterPaperRequ
+     * @return
+     */
+    @Path("/editMasterPaper")
+    @POST
+    @Produces(MediaType.APPLICATION_JSON)
+    public Map<String, Object> editMasterPaper(EditMasterPaperRequ editMasterPaperRequ){
+        Map<String, Object> resp = prizeService.editMasterPaper(editMasterPaperRequ);
+        return resp;
+    }
+
+    /**
+     * 根据学号获取硕士论文
+     * @param stuId
+     * @return
+     */
+    @Path("/getMasterPapers")
+    @POST
+    @Produces(MediaType.APPLICATION_JSON)
+    public Map<String, Object> getMasterPapers(String stuId){
+        Map<String, Object> resp = prizeService.getMasterPapers(stuId);
         return resp;
     }
 

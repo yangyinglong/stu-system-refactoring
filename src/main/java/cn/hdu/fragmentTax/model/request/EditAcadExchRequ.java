@@ -1,43 +1,21 @@
-package cn.hdu.fragmentTax.dao.entity;
+package cn.hdu.fragmentTax.model.request;
 
-import javax.persistence.*;
-import java.io.Serializable;
-import java.sql.Timestamp;
-
-
-@Entity
-public class AcademicExchangeEntity implements Serializable {
-
-    @Id
-    @GeneratedValue
+public class EditAcadExchRequ {
     private Integer id;
-    @Column
     private String stuId;
-    @Column
-    private String exchangeType;  // 交流类别
-    @Column
+    private String exchangeType;
     private String organization;
-    @Column
     private String conferenceName;
-    @Column
     private String startTime;
-    @Column
     private String endTime;
-    @Column
-    private String level;  // 级别
-    @Column
+    private String level;
     private String result;
-    @Column
     private String proofMaterialId;
-    @Column
-    private float score;
-    @Column
-    private Integer state;
 
-    public AcademicExchangeEntity() {
+    public EditAcadExchRequ() {
     }
 
-    public AcademicExchangeEntity(Integer id, String stuId, String exchangeType, String organization, String conferenceName, String startTime, String endTime, String level, String result, String proofMaterialId, float score, Integer state) {
+    public EditAcadExchRequ(Integer id, String stuId, String exchangeType, String organization, String conferenceName, String startTime, String endTime, String level, String result, String proofMaterialId) {
         this.id = id;
         this.stuId = stuId;
         this.exchangeType = exchangeType;
@@ -48,8 +26,6 @@ public class AcademicExchangeEntity implements Serializable {
         this.level = level;
         this.result = result;
         this.proofMaterialId = proofMaterialId;
-        this.score = score;
-        this.state = state;
     }
 
     public Integer getId() {
@@ -131,21 +107,4 @@ public class AcademicExchangeEntity implements Serializable {
     public void setProofMaterialId(String proofMaterialId) {
         this.proofMaterialId = proofMaterialId;
     }
-
-    public float getScore() {
-        return score;
-    }
-
-    public void setScore(float score) {
-        this.score = score;
-    }
-
-    public Integer getState() {
-        return state;
-    }
-
-    public void setState(Integer state) {
-        this.state = state;
-    }
-
 }

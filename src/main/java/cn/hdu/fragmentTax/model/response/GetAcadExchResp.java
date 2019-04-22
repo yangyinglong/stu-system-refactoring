@@ -1,45 +1,27 @@
-package cn.hdu.fragmentTax.dao.entity;
+package cn.hdu.fragmentTax.model.response;
 
-import javax.persistence.*;
-import java.io.Serializable;
-import java.sql.Timestamp;
-
-
-@Entity
-public class AcademicExchangeEntity implements Serializable {
-
-    @Id
-    @GeneratedValue
+public class GetAcadExchResp {
     private Integer id;
-    @Column
     private String stuId;
-    @Column
-    private String exchangeType;  // 交流类别
-    @Column
+    private String name;
+    private String exchangeType;
     private String organization;
-    @Column
     private String conferenceName;
-    @Column
     private String startTime;
-    @Column
     private String endTime;
-    @Column
-    private String level;  // 级别
-    @Column
+    private String level;
     private String result;
-    @Column
     private String proofMaterialId;
-    @Column
-    private float score;
-    @Column
-    private Integer state;
+    private String status;
+    private Float score;
 
-    public AcademicExchangeEntity() {
+    public GetAcadExchResp() {
     }
 
-    public AcademicExchangeEntity(Integer id, String stuId, String exchangeType, String organization, String conferenceName, String startTime, String endTime, String level, String result, String proofMaterialId, float score, Integer state) {
+    public GetAcadExchResp(Integer id, String stuId, String name, String exchangeType, String organization, String conferenceName, String startTime, String endTime, String level, String result, String proofMaterialId, String status, Float score) {
         this.id = id;
         this.stuId = stuId;
+        this.name = name;
         this.exchangeType = exchangeType;
         this.organization = organization;
         this.conferenceName = conferenceName;
@@ -48,8 +30,8 @@ public class AcademicExchangeEntity implements Serializable {
         this.level = level;
         this.result = result;
         this.proofMaterialId = proofMaterialId;
+        this.status = status;
         this.score = score;
-        this.state = state;
     }
 
     public Integer getId() {
@@ -66,6 +48,14 @@ public class AcademicExchangeEntity implements Serializable {
 
     public void setStuId(String stuId) {
         this.stuId = stuId;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getExchangeType() {
@@ -132,20 +122,19 @@ public class AcademicExchangeEntity implements Serializable {
         this.proofMaterialId = proofMaterialId;
     }
 
-    public float getScore() {
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public Float getScore() {
         return score;
     }
 
-    public void setScore(float score) {
+    public void setScore(Float score) {
         this.score = score;
     }
-
-    public Integer getState() {
-        return state;
-    }
-
-    public void setState(Integer state) {
-        this.state = state;
-    }
-
 }

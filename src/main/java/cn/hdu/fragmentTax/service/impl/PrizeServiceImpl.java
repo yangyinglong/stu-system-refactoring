@@ -2,10 +2,7 @@ package cn.hdu.fragmentTax.service.impl;
 
 import cn.hdu.fragmentTax.dao.entity.*;
 import cn.hdu.fragmentTax.dao.mapper.*;
-import cn.hdu.fragmentTax.model.request.EditCompetitionRequ;
-import cn.hdu.fragmentTax.model.request.EditHonorResp;
-import cn.hdu.fragmentTax.model.request.EditPaperRequ;
-import cn.hdu.fragmentTax.model.request.EditPatentRequ;
+import cn.hdu.fragmentTax.model.request.*;
 import cn.hdu.fragmentTax.model.response.*;
 import cn.hdu.fragmentTax.service.IPrizeService;
 import cn.hdu.fragmentTax.service.impl.model.IPrizeModel;
@@ -14,7 +11,6 @@ import cn.hdu.fragmentTax.utils.FormatUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.text.ParseException;
 import java.util.*;
 
 @Service
@@ -37,6 +33,25 @@ public class PrizeServiceImpl implements IPrizeService {
 
     @Autowired
     private ICompetitionMapper competitionMapper;
+
+    @Autowired
+    private IInnovativeProMapper innovativeProMapper;
+
+    @Autowired
+    private IEntrepreneurialProMapper entrepreneurialProMapper;
+
+    @Autowired
+    private IAcademicExchangeMapper academicExchangeMapper;
+
+    @Autowired
+    private IEngineeringProMapper engineeringProMapper;
+
+    @Autowired
+    private IWorkMapper workMapper;
+
+    @Autowired
+    private IMasterPaperMapper masterPaperMapper;
+
 
     @Override
     public Map<String, Object> editHonor(EditHonorResp editHonorResp) {
@@ -232,6 +247,270 @@ public class PrizeServiceImpl implements IPrizeService {
         }
         resp.put("c", 200);
         resp.put("r", getCompetitionResps);
+        return resp;
+    }
+
+    @Override
+    public Map<String, Object> editInnoPro(EditInnoProRequ editInnoProRequ) {
+        Map<String, Object> resp = new HashMap<>();
+        if (!FormatUtil.isEmpty(editInnoProRequ.getId())) {
+            // 更新
+            try {
+                InnovativeProEntity innovativeProEntity = prizeModel.createInnoProEntity(editInnoProRequ);
+                innovativeProEntity.setId(editInnoProRequ.getId());
+                innovativeProMapper.update(innovativeProEntity);
+                resp.put("c", 200);
+                resp.put("r", "修改成功");
+            } catch (Exception e) {
+                resp.put("c", 401);
+                resp.put("r", "数据库错误");
+            }
+        } else {
+            // 插入
+            try {
+                InnovativeProEntity innovativeProEntity = prizeModel.createInnoProEntity(editInnoProRequ);
+                innovativeProMapper.insert(innovativeProEntity);
+                resp.put("c", 200);
+                resp.put("r", "插入成功");
+            } catch (Exception e) {
+                resp.put("c", 401);
+                resp.put("r", "数据库错误");
+            }
+        }
+        return resp;
+    }
+
+    @Override
+    public Map<String, Object> getInnoPros(String stuId) {
+        Map<String, Object> resp = new HashMap<>();
+        List<InnovativeProEntity> innovativeProEntities = innovativeProMapper.queryByStuId(stuId);
+        List<GetInnoProResp> getInnoProResps = new ArrayList<GetInnoProResp>();
+        for (InnovativeProEntity innovativeProEntity : innovativeProEntities) {
+            GetInnoProResp getInnoProResp =  prizeModel.createGetInnoProResp(innovativeProEntity);
+            getInnoProResps.add(getInnoProResp);
+        }
+        resp.put("c", 200);
+        resp.put("r", getInnoProResps);
+        return resp;
+    }
+
+    @Override
+    public Map<String, Object> editEntrPro(EditInnoProRequ editInnoProRequ) {
+        Map<String, Object> resp = new HashMap<>();
+        if (!FormatUtil.isEmpty(editInnoProRequ.getId())) {
+            // 更新
+            try {
+                EntrepreneurialProEntity entrepreneurialProEntity = prizeModel.createEntrProEntity(editInnoProRequ);
+                entrepreneurialProEntity.setId(editInnoProRequ.getId());
+                entrepreneurialProMapper.update(entrepreneurialProEntity);
+                resp.put("c", 200);
+                resp.put("r", "修改成功");
+            } catch (Exception e) {
+                resp.put("c", 401);
+                resp.put("r", "数据库错误");
+            }
+        } else {
+            // 插入
+            try {
+                EntrepreneurialProEntity entrepreneurialProEntity = prizeModel.createEntrProEntity(editInnoProRequ);
+                entrepreneurialProMapper.insert(entrepreneurialProEntity);
+                resp.put("c", 200);
+                resp.put("r", "插入成功");
+            } catch (Exception e) {
+                resp.put("c", 401);
+                resp.put("r", "数据库错误");
+            }
+        }
+        return resp;
+    }
+
+    @Override
+    public Map<String, Object> getEntrPros(String stuId) {
+        Map<String, Object> resp = new HashMap<>();
+        List<EntrepreneurialProEntity> entrepreneurialProEntities = entrepreneurialProMapper.queryByStuId(stuId);
+        List<GetInnoProResp> getInnoProResps = new ArrayList<GetInnoProResp>();
+        for (EntrepreneurialProEntity entrepreneurialProEntity : entrepreneurialProEntities) {
+            GetInnoProResp getInnoProResp =  prizeModel.createGetInnoProResp(entrepreneurialProEntity);
+            getInnoProResps.add(getInnoProResp);
+        }
+        resp.put("c", 200);
+        resp.put("r", getInnoProResps);
+        return resp;
+    }
+
+    @Override
+    public Map<String, Object> editEngiPro(EditEngiProRequ editEngiProRequ) {
+        Map<String, Object> resp = new HashMap<>();
+        if (!FormatUtil.isEmpty(editEngiProRequ.getId())) {
+            // 更新
+            try {
+                EngineeringProEntity engineeringProEntity = prizeModel.createEngiProEntity(editEngiProRequ);
+                engineeringProEntity.setId(editEngiProRequ.getId());
+                engineeringProMapper.update(engineeringProEntity);
+                resp.put("c", 200);
+                resp.put("r", "修改成功");
+            } catch (Exception e) {
+                resp.put("c", 401);
+                resp.put("r", "数据库错误");
+            }
+        } else {
+            // 插入
+            try {
+                EngineeringProEntity engineeringProEntity = prizeModel.createEngiProEntity(editEngiProRequ);
+                engineeringProMapper.insert(engineeringProEntity);
+                resp.put("c", 200);
+                resp.put("r", "插入成功");
+            } catch (Exception e) {
+                resp.put("c", 401);
+                resp.put("r", "数据库错误");
+            }
+        }
+        return resp;
+    }
+
+    @Override
+    public Map<String, Object> getEngiPros(String stuId) {
+        Map<String, Object> resp = new HashMap<>();
+        List<EngineeringProEntity> engineeringProEntities = engineeringProMapper.queryByStuId(stuId);
+        List<GetEngiProResp> getEngiProResps = new ArrayList<GetEngiProResp>();
+        for (EngineeringProEntity engineeringProEntity : engineeringProEntities) {
+            GetEngiProResp getEngiProResp =  prizeModel.createGetEngiProResp(engineeringProEntity);
+            getEngiProResps.add(getEngiProResp);
+        }
+        resp.put("c", 200);
+        resp.put("r", getEngiProResps);
+        return resp;
+    }
+
+    @Override
+    public Map<String, Object> editAcadExch(EditAcadExchRequ editAcadExchRequ) {
+        Map<String, Object> resp = new HashMap<>();
+        if (!FormatUtil.isEmpty(editAcadExchRequ.getId())) {
+            // 更新
+            try {
+                AcademicExchangeEntity academicExchangeEntity = prizeModel.createAcadExchEntity(editAcadExchRequ);
+                academicExchangeEntity.setId(editAcadExchRequ.getId());
+                academicExchangeMapper.update(academicExchangeEntity);
+                resp.put("c", 200);
+                resp.put("r", "修改成功");
+            } catch (Exception e) {
+                resp.put("c", 401);
+                resp.put("r", "数据库错误");
+            }
+        } else {
+            // 插入
+            try {
+                AcademicExchangeEntity academicExchangeEntity = prizeModel.createAcadExchEntity(editAcadExchRequ);
+                academicExchangeMapper.insert(academicExchangeEntity);
+                resp.put("c", 200);
+                resp.put("r", "插入成功");
+            } catch (Exception e) {
+                resp.put("c", 401);
+                resp.put("r", "数据库错误");
+            }
+        }
+        return resp;
+    }
+
+    @Override
+    public Map<String, Object> getAcadExchs(String stuId) {
+        Map<String, Object> resp = new HashMap<>();
+        List<AcademicExchangeEntity> academicExchangeEntities = academicExchangeMapper.queryByStuId(stuId);
+        List<GetAcadExchResp> getAcadExchResps = new ArrayList<GetAcadExchResp>();
+        for (AcademicExchangeEntity academicExchangeEntity : academicExchangeEntities) {
+            GetAcadExchResp getAcadExchResp =  prizeModel.createGetAcadExchResp(academicExchangeEntity);
+            getAcadExchResps.add(getAcadExchResp);
+        }
+        resp.put("c", 200);
+        resp.put("r", getAcadExchResps);
+        return resp;
+    }
+
+    @Override
+    public Map<String, Object> editWork(EditWorkRequ editWorkRequ) {
+        Map<String, Object> resp = new HashMap<>();
+        if (!FormatUtil.isEmpty(editWorkRequ.getId())) {
+            // 更新
+            try {
+                WorkEntity workEntity = prizeModel.createdWorkEntity(editWorkRequ);
+                workEntity.setId(editWorkRequ.getId());
+                workMapper.update(workEntity);
+                resp.put("c", 200);
+                resp.put("r", "修改成功");
+            } catch (Exception e) {
+                resp.put("c", 401);
+                resp.put("r", "数据库错误");
+            }
+        } else {
+            // 插入
+            try {
+                WorkEntity workEntity = prizeModel.createdWorkEntity(editWorkRequ);
+                workMapper.insert(workEntity);
+                resp.put("c", 200);
+                resp.put("r", "插入成功");
+            } catch (Exception e) {
+                resp.put("c", 401);
+                resp.put("r", "数据库错误");
+            }
+        }
+        return resp;
+    }
+
+    @Override
+    public Map<String, Object> getWorks(String stuId) {
+        Map<String, Object> resp = new HashMap<>();
+        List<WorkEntity> workEntities = workMapper.queryByStuId(stuId);
+        List<GetWorkResp> getWorkResps = new ArrayList<GetWorkResp>();
+        for (WorkEntity workEntity : workEntities) {
+            GetWorkResp getWorkResp =  prizeModel.createGetWorkResp(workEntity);
+            getWorkResps.add(getWorkResp);
+        }
+        resp.put("c", 200);
+        resp.put("r", getWorkResps);
+        return resp;
+    }
+
+    @Override
+    public Map<String, Object> editMasterPaper(EditMasterPaperRequ editMasterPaperRequ) {
+        Map<String, Object> resp = new HashMap<>();
+        if (!FormatUtil.isEmpty(editMasterPaperRequ.getId())) {
+            // 更新
+            try {
+                MasterPaperEntity masterPaperEntity = prizeModel.createMasterPaperEntity(editMasterPaperRequ);
+                masterPaperEntity.setId(editMasterPaperRequ.getId());
+                masterPaperMapper.update(masterPaperEntity);
+                resp.put("c", 200);
+                resp.put("r", "修改成功");
+            } catch (Exception e) {
+                resp.put("c", 401);
+                resp.put("r", "数据库错误");
+            }
+        } else {
+            // 插入
+            try {
+                MasterPaperEntity masterPaperEntity = prizeModel.createMasterPaperEntity(editMasterPaperRequ);
+                masterPaperMapper.insert(masterPaperEntity);
+                resp.put("c", 200);
+                resp.put("r", "插入成功");
+            } catch (Exception e) {
+                resp.put("c", 401);
+                resp.put("r", "数据库错误");
+            }
+        }
+        return resp;
+    }
+
+    @Override
+    public Map<String, Object> getMasterPapers(String stuId) {
+        Map<String, Object> resp = new HashMap<>();
+        List<MasterPaperEntity> masterPaperEntities = masterPaperMapper.queryByStuId(stuId);
+        List<GetMasterPaperResp> getMasterPaperResps = new ArrayList<GetMasterPaperResp>();
+        for (MasterPaperEntity masterPaperEntity : masterPaperEntities) {
+            GetMasterPaperResp getMasterPaperResp =  prizeModel.createGetMasterPaperResp(masterPaperEntity);
+            getMasterPaperResps.add(getMasterPaperResp);
+        }
+        resp.put("c", 200);
+        resp.put("r", getMasterPaperResps);
         return resp;
     }
 

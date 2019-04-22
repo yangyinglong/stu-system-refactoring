@@ -1,10 +1,7 @@
 package cn.hdu.fragmentTax.service.impl.model;
 
 import cn.hdu.fragmentTax.dao.entity.*;
-import cn.hdu.fragmentTax.model.request.EditCompetitionRequ;
-import cn.hdu.fragmentTax.model.request.EditHonorResp;
-import cn.hdu.fragmentTax.model.request.EditPaperRequ;
-import cn.hdu.fragmentTax.model.request.EditPatentRequ;
+import cn.hdu.fragmentTax.model.request.*;
 import cn.hdu.fragmentTax.model.response.*;
 
 import java.text.ParseException;
@@ -27,4 +24,28 @@ public interface IPrizeModel {
     CompetitionEntity createCompetitionEntity(EditCompetitionRequ editCompetitionRequ) throws ParseException;
 
     GetCompetitionResp createGetCompetitionResp(CompetitionEntity competitionEntity);
+
+    InnovativeProEntity createInnoProEntity(EditInnoProRequ editInnoProRequ) throws ParseException;
+
+    GetInnoProResp createGetInnoProResp(InnovativeProEntity innovativeProEntity);
+
+    EntrepreneurialProEntity createEntrProEntity(EditInnoProRequ editInnoProRequ) throws ParseException;
+
+    GetInnoProResp createGetInnoProResp(EntrepreneurialProEntity entrepreneurialProEntity);
+
+    EngineeringProEntity createEngiProEntity(EditEngiProRequ editEngiProRequ) throws ParseException;
+
+    GetEngiProResp createGetEngiProResp(EngineeringProEntity engineeringProEntity);
+
+    AcademicExchangeEntity createAcadExchEntity(EditAcadExchRequ editAcadExchRequ) throws ParseException;
+
+    GetAcadExchResp createGetAcadExchResp(AcademicExchangeEntity academicExchangeEntity);
+
+    WorkEntity createdWorkEntity(EditWorkRequ editWorkRequ) throws ParseException;
+
+    GetWorkResp createGetWorkResp(WorkEntity workEntity);
+
+    MasterPaperEntity createMasterPaperEntity(EditMasterPaperRequ editMasterPaperRequ) throws ParseException;
+
+    GetMasterPaperResp createGetMasterPaperResp(MasterPaperEntity masterPaperEntity);
 }

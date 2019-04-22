@@ -1,16 +1,13 @@
 package cn.hdu.fragmentTax.service.impl.model.impl;
 
 import cn.hdu.fragmentTax.dao.entity.*;
-import cn.hdu.fragmentTax.model.request.EditCompetitionRequ;
-import cn.hdu.fragmentTax.model.request.EditHonorResp;
-import cn.hdu.fragmentTax.model.request.EditPaperRequ;
-import cn.hdu.fragmentTax.model.request.EditPatentRequ;
+import cn.hdu.fragmentTax.model.request.*;
 import cn.hdu.fragmentTax.model.response.*;
 import cn.hdu.fragmentTax.service.impl.model.IPrizeModel;
 import cn.hdu.fragmentTax.utils.DateUtil;
+import org.apache.http.client.utils.DateUtils;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
-import sun.security.krb5.internal.PAData;
 
 import java.text.ParseException;
 
@@ -261,5 +258,157 @@ public class PrizeModelImpl implements IPrizeModel {
             getCompetitionResp.setStatus("已删除");
         }
         return getCompetitionResp;
+    }
+
+    @Override
+    public InnovativeProEntity createInnoProEntity(EditInnoProRequ editInnoProRequ) throws ParseException {
+        InnovativeProEntity innovativeProEntity = new InnovativeProEntity();
+        BeanUtils.copyProperties(editInnoProRequ, innovativeProEntity);
+        innovativeProEntity.setCreatedTime(DateUtil.getChinaDateTime(editInnoProRequ.getGetDate()));
+        innovativeProEntity.setScore(0);
+        innovativeProEntity.setState(1);
+        return innovativeProEntity;
+    }
+
+    @Override
+    public GetInnoProResp createGetInnoProResp(InnovativeProEntity innovativeProEntity) {
+        GetInnoProResp getInnoProResp = new GetInnoProResp();
+        BeanUtils.copyProperties(innovativeProEntity, getInnoProResp);
+        getInnoProResp.setGetDate(innovativeProEntity.getCreatedTime().split(" ")[0]);
+        if (innovativeProEntity.getState() == 1) {
+            getInnoProResp.setStatus("待审核");
+        } else if (innovativeProEntity.getState() == 2) {
+            getInnoProResp.setStatus("已通过");
+        } else {
+            getInnoProResp.setStatus("已删除");
+        }
+        return getInnoProResp;
+    }
+
+    @Override
+    public EntrepreneurialProEntity createEntrProEntity(EditInnoProRequ editInnoProRequ) throws ParseException {
+        EntrepreneurialProEntity entrepreneurialProEntity = new EntrepreneurialProEntity();
+        BeanUtils.copyProperties(editInnoProRequ, entrepreneurialProEntity);
+        entrepreneurialProEntity.setCreatedTime(DateUtil.getChinaDateTime(editInnoProRequ.getGetDate()));
+        entrepreneurialProEntity.setScore(0);
+        entrepreneurialProEntity.setState(1);
+        return entrepreneurialProEntity;
+    }
+
+    @Override
+    public GetInnoProResp createGetInnoProResp(EntrepreneurialProEntity entrepreneurialProEntity) {
+        GetInnoProResp getInnoProResp = new GetInnoProResp();
+        BeanUtils.copyProperties(entrepreneurialProEntity, getInnoProResp);
+        getInnoProResp.setGetDate(entrepreneurialProEntity.getCreatedTime().split(" ")[0]);
+        if (entrepreneurialProEntity.getState() == 1) {
+            getInnoProResp.setStatus("待审核");
+        } else if (entrepreneurialProEntity.getState() == 2) {
+            getInnoProResp.setStatus("已通过");
+        } else {
+            getInnoProResp.setStatus("已删除");
+        }
+        return getInnoProResp;
+    }
+
+    @Override
+    public EngineeringProEntity createEngiProEntity(EditEngiProRequ editEngiProRequ) throws ParseException {
+        EngineeringProEntity engineeringProEntity = new EngineeringProEntity();
+        BeanUtils.copyProperties(editEngiProRequ, engineeringProEntity);
+        engineeringProEntity.setCreatedTime(DateUtil.getChinaDateTime(editEngiProRequ.getGetDate()));
+        engineeringProEntity.setScore(0);
+        engineeringProEntity.setState(1);
+        return engineeringProEntity;
+    }
+
+    @Override
+    public GetEngiProResp createGetEngiProResp(EngineeringProEntity engineeringProEntity) {
+        GetEngiProResp getEngiProResp = new GetEngiProResp();
+        BeanUtils.copyProperties(engineeringProEntity, getEngiProResp);
+        getEngiProResp.setGetDate(engineeringProEntity.getCreatedTime().split(" ")[0]);
+        if (engineeringProEntity.getState() == 1) {
+            getEngiProResp.setStatus("待审核");
+        } else if (engineeringProEntity.getState() == 2) {
+            getEngiProResp.setStatus("已通过");
+        } else {
+            getEngiProResp.setStatus("已删除");
+        }
+        return getEngiProResp;
+    }
+
+    @Override
+    public AcademicExchangeEntity createAcadExchEntity(EditAcadExchRequ editAcadExchRequ) throws ParseException {
+        AcademicExchangeEntity academicExchangeEntity = new AcademicExchangeEntity();
+        BeanUtils.copyProperties(editAcadExchRequ, academicExchangeEntity);
+        academicExchangeEntity.setStartTime(DateUtil.getChinaDateTime(editAcadExchRequ.getStartTime()));
+        academicExchangeEntity.setEndTime(DateUtil.getChinaDateTime(editAcadExchRequ.getEndTime()));
+        academicExchangeEntity.setScore(0);
+        academicExchangeEntity.setState(1);
+        return academicExchangeEntity;
+    }
+
+    @Override
+    public GetAcadExchResp createGetAcadExchResp(AcademicExchangeEntity academicExchangeEntity) {
+        GetAcadExchResp getAcadExchResp = new GetAcadExchResp();
+        BeanUtils.copyProperties(academicExchangeEntity, getAcadExchResp);
+        getAcadExchResp.setStartTime(academicExchangeEntity.getStartTime().split(" ")[0]);
+        getAcadExchResp.setEndTime(academicExchangeEntity.getEndTime().split(" ")[0]);
+        if (academicExchangeEntity.getState() == 1) {
+            getAcadExchResp.setStatus("待审核");
+        } else if (academicExchangeEntity.getState() == 2) {
+            getAcadExchResp.setStatus("已通过");
+        } else {
+            getAcadExchResp.setStatus("已删除");
+        }
+        return getAcadExchResp;
+    }
+
+    @Override
+    public WorkEntity createdWorkEntity(EditWorkRequ editWorkRequ) throws ParseException {
+        WorkEntity workEntity = new WorkEntity();
+        BeanUtils.copyProperties(editWorkRequ, workEntity);
+        workEntity.setCreatedTime(DateUtil.getChinaDateTime(editWorkRequ.getGetDate()));
+        workEntity.setScore(0);
+        workEntity.setState(1);
+        return workEntity;
+    }
+
+    @Override
+    public GetWorkResp createGetWorkResp(WorkEntity workEntity) {
+        GetWorkResp getWorkResp = new GetWorkResp();
+        BeanUtils.copyProperties(workEntity, getWorkResp);
+       getWorkResp.setGetDate(workEntity.getCreatedTime().split(" ")[0]);
+        if (workEntity.getState() == 1) {
+            getWorkResp.setStatus("待审核");
+        } else if (workEntity.getState() == 2) {
+            getWorkResp.setStatus("已通过");
+        } else {
+            getWorkResp.setStatus("已删除");
+        }
+        return getWorkResp;
+    }
+
+    @Override
+    public MasterPaperEntity createMasterPaperEntity(EditMasterPaperRequ editMasterPaperRequ) throws ParseException {
+        MasterPaperEntity masterPaperEntity = new MasterPaperEntity();
+        BeanUtils.copyProperties(editMasterPaperRequ, masterPaperEntity);
+        masterPaperEntity.setCreatedTime(DateUtil.getChinaDateTime(editMasterPaperRequ.getGetDate()));
+        masterPaperEntity.setScore(0);
+        masterPaperEntity.setState(1);
+        return masterPaperEntity;
+    }
+
+    @Override
+    public GetMasterPaperResp createGetMasterPaperResp(MasterPaperEntity masterPaperEntity) {
+        GetMasterPaperResp getMasterPaperResp = new GetMasterPaperResp();
+        BeanUtils.copyProperties(masterPaperEntity, getMasterPaperResp);
+        getMasterPaperResp.setGetDate(masterPaperEntity.getCreatedTime().split(" ")[0]);
+        if (masterPaperEntity.getState() == 1) {
+            getMasterPaperResp.setStatus("待审核");
+        } else if (masterPaperEntity.getState() == 2) {
+            getMasterPaperResp.setStatus("已通过");
+        } else {
+            getMasterPaperResp.setStatus("已删除");
+        }
+        return getMasterPaperResp;
     }
 }
