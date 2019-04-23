@@ -160,4 +160,42 @@ public interface IAllPrizeMapper {
     @Update("UPDATE `all_prize` SET honor_num=#{honorNum} WHERE `id` = #{id}")
     void updateHonorNum(@Param("id") Integer id, @Param("honorNum") Integer order);
 
+    @Update("UPDATE `all_prize` SET paper_socre=#{paperScore} WHERE `stu_id` = #{stuId}")
+    void updatePaperScore(@Param("stuId") String stuId, @Param("paperScore") Float allPaperScore);
+
+    @Select("SELECT `id`, `stu_id`, `honor_score`, `honor_num`, `paper_socre`, `paper_num`, `patent_score`, `patent_num`, `state`, `created_time`, `changed_time`, `competition_score`, `competition_num`, `engi_score`, `engi_num`, `entr_score`, `entr_num`, `inno_score`, `inno_num`, `exch_score`, `exch_num`, `work_score`, `work_num`, `master_score`, `master_num`, `all_score`, `all_num`, `total_count` FROM `all_prize` order by `paper_socre` DESC")
+    @Results({
+            @Result(property = "id", column = "id"),
+            @Result(property = "stuId", column = "stu_id"),
+            @Result(property = "honorScore", column = "honor_score"),
+            @Result(property = "honorNum", column = "honor_num"),
+            @Result(property = "paperSocre", column = "paper_socre"),
+            @Result(property = "paperNum", column = "paper_num"),
+            @Result(property = "patentScore", column = "patent_score"),
+            @Result(property = "patentNum", column = "patent_num"),
+            @Result(property = "state", column = "state"),
+            @Result(property = "createdTime", column = "created_time"),
+            @Result(property = "changedTime", column = "changed_time"),
+            @Result(property = "competitionScore", column = "competition_score"),
+            @Result(property = "competitionNum", column = "competition_num"),
+            @Result(property = "engiScore", column = "engi_score"),
+            @Result(property = "engiNum", column = "engi_num"),
+            @Result(property = "entrScore", column = "entr_score"),
+            @Result(property = "entrNum", column = "entr_num"),
+            @Result(property = "innoScore", column = "inno_score"),
+            @Result(property = "innoNum", column = "inno_num"),
+            @Result(property = "exchScore", column = "exch_score"),
+            @Result(property = "exchNum", column = "exch_num"),
+            @Result(property = "workScore", column = "work_score"),
+            @Result(property = "workNum", column = "work_num"),
+            @Result(property = "masterScore", column = "master_score"),
+            @Result(property = "masterNum", column = "master_num"),
+            @Result(property = "allScore", column = "all_score"),
+            @Result(property = "allNum", column = "all_num"),
+            @Result(property = "totalCount", column = "total_count")
+    })
+    List<AllPrizeEntity> orderByPaper();
+
+    @Update("UPDATE `all_prize` SET paper_num=#{paperNum} WHERE `id` = #{id}")
+    void updatePaperNum(@Param("id") Integer id, @Param("paperNum") Integer order);
 }

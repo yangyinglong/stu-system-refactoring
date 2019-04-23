@@ -70,4 +70,61 @@ public interface IPaperMapper {
             @Result(property = "changedTime", column = "changed_time")
     })
     List<PaperEntity> queryStuId(@Param("stuId") String stuId);
+
+    @Select("SELECT `id`, `stu_id`, `paper_grade`, `paper_title`, `journal_title`, `ranking`, `total_number`, `paper_state`, `proof_material_id`, `score`, `state`, `created_time`, `changed_time` FROM `paper` where `state` in (${state})")
+    @Results({
+            @Result(property = "id", column = "id"),
+            @Result(property = "stuId", column = "stu_id"),
+            @Result(property = "paperGrade", column = "paper_grade"),
+            @Result(property = "paperTitle", column = "paper_title"),
+            @Result(property = "journalTitle", column = "journal_title"),
+            @Result(property = "ranking", column = "ranking"),
+            @Result(property = "totalNumber", column = "total_number"),
+            @Result(property = "paperState", column = "paper_state"),
+            @Result(property = "proofMaterialId", column = "proof_material_id"),
+            @Result(property = "score", column = "score"),
+            @Result(property = "state", column = "state"),
+            @Result(property = "createdTime", column = "created_time"),
+            @Result(property = "changedTime", column = "changed_time")
+    })
+    List<PaperEntity> queryForAdmin(@Param("state") String status);
+
+    @Select("SELECT `id`, `stu_id`, `paper_grade`, `paper_title`, `journal_title`, `ranking`, `total_number`, `paper_state`, `proof_material_id`, `score`, `state`, `created_time`, `changed_time` FROM `paper` where `state` in (${state}) and `stu_id` in (${stuIds})")
+    @Results({
+            @Result(property = "id", column = "id"),
+            @Result(property = "stuId", column = "stu_id"),
+            @Result(property = "paperGrade", column = "paper_grade"),
+            @Result(property = "paperTitle", column = "paper_title"),
+            @Result(property = "journalTitle", column = "journal_title"),
+            @Result(property = "ranking", column = "ranking"),
+            @Result(property = "totalNumber", column = "total_number"),
+            @Result(property = "paperState", column = "paper_state"),
+            @Result(property = "proofMaterialId", column = "proof_material_id"),
+            @Result(property = "score", column = "score"),
+            @Result(property = "state", column = "state"),
+            @Result(property = "createdTime", column = "created_time"),
+            @Result(property = "changedTime", column = "changed_time")
+    })
+    List<PaperEntity> queryForTutor(@Param("state") String status, @Param("stuIds") String stuIds);
+
+    @Update("UPDATE `paper` SET score=#{score}, state=#{state} WHERE `id` = #{id}")
+    void updateScore(@Param("id") String id, @Param("score") Float score, @Param("state") Integer state);
+
+    @Select("SELECT `id`, `stu_id`, `paper_grade`, `paper_title`, `journal_title`, `ranking`, `total_number`, `paper_state`, `proof_material_id`, `score`, `state`, `created_time`, `changed_time` FROM `paper` where `state` = #{state} and `stu_id` = #{stuId}")
+    @Results({
+            @Result(property = "id", column = "id"),
+            @Result(property = "stuId", column = "stu_id"),
+            @Result(property = "paperGrade", column = "paper_grade"),
+            @Result(property = "paperTitle", column = "paper_title"),
+            @Result(property = "journalTitle", column = "journal_title"),
+            @Result(property = "ranking", column = "ranking"),
+            @Result(property = "totalNumber", column = "total_number"),
+            @Result(property = "paperState", column = "paper_state"),
+            @Result(property = "proofMaterialId", column = "proof_material_id"),
+            @Result(property = "score", column = "score"),
+            @Result(property = "state", column = "state"),
+            @Result(property = "createdTime", column = "created_time"),
+            @Result(property = "changedTime", column = "changed_time")
+    })
+    List<PaperEntity> queryByStuId(@Param("stuId") String stuId, @Param("state") Integer state);
 }

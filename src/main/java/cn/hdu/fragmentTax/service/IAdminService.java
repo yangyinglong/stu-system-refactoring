@@ -9,4 +9,8 @@ public interface IAdminService {
     Map<String,Object> showHonorsForTeacher(AdminQueryRequ adminQueryRequ);
 
     Map<String,Object> examHonor(AdminExamRequ adminExamRequ);
+
+    Map<String,Object> showPapersForTeacher(AdminQueryRequ adminQueryRequ);
+
+    Map<String,Object> examPaper(AdminExamRequ adminExamRequ);
 }

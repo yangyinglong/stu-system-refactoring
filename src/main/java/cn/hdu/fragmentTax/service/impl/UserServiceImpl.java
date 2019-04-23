@@ -186,6 +186,7 @@ public class UserServiceImpl implements IUserService {
 
         LoginResp loginResp = new LoginResp();
         if (1 == loginRequ.getState()) {
+//            辅导员登录
             CounsellorsEntity counsellorsEntity = counsellorsMapper.queryByCoId(loginRequ.getStuId());
             if (FormatUtil.isEmpty(counsellorsEntity)) {
                 resp.put("c", 302);
@@ -200,6 +201,7 @@ public class UserServiceImpl implements IUserService {
             resp.put("c", 200);
             resp.put("r", loginResp);
         } else if (2 == loginRequ.getState()) {
+            // 导师登录
             TutorsEntity tutorsEntity = tutorsMapper.queryByTuId(loginRequ.getStuId());
             if (FormatUtil.isEmpty(tutorsEntity)) {
                 resp.put("c", 302);

@@ -80,4 +80,21 @@ public interface IStuBaseMapper {
 
     @Update("UPDATE `stu_base` SET counsellor_id=#{counsellorId}, tutor_id=#{tutorId} WHERE `stu_id` = #{stuId}")
     void updateTuCoer(@Param("stuId") String stuId, @Param("tutorId") String tutorId, @Param("counsellorId") String counsellorId);
+
+    @Select("SELECT `id`, `stu_id`, `name`, `phone`, `sex`, `u_school`, `u_major`, `counsellor_id`, `tutor_id`, `state`, `created_time`, `changed_time` FROM `stu_base` WHERE `tutor_id` = #{tutorId} and `state` = 1")
+    @Results({
+            @Result(property = "id", column = "id"),
+            @Result(property = "stuId", column = "stu_id"),
+            @Result(property = "name", column = "name"),
+            @Result(property = "phone", column = "phone"),
+            @Result(property = "sex", column = "sex"),
+            @Result(property = "uSchool", column = "u_school"),
+            @Result(property = "uMajor", column = "u_major"),
+            @Result(property = "counsellorId", column = "counsellor_id"),
+            @Result(property = "tutorId", column = "tutor_id"),
+            @Result(property = "state", column = "state"),
+            @Result(property = "createdTime", column = "created_time"),
+            @Result(property = "changedTime", column = "changed_time")
+    })
+    List<StuBaseEntity> queryByTutorId(@Param("tutorId") String tutorId);
 }

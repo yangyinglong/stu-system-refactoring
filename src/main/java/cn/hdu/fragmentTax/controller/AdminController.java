@@ -23,7 +23,7 @@ public class AdminController {
     private IAdminService adminService;
 
     /**
-     * 查看所有预约单
+     * 管理员或导师查看荣誉与奖项
      * @param adminQueryRequ
      * @return
      */
@@ -36,7 +36,7 @@ public class AdminController {
     }
 
     /**
-     * 管理员审核预约单
+     * 管理员审核荣誉与奖项
      * @param adminExamRequ
      * @return
      */
@@ -45,6 +45,32 @@ public class AdminController {
     @Produces(MediaType.APPLICATION_JSON)
     public Map<String, Object> examHonor(AdminExamRequ adminExamRequ){
         Map<String, Object> resp = adminService.examHonor(adminExamRequ);
+        return resp;
+    }
+
+    /**
+     * 管理员或者导师查看学术论文
+     * @param adminQueryRequ
+     * @return
+     */
+    @Path("/showPapersForTeacher")
+    @POST
+    @Produces(MediaType.APPLICATION_JSON)
+    public Map<String, Object> showPapersForTeacher(AdminQueryRequ adminQueryRequ){
+        Map<String, Object> resp = adminService.showPapersForTeacher(adminQueryRequ);
+        return resp;
+    }
+
+    /**
+     * 管理员审核学术论文
+     * @param adminExamRequ
+     * @return
+     */
+    @Path("/examPaper")
+    @POST
+    @Produces(MediaType.APPLICATION_JSON)
+    public Map<String, Object> examPaper(AdminExamRequ adminExamRequ){
+        Map<String, Object> resp = adminService.examPaper(adminExamRequ);
         return resp;
     }
 
