@@ -72,5 +72,65 @@ public interface ICompetitionMapper {
             @Result(property = "state", column = "state"),
             @Result(property = "createdTime", column = "created_time")
     })
-    List<CompetitionEntity> queryByStuId(@Param("stuId") String stuId);
+    List<CompetitionEntity> queryStuId(@Param("stuId") String stuId);
+
+    @Select("SELECT `id`, `stu_id`, `competition_type`, `competition_name`, `ranking`, `total_number`, `competition_state`, `competition_prize`, `competition_level`, `teacher`, `proof_material_id`, `score`, `state`, `created_time` FROM `competition` where `state` in (${state})")
+    @Results({
+            @Result(property = "id", column = "id"),
+            @Result(property = "stuId", column = "stu_id"),
+            @Result(property = "competitionType", column = "competition_type"),
+            @Result(property = "competitionName", column = "competition_name"),
+            @Result(property = "ranking", column = "ranking"),
+            @Result(property = "totalNumber", column = "total_number"),
+            @Result(property = "competitionState", column = "competition_state"),
+            @Result(property = "competitionPrize", column = "competition_prize"),
+            @Result(property = "competitionLevel", column = "competition_level"),
+            @Result(property = "teacher", column = "teacher"),
+            @Result(property = "proofMaterialId", column = "proof_material_id"),
+            @Result(property = "score", column = "score"),
+            @Result(property = "state", column = "state"),
+            @Result(property = "createdTime", column = "created_time")
+    })
+    List<CompetitionEntity> queryForAdmin(@Param("state") String status);
+
+    @Select("SELECT `id`, `stu_id`, `competition_type`, `competition_name`, `ranking`, `total_number`, `competition_state`, `competition_prize`, `competition_level`, `teacher`, `proof_material_id`, `score`, `state`, `created_time` FROM `competition` where `state` in (${state} and `stu_id` in (${stuIds})")
+    @Results({
+            @Result(property = "id", column = "id"),
+            @Result(property = "stuId", column = "stu_id"),
+            @Result(property = "competitionType", column = "competition_type"),
+            @Result(property = "competitionName", column = "competition_name"),
+            @Result(property = "ranking", column = "ranking"),
+            @Result(property = "totalNumber", column = "total_number"),
+            @Result(property = "competitionState", column = "competition_state"),
+            @Result(property = "competitionPrize", column = "competition_prize"),
+            @Result(property = "competitionLevel", column = "competition_level"),
+            @Result(property = "teacher", column = "teacher"),
+            @Result(property = "proofMaterialId", column = "proof_material_id"),
+            @Result(property = "score", column = "score"),
+            @Result(property = "state", column = "state"),
+            @Result(property = "createdTime", column = "created_time")
+    })
+    List<CompetitionEntity> queryForTutor(@Param("state") String status, @Param("stuIds") String stuIds);
+
+    @Update("UPDATE `competition` SET score=#{score}, state=#{state} WHERE `id` = #{id}")
+    void updateScore(@Param("id") String id, @Param("score") Float score, @Param("state") Integer state);
+
+    @Select("SELECT `id`, `stu_id`, `competition_type`, `competition_name`, `ranking`, `total_number`, `competition_state`, `competition_prize`, `competition_level`, `teacher`, `proof_material_id`, `score`, `state`, `created_time` FROM `competition` where `state`=#{state} and `stu_id`=#{stuId}")
+    @Results({
+            @Result(property = "id", column = "id"),
+            @Result(property = "stuId", column = "stu_id"),
+            @Result(property = "competitionType", column = "competition_type"),
+            @Result(property = "competitionName", column = "competition_name"),
+            @Result(property = "ranking", column = "ranking"),
+            @Result(property = "totalNumber", column = "total_number"),
+            @Result(property = "competitionState", column = "competition_state"),
+            @Result(property = "competitionPrize", column = "competition_prize"),
+            @Result(property = "competitionLevel", column = "competition_level"),
+            @Result(property = "teacher", column = "teacher"),
+            @Result(property = "proofMaterialId", column = "proof_material_id"),
+            @Result(property = "score", column = "score"),
+            @Result(property = "state", column = "state"),
+            @Result(property = "createdTime", column = "created_time")
+    })
+    List<CompetitionEntity> queryByStuId(@Param("stuId") String stuId, @Param("state") Integer state);
 }

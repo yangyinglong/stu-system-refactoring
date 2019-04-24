@@ -239,7 +239,7 @@ public class PrizeServiceImpl implements IPrizeService {
     @Override
     public Map<String, Object> getCompetitions(String stuId) {
         Map<String, Object> resp = new HashMap<>();
-        List<CompetitionEntity> competitionEntities = competitionMapper.queryByStuId(stuId);
+        List<CompetitionEntity> competitionEntities = competitionMapper.queryStuId(stuId);
         List<GetCompetitionResp> getCompetitionResps = new ArrayList<GetCompetitionResp>();
         for (CompetitionEntity competitionEntity : competitionEntities) {
             GetCompetitionResp getCompetitionResp = prizeModel.createGetCompetitionResp(competitionEntity);
@@ -283,7 +283,7 @@ public class PrizeServiceImpl implements IPrizeService {
     @Override
     public Map<String, Object> getInnoPros(String stuId) {
         Map<String, Object> resp = new HashMap<>();
-        List<InnovativeProEntity> innovativeProEntities = innovativeProMapper.queryByStuId(stuId);
+        List<InnovativeProEntity> innovativeProEntities = innovativeProMapper.queryStuId(stuId);
         List<GetInnoProResp> getInnoProResps = new ArrayList<GetInnoProResp>();
         for (InnovativeProEntity innovativeProEntity : innovativeProEntities) {
             GetInnoProResp getInnoProResp =  prizeModel.createGetInnoProResp(innovativeProEntity);
@@ -327,7 +327,7 @@ public class PrizeServiceImpl implements IPrizeService {
     @Override
     public Map<String, Object> getEntrPros(String stuId) {
         Map<String, Object> resp = new HashMap<>();
-        List<EntrepreneurialProEntity> entrepreneurialProEntities = entrepreneurialProMapper.queryByStuId(stuId);
+        List<EntrepreneurialProEntity> entrepreneurialProEntities = entrepreneurialProMapper.queryStuId(stuId);
         List<GetInnoProResp> getInnoProResps = new ArrayList<GetInnoProResp>();
         for (EntrepreneurialProEntity entrepreneurialProEntity : entrepreneurialProEntities) {
             GetInnoProResp getInnoProResp =  prizeModel.createGetInnoProResp(entrepreneurialProEntity);
@@ -371,7 +371,7 @@ public class PrizeServiceImpl implements IPrizeService {
     @Override
     public Map<String, Object> getEngiPros(String stuId) {
         Map<String, Object> resp = new HashMap<>();
-        List<EngineeringProEntity> engineeringProEntities = engineeringProMapper.queryByStuId(stuId);
+        List<EngineeringProEntity> engineeringProEntities = engineeringProMapper.queryStuId(stuId);
         List<GetEngiProResp> getEngiProResps = new ArrayList<GetEngiProResp>();
         for (EngineeringProEntity engineeringProEntity : engineeringProEntities) {
             GetEngiProResp getEngiProResp =  prizeModel.createGetEngiProResp(engineeringProEntity);
@@ -415,7 +415,7 @@ public class PrizeServiceImpl implements IPrizeService {
     @Override
     public Map<String, Object> getAcadExchs(String stuId) {
         Map<String, Object> resp = new HashMap<>();
-        List<AcademicExchangeEntity> academicExchangeEntities = academicExchangeMapper.queryByStuId(stuId);
+        List<AcademicExchangeEntity> academicExchangeEntities = academicExchangeMapper.queryStuId(stuId);
         List<GetAcadExchResp> getAcadExchResps = new ArrayList<GetAcadExchResp>();
         for (AcademicExchangeEntity academicExchangeEntity : academicExchangeEntities) {
             GetAcadExchResp getAcadExchResp =  prizeModel.createGetAcadExchResp(academicExchangeEntity);

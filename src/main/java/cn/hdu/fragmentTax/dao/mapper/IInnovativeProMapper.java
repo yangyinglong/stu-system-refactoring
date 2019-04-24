@@ -75,5 +75,68 @@ public interface IInnovativeProMapper {
             @Result(property = "createdTime", column = "created_time"),
             @Result(property = "proLevel", column = "pro_level")
     })
-    List<InnovativeProEntity> queryByStuId(@Param("stuId") String stuId);
+    List<InnovativeProEntity> queryStuId(@Param("stuId") String stuId);
+
+    @Select("SELECT `id`, `stu_id`, `pro_type`, `pro_name`, `pro_intr`, `ranking`, `total_number`, `pro_state`, `pro_result`, `proof_material_id`, `teacher`, `score`, `state`, `created_time`, `pro_level` FROM `innovative_pro` WHERE `state` in (${states})")
+    @Results({
+            @Result(property = "id", column = "id"),
+            @Result(property = "stuId", column = "stu_id"),
+            @Result(property = "proType", column = "pro_type"),
+            @Result(property = "proName", column = "pro_name"),
+            @Result(property = "proIntr", column = "pro_intr"),
+            @Result(property = "ranking", column = "ranking"),
+            @Result(property = "totalNumber", column = "total_number"),
+            @Result(property = "proState", column = "pro_state"),
+            @Result(property = "proResult", column = "pro_result"),
+            @Result(property = "proofMaterialId", column = "proof_material_id"),
+            @Result(property = "teacher", column = "teacher"),
+            @Result(property = "score", column = "score"),
+            @Result(property = "state", column = "state"),
+            @Result(property = "createdTime", column = "created_time"),
+            @Result(property = "proLevel", column = "pro_level")
+    })
+    List<InnovativeProEntity> queryForAdmin(@Param("states") String status);
+
+    @Select("SELECT `id`, `stu_id`, `pro_type`, `pro_name`, `pro_intr`, `ranking`, `total_number`, `pro_state`, `pro_result`, `proof_material_id`, `teacher`, `score`, `state`, `created_time`, `pro_level` FROM `innovative_pro` WHERE `state` in (${states}) and `stu_id` in (${stuIds})")
+    @Results({
+            @Result(property = "id", column = "id"),
+            @Result(property = "stuId", column = "stu_id"),
+            @Result(property = "proType", column = "pro_type"),
+            @Result(property = "proName", column = "pro_name"),
+            @Result(property = "proIntr", column = "pro_intr"),
+            @Result(property = "ranking", column = "ranking"),
+            @Result(property = "totalNumber", column = "total_number"),
+            @Result(property = "proState", column = "pro_state"),
+            @Result(property = "proResult", column = "pro_result"),
+            @Result(property = "proofMaterialId", column = "proof_material_id"),
+            @Result(property = "teacher", column = "teacher"),
+            @Result(property = "score", column = "score"),
+            @Result(property = "state", column = "state"),
+            @Result(property = "createdTime", column = "created_time"),
+            @Result(property = "proLevel", column = "pro_level")
+    })
+    List<InnovativeProEntity> queryForTutor(@Param("states") String status, @Param("stuIds")  String stuIds);
+
+    @Update("UPDATE `innovative_pro` SET score=#{score}, state=#{state} WHERE `id` = #{id}")
+    void updateScore(@Param("id") String id, @Param("score") Float score, @Param("state") Integer state);
+
+    @Select("SELECT `id`, `stu_id`, `pro_type`, `pro_name`, `pro_intr`, `ranking`, `total_number`, `pro_state`, `pro_result`, `proof_material_id`, `teacher`, `score`, `state`, `created_time`, `pro_level` FROM `innovative_pro` WHERE `state` = #{state} and `stu_id` = #{stuId}")
+    @Results({
+            @Result(property = "id", column = "id"),
+            @Result(property = "stuId", column = "stu_id"),
+            @Result(property = "proType", column = "pro_type"),
+            @Result(property = "proName", column = "pro_name"),
+            @Result(property = "proIntr", column = "pro_intr"),
+            @Result(property = "ranking", column = "ranking"),
+            @Result(property = "totalNumber", column = "total_number"),
+            @Result(property = "proState", column = "pro_state"),
+            @Result(property = "proResult", column = "pro_result"),
+            @Result(property = "proofMaterialId", column = "proof_material_id"),
+            @Result(property = "teacher", column = "teacher"),
+            @Result(property = "score", column = "score"),
+            @Result(property = "state", column = "state"),
+            @Result(property = "createdTime", column = "created_time"),
+            @Result(property = "proLevel", column = "pro_level")
+    })
+    List<InnovativeProEntity> queryByStuId(@Param("stuId") String stuId, @Param("state") Integer state);
 }

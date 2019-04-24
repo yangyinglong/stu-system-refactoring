@@ -13,4 +13,28 @@ public interface IAdminService {
     Map<String,Object> showPapersForTeacher(AdminQueryRequ adminQueryRequ);
 
     Map<String,Object> examPaper(AdminExamRequ adminExamRequ);
+
+    Map<String,Object> showPatentsForTeacher(AdminQueryRequ adminQueryRequ);
+
+    Map<String,Object> examPatent(AdminExamRequ adminExamRequ);
+
+    Map<String,Object> showCompetitionsForTeacher(AdminQueryRequ adminQueryRequ);
+
+    Map<String,Object> examCompetition(AdminExamRequ adminExamRequ);
+
+    Map<String,Object> showEntrProsForTeacher(AdminQueryRequ adminQueryRequ);
+
+    Map<String,Object> examEntrPro(AdminExamRequ adminExamRequ);
+
+    Map<String,Object> showInnoProsForTeacher(AdminQueryRequ adminQueryRequ);
+
+    Map<String,Object> examInnoPro(AdminExamRequ adminExamRequ);
+
+    Map<String,Object> showEngiProsForTeacher(AdminQueryRequ adminQueryRequ);
+
+    Map<String,Object> examEngiPro(AdminExamRequ adminExamRequ);
+
+    Map<String,Object> showAcadExchsForTeacher(AdminQueryRequ adminQueryRequ);
+
+    Map<String,Object> examAcadExch(AdminExamRequ adminExamRequ);
 }

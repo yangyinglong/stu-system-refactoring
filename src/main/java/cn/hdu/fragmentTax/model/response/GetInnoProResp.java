@@ -16,11 +16,12 @@ public class GetInnoProResp {
     private String proofMaterialId;
     private String status;
     private Float score;
+    private String name;
 
     public GetInnoProResp() {
     }
 
-    public GetInnoProResp(Integer id, String stuId, String proName, String proType, String proIntr, Integer ranking, Integer totalNumber, String proState, String proResult, String proLevel, String getDate, String teacher, String proofMaterialId, String status, Float score) {
+    public GetInnoProResp(Integer id, String stuId, String proName, String proType, String proIntr, Integer ranking, Integer totalNumber, String proState, String proResult, String proLevel, String getDate, String teacher, String proofMaterialId, String status, Float score, String name) {
         this.id = id;
         this.stuId = stuId;
         this.proName = proName;
@@ -36,6 +37,15 @@ public class GetInnoProResp {
         this.proofMaterialId = proofMaterialId;
         this.status = status;
         this.score = score;
+        this.name = name;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public Integer getId() {

@@ -17,8 +17,9 @@ public class GetEngiProResp {
     private String work;
     private String enterpriseName;
     private String enterpriseTeacher;
+    private String name;
 
-    public GetEngiProResp(Integer id, String stuId, String proName, String proIntr, Integer ranking, Integer totalNumber, String proState, String getDate, String teacher, String proofMaterialId, String status, Float score, String performance, String work, String enterpriseName, String enterpriseTeacher) {
+    public GetEngiProResp(Integer id, String stuId, String proName, String proIntr, Integer ranking, Integer totalNumber, String proState, String getDate, String teacher, String proofMaterialId, String status, Float score, String performance, String work, String enterpriseName, String enterpriseTeacher, String name) {
         this.id = id;
         this.stuId = stuId;
         this.proName = proName;
@@ -35,9 +36,18 @@ public class GetEngiProResp {
         this.work = work;
         this.enterpriseName = enterpriseName;
         this.enterpriseTeacher = enterpriseTeacher;
+        this.name = name;
     }
 
     public GetEngiProResp() {
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public Integer getId() {

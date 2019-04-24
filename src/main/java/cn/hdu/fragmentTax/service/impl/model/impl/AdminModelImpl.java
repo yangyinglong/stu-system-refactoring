@@ -1,14 +1,14 @@
 package cn.hdu.fragmentTax.service.impl.model.impl;
 
-import cn.hdu.fragmentTax.dao.entity.HonorEntity;
-import cn.hdu.fragmentTax.dao.entity.PaperEntity;
-import cn.hdu.fragmentTax.dao.entity.StuBaseEntity;
+import cn.hdu.fragmentTax.dao.entity.*;
 import cn.hdu.fragmentTax.dao.mapper.IStuBaseMapper;
-import cn.hdu.fragmentTax.model.response.GetHonorResp;
-import cn.hdu.fragmentTax.model.response.GetPaperResp;
+import cn.hdu.fragmentTax.model.response.*;
 import cn.hdu.fragmentTax.service.impl.model.IAdminModel;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 public class AdminModelImpl implements IAdminModel {
@@ -127,5 +127,131 @@ public class AdminModelImpl implements IAdminModel {
             getPaperResp.setStatus("已删除");
         }
         return getPaperResp;
+    }
+
+    @Override
+    public GetPatentResp createGetPatentResp(PatentEntity patentEntity, StuBaseEntity stuBaseEntity) {
+        GetPatentResp getPatentResp = new GetPatentResp();
+        getPatentResp.setName(stuBaseEntity.getName());
+        getPatentResp.setId(patentEntity.getId());
+        getPatentResp.setStuId(patentEntity.getStuId());
+        getPatentResp.setPatentName(patentEntity.getPatentName());
+        getPatentResp.setRanking(patentEntity.getRanking());
+        getPatentResp.setTotalNumber(patentEntity.getTotalNumber());
+        getPatentResp.setGetDate(patentEntity.getCreatedTime().split(" ")[0]);
+        getPatentResp.setScore(patentEntity.getScore());
+        getPatentResp.setProofMaterialId(patentEntity.getProofMaterialId());
+        if (patentEntity.getState() == 1) {
+            getPatentResp.setStatus("待审核");
+        } else if (patentEntity.getState() == 2) {
+            getPatentResp.setStatus("已通过");
+        } else {
+            getPatentResp.setStatus("已删除");
+        }
+//        1-实用新型专利,2-发明专利
+        if (patentEntity.getPatentType() == 1) {
+            getPatentResp.setPatentType("实用新型专利");
+        } else {
+            getPatentResp.setPatentType("发明专利");
+        }
+        // 专利状态：1-申请,2-受理,3-审查中,4-一审,5-二审,6-三审,7-授权
+        if (patentEntity.getPatentState() == 1) {
+            getPatentResp.setPatentState("申请");
+        } else if (patentEntity.getPatentState() == 2) {
+            getPatentResp.setPatentState("受理");
+        } else if (patentEntity.getPatentState() == 3) {
+            getPatentResp.setPatentState("审查中");
+        } else if (patentEntity.getPatentState() == 4) {
+            getPatentResp.setPatentState("一审");
+        } else if (patentEntity.getPatentState() == 5) {
+            getPatentResp.setPatentState("二审");
+        } else if (patentEntity.getPatentState() == 6) {
+            getPatentResp.setPatentState("三审");
+        } else {
+            getPatentResp.setPatentState("授权");
+        }
+
+        return getPatentResp;
+    }
+
+    @Override
+    public GetCompetitionResp createGetCompetitionResp(CompetitionEntity competitionEntity, StuBaseEntity stuBaseEntity) {
+        GetCompetitionResp getCompetitionResp = new GetCompetitionResp();
+        BeanUtils.copyProperties(competitionEntity, getCompetitionResp);
+        getCompetitionResp.setName(stuBaseEntity.getName());
+        getCompetitionResp.setGetDate(competitionEntity.getCreatedTime().split(" ")[0]);
+        if (competitionEntity.getState() == 1) {
+            getCompetitionResp.setStatus("待审核");
+        } else if (competitionEntity.getState() == 2) {
+            getCompetitionResp.setStatus("已通过");
+        } else {
+            getCompetitionResp.setStatus("已删除");
+        }
+        return getCompetitionResp;
+    }
+
+    @Override
+    public GetInnoProResp createGetInnoProResp(EntrepreneurialProEntity entrepreneurialProEntity, StuBaseEntity stuBaseEntity) {
+        GetInnoProResp getInnoProResp = new GetInnoProResp();
+        BeanUtils.copyProperties(entrepreneurialProEntity, getInnoProResp);
+        getInnoProResp.setName(stuBaseEntity.getName());
+        getInnoProResp.setGetDate(entrepreneurialProEntity.getCreatedTime().split(" ")[0]);
+        if (entrepreneurialProEntity.getState() == 1) {
+            getInnoProResp.setStatus("待审核");
+        } else if (entrepreneurialProEntity.getState() == 2) {
+            getInnoProResp.setStatus("已通过");
+        } else {
+            getInnoProResp.setStatus("已删除");
+        }
+        return getInnoProResp;
+    }
+
+    @Override
+    public GetInnoProResp createGetInnoProResp(InnovativeProEntity innovativeProEntity, StuBaseEntity stuBaseEntity) {
+        GetInnoProResp getInnoProResp = new GetInnoProResp();
+        BeanUtils.copyProperties(innovativeProEntity, getInnoProResp);
+        getInnoProResp.setName(stuBaseEntity.getName());
+        getInnoProResp.setGetDate(innovativeProEntity.getCreatedTime().split(" ")[0]);
+        if (innovativeProEntity.getState() == 1) {
+            getInnoProResp.setStatus("待审核");
+        } else if (innovativeProEntity.getState() == 2) {
+            getInnoProResp.setStatus("已通过");
+        } else {
+            getInnoProResp.setStatus("已删除");
+        }
+        return getInnoProResp;
+    }
+
+    @Override
+    public GetEngiProResp createGetEngiProResp(EngineeringProEntity engineeringProEntity, StuBaseEntity stuBaseEntity) {
+        GetEngiProResp getEngiProResp = new GetEngiProResp();
+        BeanUtils.copyProperties(engineeringProEntity, getEngiProResp);
+        getEngiProResp.setGetDate(engineeringProEntity.getCreatedTime().split(" ")[0]);
+        getEngiProResp.setName(stuBaseEntity.getName());
+        if (engineeringProEntity.getState() == 1) {
+            getEngiProResp.setStatus("待审核");
+        } else if (engineeringProEntity.getState() == 2) {
+            getEngiProResp.setStatus("已通过");
+        } else {
+            getEngiProResp.setStatus("已删除");
+        }
+        return getEngiProResp;
+    }
+
+    @Override
+    public GetAcadExchResp createGetAcadExchResp(AcademicExchangeEntity academicExchangeEntity, StuBaseEntity stuBaseEntity) {
+        GetAcadExchResp getAcadExchResp = new GetAcadExchResp();
+        BeanUtils.copyProperties(academicExchangeEntity, getAcadExchResp);
+        getAcadExchResp.setName(stuBaseEntity.getName());
+        getAcadExchResp.setStartTime(academicExchangeEntity.getStartTime().split(" ")[0]);
+        getAcadExchResp.setEndTime(academicExchangeEntity.getEndTime().split(" ")[0]);
+        if (academicExchangeEntity.getState() == 1) {
+            getAcadExchResp.setStatus("待审核");
+        } else if (academicExchangeEntity.getState() == 2) {
+            getAcadExchResp.setStatus("已通过");
+        } else {
+            getAcadExchResp.setStatus("已删除");
+        }
+        return getAcadExchResp;
     }
 }

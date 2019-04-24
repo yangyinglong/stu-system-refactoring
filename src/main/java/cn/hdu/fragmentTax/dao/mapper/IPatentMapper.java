@@ -67,4 +67,58 @@ public interface IPatentMapper {
             @Result(property = "changedTime", column = "changed_time")
     })
     List<PatentEntity> queryStuId(@Param("stuId") String stuId);
+
+    @Select("SELECT `id`, `stu_id`, `patent_type`, `patent_name`, `patent_state`, `proof_material_id`, `ranking`, `total_number`, `score`, `state`, `created_time`, `changed_time` FROM `patent` where `state` in (${state})")
+    @Results({
+            @Result(property = "id", column = "id"),
+            @Result(property = "stuId", column = "stu_id"),
+            @Result(property = "patentType", column = "patent_type"),
+            @Result(property = "patentName", column = "patent_name"),
+            @Result(property = "patentState", column = "patent_state"),
+            @Result(property = "proofMaterialId", column = "proof_material_id"),
+            @Result(property = "ranking", column = "ranking"),
+            @Result(property = "totalNumber", column = "total_number"),
+            @Result(property = "score", column = "score"),
+            @Result(property = "state", column = "state"),
+            @Result(property = "createdTime", column = "created_time"),
+            @Result(property = "changedTime", column = "changed_time")
+    })
+    List<PatentEntity> queryForAdmin(@Param("state") String status);
+
+    @Select("SELECT `id`, `stu_id`, `patent_type`, `patent_name`, `patent_state`, `proof_material_id`, `ranking`, `total_number`, `score`, `state`, `created_time`, `changed_time` FROM `patent` where `state` in (${state}) and `stu_id` in (${stuIds})")
+    @Results({
+            @Result(property = "id", column = "id"),
+            @Result(property = "stuId", column = "stu_id"),
+            @Result(property = "patentType", column = "patent_type"),
+            @Result(property = "patentName", column = "patent_name"),
+            @Result(property = "patentState", column = "patent_state"),
+            @Result(property = "proofMaterialId", column = "proof_material_id"),
+            @Result(property = "ranking", column = "ranking"),
+            @Result(property = "totalNumber", column = "total_number"),
+            @Result(property = "score", column = "score"),
+            @Result(property = "state", column = "state"),
+            @Result(property = "createdTime", column = "created_time"),
+            @Result(property = "changedTime", column = "changed_time")
+    })
+    List<PatentEntity> queryForTutor(@Param("state") String status, @Param("stuIds") String stuIds);
+
+    @Update("UPDATE `patent` SET score=#{score}, state=#{state} WHERE `id` = #{id}")
+    void updateScore(@Param("id") String id, @Param("score") Float score, @Param("state") Integer state);
+
+    @Select("SELECT `id`, `stu_id`, `patent_type`, `patent_name`, `patent_state`, `proof_material_id`, `ranking`, `total_number`, `score`, `state`, `created_time`, `changed_time` FROM `patent` where `state`=#{state} and `stu_id`=#{stuId}")
+    @Results({
+            @Result(property = "id", column = "id"),
+            @Result(property = "stuId", column = "stu_id"),
+            @Result(property = "patentType", column = "patent_type"),
+            @Result(property = "patentName", column = "patent_name"),
+            @Result(property = "patentState", column = "patent_state"),
+            @Result(property = "proofMaterialId", column = "proof_material_id"),
+            @Result(property = "ranking", column = "ranking"),
+            @Result(property = "totalNumber", column = "total_number"),
+            @Result(property = "score", column = "score"),
+            @Result(property = "state", column = "state"),
+            @Result(property = "createdTime", column = "created_time"),
+            @Result(property = "changedTime", column = "changed_time")
+    })
+    List<PatentEntity> queryByStuId(@Param("stuId") String stuId, @Param("state") Integer state);
 }

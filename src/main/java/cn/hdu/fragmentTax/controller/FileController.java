@@ -32,7 +32,7 @@ public class FileController {
                        @FormDataParam("fileName") String fileName,
                        @FormDataParam("isFront") String isFront) throws IOException {
 
-        fileName = fileName + "_" + isFront + ".jpg";
+        fileName = fileName + "_" + isFront + ".pdf";
 
         //使用common io的文件写入操作
         FileUtils.copyInputStreamToFile(fileInputStream, new File(IMAGE_PATH + fileName));

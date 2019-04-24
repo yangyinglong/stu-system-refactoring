@@ -76,5 +76,71 @@ void delete(@Param("id") Integer id);
             @Result(property = "state", column = "state"),
             @Result(property = "createdTime", column = "created_time")
     })
-    List<EngineeringProEntity> queryByStuId(@Param("stuId") String stuId);
+    List<EngineeringProEntity> queryStuId(@Param("stuId") String stuId);
+
+    @Select("SELECT `id`, `stu_id`, `pro_name`, `pro_intr`, `performance`, `work`, `ranking`, `total_number`, `pro_state`, `enterprise_name`, `enterprise_teacher`, `teacher`, `proof_material_id`, `score`, `state`, `created_time` FROM `engineering_pro` WHERE `state` in (${states})")
+    @Results({
+            @Result(property = "id", column = "id"),
+            @Result(property = "stuId", column = "stu_id"),
+            @Result(property = "proName", column = "pro_name"),
+            @Result(property = "proIntr", column = "pro_intr"),
+            @Result(property = "performance", column = "performance"),
+            @Result(property = "work", column = "work"),
+            @Result(property = "ranking", column = "ranking"),
+            @Result(property = "totalNumber", column = "total_number"),
+            @Result(property = "proState", column = "pro_state"),
+            @Result(property = "enterpriseName", column = "enterprise_name"),
+            @Result(property = "enterpriseTeacher", column = "enterprise_teacher"),
+            @Result(property = "teacher", column = "teacher"),
+            @Result(property = "proofMaterialId", column = "proof_material_id"),
+            @Result(property = "score", column = "score"),
+            @Result(property = "state", column = "state"),
+            @Result(property = "createdTime", column = "created_time")
+    })
+    List<EngineeringProEntity> queryForAdmin(@Param("states") String status);
+
+    @Select("SELECT `id`, `stu_id`, `pro_name`, `pro_intr`, `performance`, `work`, `ranking`, `total_number`, `pro_state`, `enterprise_name`, `enterprise_teacher`, `teacher`, `proof_material_id`, `score`, `state`, `created_time` FROM `engineering_pro` WHERE `state` in (${states}) and `stu_id` in (${stuIds})")
+    @Results({
+            @Result(property = "id", column = "id"),
+            @Result(property = "stuId", column = "stu_id"),
+            @Result(property = "proName", column = "pro_name"),
+            @Result(property = "proIntr", column = "pro_intr"),
+            @Result(property = "performance", column = "performance"),
+            @Result(property = "work", column = "work"),
+            @Result(property = "ranking", column = "ranking"),
+            @Result(property = "totalNumber", column = "total_number"),
+            @Result(property = "proState", column = "pro_state"),
+            @Result(property = "enterpriseName", column = "enterprise_name"),
+            @Result(property = "enterpriseTeacher", column = "enterprise_teacher"),
+            @Result(property = "teacher", column = "teacher"),
+            @Result(property = "proofMaterialId", column = "proof_material_id"),
+            @Result(property = "score", column = "score"),
+            @Result(property = "state", column = "state"),
+            @Result(property = "createdTime", column = "created_time")
+    })
+    List<EngineeringProEntity> queryForTutor(@Param("states") String status, @Param("stuIds") String stuIds);
+
+    @Update("UPDATE `engineering_pro` SET score=#{score}, state=#{state} WHERE `id` = #{id}")
+    void updateScore(@Param("id") String id, @Param("score") Float score, @Param("state") Integer state);
+
+    @Select("SELECT `id`, `stu_id`, `pro_name`, `pro_intr`, `performance`, `work`, `ranking`, `total_number`, `pro_state`, `enterprise_name`, `enterprise_teacher`, `teacher`, `proof_material_id`, `score`, `state`, `created_time` FROM `engineering_pro` WHERE `state` = #{state} and `stu_id` = #{stuId}")
+    @Results({
+            @Result(property = "id", column = "id"),
+            @Result(property = "stuId", column = "stu_id"),
+            @Result(property = "proName", column = "pro_name"),
+            @Result(property = "proIntr", column = "pro_intr"),
+            @Result(property = "performance", column = "performance"),
+            @Result(property = "work", column = "work"),
+            @Result(property = "ranking", column = "ranking"),
+            @Result(property = "totalNumber", column = "total_number"),
+            @Result(property = "proState", column = "pro_state"),
+            @Result(property = "enterpriseName", column = "enterprise_name"),
+            @Result(property = "enterpriseTeacher", column = "enterprise_teacher"),
+            @Result(property = "teacher", column = "teacher"),
+            @Result(property = "proofMaterialId", column = "proof_material_id"),
+            @Result(property = "score", column = "score"),
+            @Result(property = "state", column = "state"),
+            @Result(property = "createdTime", column = "created_time")
+    })
+    List<EngineeringProEntity> queryByStuId(@Param("stuId") String stuId, @Param("state") Integer state);
 }
