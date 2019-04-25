@@ -4,6 +4,7 @@ import cn.hdu.fragmentTax.dao.entity.*;
 import cn.hdu.fragmentTax.dao.mapper.IStuBaseMapper;
 import cn.hdu.fragmentTax.model.response.*;
 import cn.hdu.fragmentTax.service.impl.model.IAdminModel;
+import cn.hdu.fragmentTax.utils.FormatUtil;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -253,5 +254,78 @@ public class AdminModelImpl implements IAdminModel {
             getAcadExchResp.setStatus("已删除");
         }
         return getAcadExchResp;
+    }
+
+    @Override
+    public GetMasterPaperResp createGetMasterPaperResp(MasterPaperEntity masterPaperEntity, StuBaseEntity stuBaseEntity) {
+        GetMasterPaperResp getMasterPaperResp = new GetMasterPaperResp();
+        BeanUtils.copyProperties(masterPaperEntity, getMasterPaperResp);
+        getMasterPaperResp.setName(stuBaseEntity.getName());
+        getMasterPaperResp.setGetDate(masterPaperEntity.getCreatedTime().split(" ")[0]);
+        if (masterPaperEntity.getState() == 1) {
+            getMasterPaperResp.setStatus("待审核");
+        } else if (masterPaperEntity.getState() == 2) {
+            getMasterPaperResp.setStatus("已通过");
+        } else {
+            getMasterPaperResp.setStatus("已删除");
+        }
+        return getMasterPaperResp;
+    }
+
+    @Override
+    public GetWorkResp createGetWorkResp(WorkEntity workEntity, StuBaseEntity stuBaseEntity) {
+        GetWorkResp getWorkResp = new GetWorkResp();
+        BeanUtils.copyProperties(workEntity, getWorkResp);
+        getWorkResp.setName(stuBaseEntity.getName());
+        getWorkResp.setGetDate(workEntity.getCreatedTime().split(" ")[0]);
+        if (workEntity.getState() == 1) {
+            getWorkResp.setStatus("待审核");
+        } else if (workEntity.getState() == 2) {
+            getWorkResp.setStatus("已通过");
+        } else {
+            getWorkResp.setStatus("已删除");
+        }
+        return getWorkResp;
+    }
+
+    @Override
+    public GetStuForTeacherResp createGetStuForTeacherResp(StuBaseEntity stuBaseEntity, TutorsEntity tutorsEntity, CounsellorsEntity counsellorsEntity, ScoreEntranceEntity scoreEntranceEntity) {
+        GetStuForTeacherResp getStuForTeacherResp = new GetStuForTeacherResp();
+        BeanUtils.copyProperties(stuBaseEntity, getStuForTeacherResp);
+        if (1 == stuBaseEntity.getSex()) {
+            getStuForTeacherResp.setSex("男");
+        } else {
+            getStuForTeacherResp.setSex("女");
+        }
+        if (!FormatUtil.isEmpty(counsellorsEntity)) {
+            getStuForTeacherResp.setCounsellorName(counsellorsEntity.getName());
+        }
+        if (!FormatUtil.isEmpty(tutorsEntity)) {
+            getStuForTeacherResp.setTuturName(tutorsEntity.getName());
+        }
+        if (!FormatUtil.isEmpty(scoreEntranceEntity)) {
+            BeanUtils.copyProperties(scoreEntranceEntity, getStuForTeacherResp);
+        }
+        return getStuForTeacherResp;
+    }
+
+    @Override
+    public GetPrizeForTeacherResp createGetPrizeForTeacherResp(AllPrizeEntity allPrizeEntity, StuBaseEntity stuBaseEntity, int allStuNum) {
+        GetPrizeForTeacherResp getPrizeForTeacherResp = new GetPrizeForTeacherResp();
+        BeanUtils.copyProperties(allPrizeEntity, getPrizeForTeacherResp);
+        getPrizeForTeacherResp.setCompetitionNum(String.valueOf(allPrizeEntity.getCompetitionNum())+"/"+String.valueOf(allStuNum));
+        getPrizeForTeacherResp.setEngiNum(String.valueOf(allPrizeEntity.getEngiNum())+"/"+String.valueOf(allStuNum));
+        getPrizeForTeacherResp.setEntrNum(String.valueOf(allPrizeEntity.getEntrNum())+"/"+String.valueOf(allStuNum));
+        getPrizeForTeacherResp.setExchNum(String.valueOf(allPrizeEntity.getExchNum())+"/"+String.valueOf(allStuNum));
+        getPrizeForTeacherResp.setHonorNum(String.valueOf(allPrizeEntity.getHonorNum())+"/"+String.valueOf(allStuNum));
+        getPrizeForTeacherResp.setInnoNum(String.valueOf(allPrizeEntity.getInnoNum())+"/"+String.valueOf(allStuNum));
+        getPrizeForTeacherResp.setMasterNum(String.valueOf(allPrizeEntity.getMasterNum())+"/"+String.valueOf(allStuNum));
+        getPrizeForTeacherResp.setMasterNum(String.valueOf(allPrizeEntity.getMasterNum())+"/"+String.valueOf(allStuNum));
+        getPrizeForTeacherResp.setPaperNum(String.valueOf(allPrizeEntity.getPaperNum())+"/"+String.valueOf(allStuNum));
+        getPrizeForTeacherResp.setPatentNum(String.valueOf(allPrizeEntity.getPatentNum())+"/"+String.valueOf(allStuNum));
+        getPrizeForTeacherResp.setWorkNum(String.valueOf(allPrizeEntity.getWorkNum())+"/"+String.valueOf(allStuNum));
+        getPrizeForTeacherResp.setName(stuBaseEntity.getName());
+
+        return getPrizeForTeacherResp;
     }
 }

@@ -9,7 +9,7 @@ import java.util.List;
 
 @Mapper
 public interface IStuBaseMapper {
-    @Select("SELECT `id`, `stu_id`, `name`, `phone`, `sex`, `u_school`, `u_major`, `counsellor_id`, `tutor_id`, `state`, `created_time`, `changed_time` FROM `stu_base`")
+    @Select("SELECT `id`, `stu_id`, `name`, `phone`, `sex`, `u_school`, `u_major`, `counsellor_id`, `tutor_id`, `state`, `created_time`, `changed_time` FROM `stu_base` order by `stu_id`")
     @Results({
             @Result(property = "id", column = "id"),
             @Result(property = "stuId", column = "stu_id"),
@@ -97,4 +97,10 @@ public interface IStuBaseMapper {
             @Result(property = "changedTime", column = "changed_time")
     })
     List<StuBaseEntity> queryByTutorId(@Param("tutorId") String tutorId);
+
+    @Select("SELECT count(*) FROM `stu_base` WHERE  `state` = 1")
+    @Results({
+            @Result(property = "num", column = "count(*)")
+    })
+    int queryCount();
 }

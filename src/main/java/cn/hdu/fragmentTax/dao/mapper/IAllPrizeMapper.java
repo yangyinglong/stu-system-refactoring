@@ -118,8 +118,8 @@ public interface IAllPrizeMapper {
     })
     AllPrizeEntity queryByStuId(@Param("stuId") String stuId);
 
-    @Insert("INSERT INTO `all_prize`(`stu_id`, `created_time`) VALUES(#{stuId}, #{createdTime}) ON DUPLICATE KEY UPDATE `created_time` = #{createdTime}")
-    void insertFirst(@Param("stuId") String stuId, @Param("createdTime") String currentDatetime);
+    @Insert("INSERT INTO `all_prize`(`stu_id`, `created_time`, `honor_num`, `paper_num`, `patent_num`, `competition_num`, `engi_num`, `entr_num`, `inno_num`, `exch_num`, `work_num`, `master_num` ) VALUES(#{stuId}, #{createdTime}, #{stuNum}, #{stuNum}, #{stuNum}, #{stuNum}, #{stuNum}, #{stuNum}, #{stuNum}, #{stuNum}, #{stuNum}, #{stuNum}) ON DUPLICATE KEY UPDATE `created_time` = #{createdTime}")
+    void insertFirst(@Param("stuId") String stuId, @Param("stuNum") int stuNumber, @Param("createdTime") String currentDatetime);
 
     @Update("UPDATE `all_prize` SET honor_score=#{honorScore} WHERE `stu_id` = #{stuId}")
     void updateHonorScore(@Param("stuId") String stuId, @Param("honorScore") Float allHonorScore);
@@ -380,4 +380,30 @@ public interface IAllPrizeMapper {
 
     @Update("UPDATE `all_prize` SET exch_num=#{exchNum} WHERE `id` = #{id}")
     void updateAcadExchNum(@Param("id") Integer id, @Param("exchNum") Integer order);
+
+    @Update("UPDATE `all_prize` SET master_score=#{masterScore} WHERE `stu_id` = #{stuId}")
+    void updateMasterPaperScore(@Param("stuId") String stuId, @Param("masterScore") Float allMasterPaperScore);
+
+    @Select("SELECT `id`, `master_num` FROM `all_prize` order by `master_score` DESC")
+    @Results({
+            @Result(property = "id", column = "id"),
+            @Result(property = "masterNum", column = "master_num")
+    })
+    List<AllPrizeEntity> orderByMasterPaper();
+
+    @Update("UPDATE `all_prize` SET master_num=#{masterNum} WHERE `id` = #{id}")
+    void updateMasterPaperNum(@Param("id") Integer id, @Param("masterNum") Integer order);
+
+    @Update("UPDATE `all_prize` SET work_score=#{workScore} WHERE `stu_id` = #{stuId}")
+    void updateWorkScore(@Param("stuId") String stuId, @Param("workScore") Float allWorkScore);
+
+    @Select("SELECT `id`, `work_num` FROM `all_prize` order by `work_score` DESC")
+    @Results({
+            @Result(property = "id", column = "id"),
+            @Result(property = "workNum", column = "work_num")
+    })
+    List<AllPrizeEntity> orderByWork();
+
+    @Update("UPDATE `all_prize` SET work_num=#{workNum} WHERE `id` = #{id}")
+    void updateWorkNum(@Param("id") Integer id, @Param("workNum") Integer order);
 }

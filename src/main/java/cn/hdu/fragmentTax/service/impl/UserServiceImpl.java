@@ -56,7 +56,8 @@ public class UserServiceImpl implements IUserService {
             stuBaseMapper.insertBaseInfo(baseEntity);
             passwordMapper.insertAccPass(passwordEntity);
 //            在综合素质里面插入一条数据
-            allPrizeMapper.insertFirst(registerRequ.getStuId(), DateUtil.getCurrentDatetime());
+            int stuNumber = stuBaseMapper.queryCount();
+            allPrizeMapper.insertFirst(registerRequ.getStuId(), stuNumber, DateUtil.getCurrentDatetime());
             resp.put("c", 200);
             resp.put("r", "注册成功");
         } catch (Exception e) {

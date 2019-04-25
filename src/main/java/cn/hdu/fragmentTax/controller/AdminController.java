@@ -229,4 +229,82 @@ public class AdminController {
         Map<String, Object> resp = adminService.examAcadExch(adminExamRequ);
         return resp;
     }
+
+    /**
+     * 管理员或者导师查看硕士论文
+     * @param adminQueryRequ
+     * @return
+     */
+    @Path("/showMasterPapersForTeacher")
+    @POST
+    @Produces(MediaType.APPLICATION_JSON)
+    public Map<String, Object> showMasterPapersForTeacher(AdminQueryRequ adminQueryRequ){
+        Map<String, Object> resp = adminService.showMasterPapersForTeacher(adminQueryRequ);
+        return resp;
+    }
+
+    /**
+     * 管理员审核硕士论文
+     * @param adminExamRequ
+     * @return
+     */
+    @Path("/examMasterPaper")
+    @POST
+    @Produces(MediaType.APPLICATION_JSON)
+    public Map<String, Object> examMasterPaper(AdminExamRequ adminExamRequ){
+        Map<String, Object> resp = adminService.examMasterPaper(adminExamRequ);
+        return resp;
+    }
+
+    /**
+     * 管理员或者导师查看就业深造
+     * @param adminQueryRequ
+     * @return
+     */
+    @Path("/showWorksForTeacher")
+    @POST
+    @Produces(MediaType.APPLICATION_JSON)
+    public Map<String, Object> showWorksForTeacher(AdminQueryRequ adminQueryRequ){
+        Map<String, Object> resp = adminService.showWorksForTeacher(adminQueryRequ);
+        return resp;
+    }
+
+    /**
+     * 管理员审核就业深造
+     * @param adminExamRequ
+     * @return
+     */
+    @Path("/examWork")
+    @POST
+    @Produces(MediaType.APPLICATION_JSON)
+    public Map<String, Object> examWork(AdminExamRequ adminExamRequ){
+        Map<String, Object> resp = adminService.examWork(adminExamRequ);
+        return resp;
+    }
+
+    /**
+     * 管理员或者导师查看学生基本信息
+     * @param adminQueryRequ
+     * @return
+     */
+    @Path("/showStusForTeacher")
+    @POST
+    @Produces(MediaType.APPLICATION_JSON)
+    public Map<String, Object> showStusForTeacher(AdminQueryRequ adminQueryRequ){
+        Map<String, Object> resp = adminService.showStusForTeacher(adminQueryRequ);
+        return resp;
+    }
+
+    /**
+     * 管理员或者导师查看学生的综合素质
+     * @param adminQueryRequ
+     * @return
+     */
+    @Path("/showAllPrizeForTeacher")
+    @POST
+    @Produces(MediaType.APPLICATION_JSON)
+    public Map<String, Object> showAllPrizeForTeacher(AdminQueryRequ adminQueryRequ){
+        Map<String, Object> resp = adminService.showAllPrizeForTeacher(adminQueryRequ);
+        return resp;
+    }
 }

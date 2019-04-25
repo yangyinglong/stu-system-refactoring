@@ -100,16 +100,16 @@ public class PrizeServiceImpl implements IPrizeService {
     public Map<String, Object> getPrizes(String stuId) {
         Map<String, Object> resp = new HashMap<>();
         AllPrizeEntity allPrizeEntity = allPrizeMapper.queryByStuId(stuId);
-        if (FormatUtil.isEmpty(allPrizeEntity)) {
-            allPrizeMapper.insertFirst(stuId, DateUtil.getCurrentDatetime());
-            allPrizeEntity = new AllPrizeEntity();
-            allPrizeEntity.setHonorNum(0);
-            allPrizeEntity.setHonorScore(0);
-            allPrizeEntity.setPaperNum(0);
-            allPrizeEntity.setPaperSocre(0);
-            allPrizeEntity.setPatentNum(0);
-            allPrizeEntity.setPatentScore(0);
-        }
+//        if (FormatUtil.isEmpty(allPrizeEntity)) {
+//            allPrizeMapper.insertFirst(stuId, stuNumber, DateUtil.getCurrentDatetime());
+//            allPrizeEntity = new AllPrizeEntity();
+//            allPrizeEntity.setHonorNum(0);
+//            allPrizeEntity.setHonorScore(0);
+//            allPrizeEntity.setPaperNum(0);
+//            allPrizeEntity.setPaperSocre(0);
+//            allPrizeEntity.setPatentNum(0);
+//            allPrizeEntity.setPatentScore(0);
+//        }
         GetPrizesResp getPrizesResp = prizeModel.createGetPrizesResp(allPrizeEntity);
         resp.put("c", 200);
         resp.put("r", getPrizesResp);
@@ -459,7 +459,7 @@ public class PrizeServiceImpl implements IPrizeService {
     @Override
     public Map<String, Object> getWorks(String stuId) {
         Map<String, Object> resp = new HashMap<>();
-        List<WorkEntity> workEntities = workMapper.queryByStuId(stuId);
+        List<WorkEntity> workEntities = workMapper.queryStuId(stuId);
         List<GetWorkResp> getWorkResps = new ArrayList<GetWorkResp>();
         for (WorkEntity workEntity : workEntities) {
             GetWorkResp getWorkResp =  prizeModel.createGetWorkResp(workEntity);
@@ -503,7 +503,7 @@ public class PrizeServiceImpl implements IPrizeService {
     @Override
     public Map<String, Object> getMasterPapers(String stuId) {
         Map<String, Object> resp = new HashMap<>();
-        List<MasterPaperEntity> masterPaperEntities = masterPaperMapper.queryByStuId(stuId);
+        List<MasterPaperEntity> masterPaperEntities = masterPaperMapper.queryStuId(stuId);
         List<GetMasterPaperResp> getMasterPaperResps = new ArrayList<GetMasterPaperResp>();
         for (MasterPaperEntity masterPaperEntity : masterPaperEntities) {
             GetMasterPaperResp getMasterPaperResp =  prizeModel.createGetMasterPaperResp(masterPaperEntity);

@@ -7,12 +7,10 @@ import cn.hdu.fragmentTax.model.request.AdminQueryRequ;
 import cn.hdu.fragmentTax.model.response.*;
 import cn.hdu.fragmentTax.service.IAdminService;
 import cn.hdu.fragmentTax.service.impl.model.IAdminModel;
-import cn.hdu.fragmentTax.service.impl.model.IPrizeModel;
 import cn.hdu.fragmentTax.utils.FormatUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.awt.print.Paper;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
@@ -60,6 +58,15 @@ public class AdminServiceImpl implements IAdminService {
 
     @Autowired
     private IStuBaseMapper stuBaseMapper;
+
+    @Autowired
+    private ITutorsMapper tutorsMapper;
+
+    @Autowired
+    private ICounsellorsMapper counsellorsMapper;
+
+    @Autowired
+    private IScoreEntranceMapper scoreEntranceMapper;
 
     @Override
     public Map<String, Object> showHonorsForTeacher(AdminQueryRequ adminQueryRequ) {
@@ -546,6 +553,174 @@ public class AdminServiceImpl implements IAdminService {
             resp.put("c", 401);
             resp.put("r", "数据库错误");
         }
+        return resp;
+    }
+
+    @Override
+    public Map<String, Object> showMasterPapersForTeacher(AdminQueryRequ adminQueryRequ) {
+        Map<String, Object> resp = new HashMap<>();
+        String status = FormatUtil.strings2String(getIntAuditStatus(adminQueryRequ.getStatus()));
+        List<MasterPaperEntity> masterPaperEntities = null;
+        List<GetMasterPaperResp> getMasterPaperResps = new LinkedList<GetMasterPaperResp>();
+        if (adminQueryRequ.getState() == 1) {
+//            辅导员查询
+            masterPaperEntities = masterPaperMapper.queryForAdmin(status);
+        } else {
+//            导师查询
+            List<StuBaseEntity> stuBaseEntities = stuBaseMapper.queryByTutorId(adminQueryRequ.getUserId());
+            String stuIds = FormatUtil.strings2String(getStuIds(stuBaseEntities));
+            if (stuIds.equals("")){
+                resp.put("c", 200);
+                resp.put("r", getMasterPaperResps);
+                return resp;
+            }
+            masterPaperEntities = masterPaperMapper.queryForTutor(status, stuIds);
+        }
+        for (MasterPaperEntity masterPaperEntity : masterPaperEntities) {
+            StuBaseEntity stuBaseEntity = stuBaseMapper.queryByStuId(masterPaperEntity.getStuId());
+            if (FormatUtil.isEmpty(stuBaseEntity)) {
+                continue;
+            }
+            GetMasterPaperResp getMasterPaperResp = adminModel.createGetMasterPaperResp(masterPaperEntity, stuBaseEntity);
+            getMasterPaperResps.add(getMasterPaperResp);
+        }
+        resp.put("c", 200);
+        resp.put("r", getMasterPaperResps);
+        return resp;
+    }
+
+    @Override
+    public Map<String, Object> examMasterPaper(AdminExamRequ adminExamRequ) {
+        Map<String, Object> resp = new HashMap<>();
+        try {
+            masterPaperMapper.updateScore(adminExamRequ.getId(), adminExamRequ.getScore(), 2);
+            // 更新分数
+            Float allMasterPaperScore = 0.0f;
+            List<MasterPaperEntity> masterPaperEntities = masterPaperMapper.queryByStuId(adminExamRequ.getStuId(), 2);
+            for (MasterPaperEntity masterPaperEntity : masterPaperEntities) {
+                allMasterPaperScore = allMasterPaperScore + masterPaperEntity.getScore();
+            }
+            allPrizeMapper.updateMasterPaperScore(adminExamRequ.getStuId(), allMasterPaperScore);
+            // 更新排名
+            Integer order = 1;
+            List<AllPrizeEntity> allPrizeEntities = allPrizeMapper.orderByMasterPaper();
+            for (AllPrizeEntity allPrizeEntity : allPrizeEntities) {
+                allPrizeMapper.updateMasterPaperNum(allPrizeEntity.getId(), order);
+                order = order + 1;
+            }
+            resp.put("c", 200);
+            resp.put("r", "审核成功");
+        } catch (Exception e) {
+            resp.put("c", 401);
+            resp.put("r", "数据库错误");
+        }
+        return resp;
+    }
+
+    @Override
+    public Map<String, Object> showWorksForTeacher(AdminQueryRequ adminQueryRequ) {
+        Map<String, Object> resp = new HashMap<>();
+        String status = FormatUtil.strings2String(getIntAuditStatus(adminQueryRequ.getStatus()));
+        List<WorkEntity> workEntities = null;
+        List<GetWorkResp> getWorkResps = new LinkedList<GetWorkResp>();
+        if (adminQueryRequ.getState() == 1) {
+//            辅导员查询
+            workEntities = workMapper.queryForAdmin(status);
+        } else {
+//            导师查询
+            List<StuBaseEntity> stuBaseEntities = stuBaseMapper.queryByTutorId(adminQueryRequ.getUserId());
+            String stuIds = FormatUtil.strings2String(getStuIds(stuBaseEntities));
+            if (stuIds.equals("")){
+                resp.put("c", 200);
+                resp.put("r", getWorkResps);
+                return resp;
+            }
+            workEntities = workMapper.queryForTutor(status, stuIds);
+        }
+        for (WorkEntity workEntity : workEntities) {
+            StuBaseEntity stuBaseEntity = stuBaseMapper.queryByStuId(workEntity.getStuId());
+            if (FormatUtil.isEmpty(stuBaseEntity)) {
+                continue;
+            }
+            GetWorkResp getWorkResp = adminModel.createGetWorkResp(workEntity, stuBaseEntity);
+            getWorkResps.add(getWorkResp);
+        }
+        resp.put("c", 200);
+        resp.put("r", getWorkResps);
+        return resp;
+    }
+
+    @Override
+    public Map<String, Object> examWork(AdminExamRequ adminExamRequ) {
+        Map<String, Object> resp = new HashMap<>();
+        try {
+            workMapper.updateScore(adminExamRequ.getId(), adminExamRequ.getScore(), 2);
+            // 更新分数
+            Float allWorkScore = 0.0f;
+            List<WorkEntity> workEntities = workMapper.queryByStuId(adminExamRequ.getStuId(), 2);
+            for (WorkEntity workEntity : workEntities) {
+                allWorkScore = allWorkScore + workEntity.getScore();
+            }
+            allPrizeMapper.updateWorkScore(adminExamRequ.getStuId(), allWorkScore);
+            // 更新排名
+            Integer order = 1;
+            List<AllPrizeEntity> allPrizeEntities = allPrizeMapper.orderByWork();
+            for (AllPrizeEntity allPrizeEntity : allPrizeEntities) {
+                allPrizeMapper.updateWorkNum(allPrizeEntity.getId(), order);
+                order = order + 1;
+            }
+            resp.put("c", 200);
+            resp.put("r", "审核成功");
+        } catch (Exception e) {
+            resp.put("c", 401);
+            resp.put("r", "数据库错误");
+        }
+        return resp;
+    }
+
+    @Override
+    public Map<String, Object> showStusForTeacher(AdminQueryRequ adminQueryRequ) {
+        Map<String, Object> resp = new HashMap<>();
+        List<StuBaseEntity> stuBaseEntities = null;
+        List<GetStuForTeacherResp> getStuForTeacherResps = new LinkedList<GetStuForTeacherResp>();
+        if (adminQueryRequ.getState() == 1) {
+//            辅导员查询
+            stuBaseEntities = stuBaseMapper.queryAll();
+        } else {
+//            导师查询
+            stuBaseEntities = stuBaseMapper.queryByTutorId(adminQueryRequ.getUserId());
+        }
+        for (StuBaseEntity stuBaseEntity : stuBaseEntities) {
+            TutorsEntity tutorsEntity = tutorsMapper.queryByTuId(stuBaseEntity.getTutorId());
+            CounsellorsEntity counsellorsEntity = counsellorsMapper.queryByCoId(stuBaseEntity.getCounsellorId());
+            ScoreEntranceEntity scoreEntranceEntity = scoreEntranceMapper.queryByStuId(stuBaseEntity.getStuId());
+            GetStuForTeacherResp getStuForTeacherResp = adminModel.createGetStuForTeacherResp(stuBaseEntity, tutorsEntity, counsellorsEntity, scoreEntranceEntity);
+            getStuForTeacherResps.add(getStuForTeacherResp);
+        }
+        resp.put("c", 200);
+        resp.put("r", getStuForTeacherResps);
+        return resp;
+    }
+
+    @Override
+    public Map<String, Object> showAllPrizeForTeacher(AdminQueryRequ adminQueryRequ) {
+        Map<String, Object> resp = new HashMap<>();
+        List<StuBaseEntity> stuBaseEntities = null;
+        List<GetPrizeForTeacherResp> getPrizeForTeacherResps = new LinkedList<GetPrizeForTeacherResp>();
+        if (adminQueryRequ.getState() == 1) {
+//            辅导员查询
+            stuBaseEntities = stuBaseMapper.queryAll();
+        } else {
+//            导师查询
+            stuBaseEntities = stuBaseMapper.queryByTutorId(adminQueryRequ.getUserId());
+        }
+        for (StuBaseEntity stuBaseEntity : stuBaseEntities) {
+           AllPrizeEntity allPrizeEntity = allPrizeMapper.queryByStuId(stuBaseEntity.getStuId());
+           GetPrizeForTeacherResp getPrizeForTeacherResp = adminModel.createGetPrizeForTeacherResp(allPrizeEntity, stuBaseEntity, stuBaseEntities.size());
+           getPrizeForTeacherResps.add(getPrizeForTeacherResp);
+        }
+        resp.put("c", 200);
+        resp.put("r", getPrizeForTeacherResps);
         return resp;
     }
 

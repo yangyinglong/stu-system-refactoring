@@ -1,7 +1,8 @@
 package cn.hdu.fragmentTax.model.response;
 
-public class GetEntranceInfoResp {
+public class GetStuForTeacherResp {
     private String stuId;
+    private String name;
     private String uSchool;
     private String uMajor;
     private Float english;
@@ -10,12 +11,17 @@ public class GetEntranceInfoResp {
     private Float specialized;
     private String languagesTypes;
     private Float languagesScore;
+    private String tutorId;
+    private String counsellorId;
+    private String sex;
+    private String phone;
+    private String tuturName;
+    private String counsellorName;
 
-
-    public GetEntranceInfoResp() {
+    public GetStuForTeacherResp() {
     }
 
-    public GetEntranceInfoResp(String stuId, String uSchool, String uMajor, Float english, Float political, Float math, Float specialized, String languagesTypes, Float languagesScore) {
+    public GetStuForTeacherResp(String stuId, String uSchool, String uMajor, Float english, Float political, Float math, Float specialized, String languagesTypes, Float languagesScore, String tutorId, String counsellorId, String sex, String tuturName, String counsellorName) {
         this.stuId = stuId;
         this.uSchool = uSchool;
         this.uMajor = uMajor;
@@ -25,6 +31,27 @@ public class GetEntranceInfoResp {
         this.specialized = specialized;
         this.languagesTypes = languagesTypes;
         this.languagesScore = languagesScore;
+        this.tutorId = tutorId;
+        this.counsellorId = counsellorId;
+        this.sex = sex;
+        this.tuturName = tuturName;
+        this.counsellorName = counsellorName;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getStuId() {
@@ -97,5 +124,45 @@ public class GetEntranceInfoResp {
 
     public void setLanguagesScore(Float languagesScore) {
         this.languagesScore = languagesScore;
+    }
+
+    public String getTutorId() {
+        return tutorId;
+    }
+
+    public void setTutorId(String tutorId) {
+        this.tutorId = tutorId;
+    }
+
+    public String getCounsellorId() {
+        return counsellorId;
+    }
+
+    public void setCounsellorId(String counsellorId) {
+        this.counsellorId = counsellorId;
+    }
+
+    public String getSex() {
+        return sex;
+    }
+
+    public void setSex(String sex) {
+        this.sex = sex;
+    }
+
+    public String getTuturName() {
+        return tuturName;
+    }
+
+    public void setTuturName(String tuturName) {
+        this.tuturName = tuturName;
+    }
+
+    public String getCounsellorName() {
+        return counsellorName;
+    }
+
+    public void setCounsellorName(String counsellorName) {
+        this.counsellorName = counsellorName;
     }
 }
