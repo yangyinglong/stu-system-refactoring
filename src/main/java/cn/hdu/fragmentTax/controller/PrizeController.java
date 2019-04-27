@@ -35,6 +35,19 @@ public class PrizeController {
     }
 
     /**
+     * 删除荣誉
+     * @param id
+     * @return
+     */
+    @Path("/deleHonor")
+    @POST
+    @Produces(MediaType.APPLICATION_JSON)
+    public Map<String, Object> deleHonor(Integer id){
+        Map<String, Object> resp = prizeService.deleHonor(id);
+        return resp;
+    }
+
+    /**
      * 根据学号获取所有的荣誉和奖项
      * @param stuId
      * @return
@@ -73,6 +86,13 @@ public class PrizeController {
         return resp;
     }
 
+    @Path("/delePaper")
+    @POST
+    @Produces(MediaType.APPLICATION_JSON)
+    public Map<String, Object> delePaper(Integer id){
+        Map<String, Object> resp = prizeService.delePaper(id);
+        return resp;
+    }
     /**
      * 根据学号获取所有的论文信息
      * @param stuId
@@ -96,6 +116,14 @@ public class PrizeController {
     @Produces(MediaType.APPLICATION_JSON)
     public Map<String, Object> editPatent(EditPatentRequ editPatentRequ){
         Map<String, Object> resp = prizeService.editPatent(editPatentRequ);
+        return resp;
+    }
+
+    @Path("/delePatent")
+    @POST
+    @Produces(MediaType.APPLICATION_JSON)
+    public Map<String, Object> delePatent(Integer id){
+        Map<String, Object> resp = prizeService.delePatent(id);
         return resp;
     }
 
@@ -125,6 +153,13 @@ public class PrizeController {
         return resp;
     }
 
+    @Path("/deleCompetition")
+    @POST
+    @Produces(MediaType.APPLICATION_JSON)
+    public Map<String, Object> deleCompetition(Integer id){
+        Map<String, Object> resp = prizeService.deleCompetition(id);
+        return resp;
+    }
     /**
      * 根据学号获取竞赛
      * @param stuId
@@ -148,6 +183,14 @@ public class PrizeController {
     @Produces(MediaType.APPLICATION_JSON)
     public Map<String, Object> editInnoPro(EditInnoProRequ editInnoProRequ){
         Map<String, Object> resp = prizeService.editInnoPro(editInnoProRequ);
+        return resp;
+    }
+
+    @Path("/deleInnoPro")
+    @POST
+    @Produces(MediaType.APPLICATION_JSON)
+    public Map<String, Object> deleInnoPro(Integer id){
+        Map<String, Object> resp = prizeService.deleInnoPro(id);
         return resp;
     }
 
@@ -177,6 +220,14 @@ public class PrizeController {
         return resp;
     }
 
+    @Path("/deleEntrPro")
+    @POST
+    @Produces(MediaType.APPLICATION_JSON)
+    public Map<String, Object> deleEntrPro(Integer id){
+        Map<String, Object> resp = prizeService.deleEntrPro(id);
+        return resp;
+    }
+
     /**
      * 根据学号获取创业项目
      * @param stuId
@@ -200,6 +251,14 @@ public class PrizeController {
     @Produces(MediaType.APPLICATION_JSON)
     public Map<String, Object> editEngiPro(EditEngiProRequ editEngiProRequ){
         Map<String, Object> resp = prizeService.editEngiPro(editEngiProRequ);
+        return resp;
+    }
+
+    @Path("/deleEngiPro")
+    @POST
+    @Produces(MediaType.APPLICATION_JSON)
+    public Map<String, Object> deleEngiPro(Integer id){
+        Map<String, Object> resp = prizeService.deleEngiPro(id);
         return resp;
     }
 
@@ -229,6 +288,13 @@ public class PrizeController {
         return resp;
     }
 
+    @Path("/deleAcadExch")
+    @POST
+    @Produces(MediaType.APPLICATION_JSON)
+    public Map<String, Object> deleAcadExch(Integer id){
+        Map<String, Object> resp = prizeService.deleAcadExch(id);
+        return resp;
+    }
     /**
      * 根据学号获取学术交流
      * @param stuId
@@ -253,6 +319,14 @@ public class PrizeController {
     @Produces(MediaType.APPLICATION_JSON)
     public Map<String, Object> editWork(EditWorkRequ editWorkRequ){
         Map<String, Object> resp = prizeService.editWork(editWorkRequ);
+        return resp;
+    }
+
+    @Path("/deleWork")
+    @POST
+    @Produces(MediaType.APPLICATION_JSON)
+    public Map<String, Object> deleWork(Integer id){
+        Map<String, Object> resp = prizeService.deleWork(id);
         return resp;
     }
 
@@ -282,6 +356,13 @@ public class PrizeController {
         return resp;
     }
 
+    @Path("/deleMasterPaper")
+    @POST
+    @Produces(MediaType.APPLICATION_JSON)
+    public Map<String, Object> deleMasterPaper(Integer id){
+        Map<String, Object> resp = prizeService.deleMasterPaper(id);
+        return resp;
+    }
     /**
      * 根据学号获取硕士论文
      * @param stuId

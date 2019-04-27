@@ -48,10 +48,10 @@ public interface IPatentMapper {
     @Update("UPDATE `patent` SET stu_id=#{stuId}, patent_type=#{patentType}, patent_name=#{patentName}, patent_state=#{patentState}, ranking=#{ranking}, total_number=#{totalNumber}, score=#{score}, state=#{state}, created_time=#{createdTime}, proof_material_id=#{proofMaterialId} WHERE `id` = #{id}")
     void update(PatentEntity patentEntity);
 
-    @Delete("DELETE FROM `patent` WHERE `id` = #{id}")
+    @Update("UPDATE `patent` SET state=0 WHERE `id` = #{id}")
     void delete(@Param("id") Integer id);
 
-    @Select("SELECT `id`, `stu_id`, `patent_type`, `patent_name`, `patent_state`, `proof_material_id`, `ranking`, `total_number`, `score`, `state`, `created_time`, `changed_time` FROM `patent` WHERE `stu_id` = #{stuId}")
+    @Select("SELECT `id`, `stu_id`, `patent_type`, `patent_name`, `patent_state`, `proof_material_id`, `ranking`, `total_number`, `score`, `state`, `created_time`, `changed_time` FROM `patent` WHERE `stu_id` = #{stuId} and `state` <> 0")
     @Results({
             @Result(property = "id", column = "id"),
             @Result(property = "stuId", column = "stu_id"),

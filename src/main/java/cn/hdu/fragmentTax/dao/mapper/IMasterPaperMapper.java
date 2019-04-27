@@ -52,10 +52,10 @@ public interface IMasterPaperMapper {
     @Update("UPDATE `master_paper` SET stu_id=#{stuId}, paper_name=#{paperName}, paper_abstract=#{paperAbstract}, score1=#{score1}, sugg1=#{sugg1}, score2=#{score2}, sugg2=#{sugg2}, score3=#{score3}, sugg3=#{sugg3}, score=#{score}, state=#{state}, created_time=#{createdTime}, proof_material_id=#{proofMaterialId} WHERE `id` = #{id}")
     void update(MasterPaperEntity master_paperEntity);
 
-    @Delete("DELETE FROM `master_paper` WHERE `id` = #{id}")
+    @Update("UPDATE `master_paper` SET state=0 WHERE `id` = #{id}")
     void delete(@Param("id") Integer id);
 
-    @Select("SELECT `id`, `stu_id`, `paper_name`, `paper_abstract`, `score1`, `sugg1`, `score2`, `sugg2`, `score3`, `sugg3`, `score`, `state`, `created_time`, `proof_material_id` FROM `master_paper` WHERE `stu_id` = #{stuId}")
+    @Select("SELECT `id`, `stu_id`, `paper_name`, `paper_abstract`, `score1`, `sugg1`, `score2`, `sugg2`, `score3`, `sugg3`, `score`, `state`, `created_time`, `proof_material_id` FROM `master_paper` WHERE `stu_id` = #{stuId} and `state` <> 0")
     @Results({
             @Result(property = "id", column = "id"),
             @Result(property = "stuId", column = "stu_id"),

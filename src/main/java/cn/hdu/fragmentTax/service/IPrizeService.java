@@ -47,4 +47,24 @@ public interface IPrizeService {
     Map<String,Object> editMasterPaper(EditMasterPaperRequ editMasterPaperRequ);
 
     Map<String,Object> getMasterPapers(String stuId);
+
+    Map<String,Object> deleHonor(Integer id);
+
+    Map<String,Object> delePaper(Integer id);
+
+    Map<String,Object> delePatent(Integer id);
+
+    Map<String,Object> deleCompetition(Integer id);
+
+    Map<String,Object> deleInnoPro(Integer id);
+
+    Map<String,Object> deleEntrPro(Integer id);
+
+    Map<String,Object> deleEngiPro(Integer id);
+
+    Map<String,Object> deleAcadExch(Integer id);
+
+    Map<String,Object> deleWork(Integer id);
+
+    Map<String,Object> deleMasterPaper(Integer id);
 }

@@ -44,10 +44,10 @@ public interface IHonorMapper {
     @Update("UPDATE `honor` SET honor_type=#{honorType}, honor_level=#{honorLevel}, proof_material_id=#{proofMaterialId}, honor_grade=#{honorGrade}, score=#{score}, state=#{state} WHERE `id` = #{id}")
     void update(HonorEntity honorEntity);
 
-    @Delete("DELETE FROM `honor` WHERE `id` = #{id}")
+    @Update("UPDATE `honor` SET state=0 WHERE `id` = #{id}")
     void delete(@Param("id") Integer id);
 
-    @Select("SELECT `id`, `stu_id`, `honor_type`, `honor_level`, `honor_grade`, `proof_material_id`, `score`, `state`, `created_time`, `changed_time` FROM `honor` where `stu_id` = #{stuId}")
+    @Select("SELECT `id`, `stu_id`, `honor_type`, `honor_level`, `honor_grade`, `proof_material_id`, `score`, `state`, `created_time`, `changed_time` FROM `honor` where `stu_id` = #{stuId} and `state` <> 0")
     @Results({
             @Result(property = "id", column = "id"),
             @Result(property = "stuId", column = "stu_id"),

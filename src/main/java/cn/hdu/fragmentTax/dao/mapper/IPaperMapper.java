@@ -50,10 +50,10 @@ public interface IPaperMapper {
     @Update("UPDATE `paper` SET stu_id=#{stuId}, paper_grade=#{paperGrade}, paper_title=#{paperTitle}, journal_title=#{journalTitle}, ranking=#{ranking}, total_number=#{totalNumber}, paper_state=#{paperState}, score=#{score}, state=#{state}, proof_material_id=#{proofMaterialId} WHERE `id` = #{id}")
     void update(PaperEntity paperEntity);
 
-    @Delete("DELETE FROM `paper` WHERE `id` = #{id}")
+    @Update("UPDATE `paper` SET state= 0 WHERE `id` = #{id}")
     void delete(@Param("id") Integer id);
 
-    @Select("SELECT `id`, `stu_id`, `paper_grade`, `paper_title`, `journal_title`, `ranking`, `total_number`, `paper_state`, `proof_material_id`, `score`, `state`, `created_time`, `changed_time` FROM `paper` where `stu_id` = #{stuId}")
+    @Select("SELECT `id`, `stu_id`, `paper_grade`, `paper_title`, `journal_title`, `ranking`, `total_number`, `paper_state`, `proof_material_id`, `score`, `state`, `created_time`, `changed_time` FROM `paper` where `stu_id` = #{stuId} and `state` <> 0")
     @Results({
             @Result(property = "id", column = "id"),
             @Result(property = "stuId", column = "stu_id"),

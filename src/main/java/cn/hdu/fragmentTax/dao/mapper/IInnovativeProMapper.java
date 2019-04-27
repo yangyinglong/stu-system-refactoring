@@ -54,10 +54,10 @@ public interface IInnovativeProMapper {
     @Update("UPDATE `innovative_pro` SET stu_id=#{stuId}, pro_type=#{proType}, pro_name=#{proName}, pro_intr=#{proIntr}, ranking=#{ranking}, total_number=#{totalNumber}, pro_state=#{proState}, pro_result=#{proResult}, proof_material_id=#{proofMaterialId}, teacher=#{teacher}, score=#{score}, state=#{state}, created_time=#{createdTime}, pro_level=#{proLevel} WHERE `id` = #{id}")
     void update(InnovativeProEntity innovative_proEntity);
 
-    @Delete("DELETE FROM `innovative_pro` WHERE `id` = #{id}")
+    @Update("UPDATE `innovative_pro` SET state=0 WHERE `id` = #{id}")
     void delete(@Param("id") Integer id);
 
-    @Select("SELECT `id`, `stu_id`, `pro_type`, `pro_name`, `pro_intr`, `ranking`, `total_number`, `pro_state`, `pro_result`, `proof_material_id`, `teacher`, `score`, `state`, `created_time`, `pro_level` FROM `innovative_pro` WHERE `stu_id` = #{stuId}")
+    @Select("SELECT `id`, `stu_id`, `pro_type`, `pro_name`, `pro_intr`, `ranking`, `total_number`, `pro_state`, `pro_result`, `proof_material_id`, `teacher`, `score`, `state`, `created_time`, `pro_level` FROM `innovative_pro` WHERE `stu_id` = #{stuId} and `state` <> 0")
     @Results({
             @Result(property = "id", column = "id"),
             @Result(property = "stuId", column = "stu_id"),

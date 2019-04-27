@@ -514,4 +514,144 @@ public class PrizeServiceImpl implements IPrizeService {
         return resp;
     }
 
+    @Override
+    public Map<String, Object> deleHonor(Integer id) {
+        Map<String, Object> resp = new HashMap<>();
+        try {
+            honorMapper.delete(id);
+            resp.put("c", 200);
+            resp.put("r", "删除成功");
+        } catch (Exception e) {
+            resp.put("c", 410);
+            resp.put("r", "删除失败");
+        }
+        return resp;
+    }
+
+    @Override
+    public Map<String, Object> delePaper(Integer id) {
+        Map<String, Object> resp = new HashMap<>();
+        try {
+            paperMapper.delete(id);
+            resp.put("c", 200);
+            resp.put("r", "删除成功");
+        } catch (Exception e) {
+            resp.put("c", 410);
+            resp.put("r", "删除失败");
+        }
+        return resp;
+    }
+
+    @Override
+    public Map<String, Object> delePatent(Integer id) {
+        Map<String, Object> resp = new HashMap<>();
+        try {
+            patentMapper.delete(id);
+            resp.put("c", 200);
+            resp.put("r", "删除成功");
+        } catch (Exception e) {
+            resp.put("c", 410);
+            resp.put("r", "删除失败");
+        }
+        return resp;
+    }
+
+    @Override
+    public Map<String, Object> deleCompetition(Integer id) {
+        Map<String, Object> resp = new HashMap<>();
+        try {
+            competitionMapper.delete(id);
+            resp.put("c", 200);
+            resp.put("r", "删除成功");
+        } catch (Exception e) {
+            resp.put("c", 410);
+            resp.put("r", "删除失败");
+        }
+        return resp;
+    }
+
+    @Override
+    public Map<String, Object> deleInnoPro(Integer id) {
+        Map<String, Object> resp = new HashMap<>();
+        try {
+            innovativeProMapper.delete(id);
+            resp.put("c", 200);
+            resp.put("r", "删除成功");
+        } catch (Exception e) {
+            resp.put("c", 410);
+            resp.put("r", "删除失败");
+        }
+        return resp;
+    }
+
+    @Override
+    public Map<String, Object> deleEntrPro(Integer id) {
+        Map<String, Object> resp = new HashMap<>();
+        try {
+            entrepreneurialProMapper.delete(id);
+            resp.put("c", 200);
+            resp.put("r", "删除成功");
+        } catch (Exception e) {
+            resp.put("c", 410);
+            resp.put("r", "删除失败");
+        }
+        return resp;
+    }
+
+    @Override
+    public Map<String, Object> deleEngiPro(Integer id) {
+        Map<String, Object> resp = new HashMap<>();
+        try {
+            engineeringProMapper.delete(id);
+            resp.put("c", 200);
+            resp.put("r", "删除成功");
+        } catch (Exception e) {
+            resp.put("c", 410);
+            resp.put("r", "删除失败");
+        }
+        return resp;
+    }
+
+    @Override
+    public Map<String, Object> deleAcadExch(Integer id) {
+        Map<String, Object> resp = new HashMap<>();
+        try {
+            academicExchangeMapper.delete(id);
+            resp.put("c", 200);
+            resp.put("r", "删除成功");
+        } catch (Exception e) {
+            resp.put("c", 410);
+            resp.put("r", "删除失败");
+        }
+        return resp;
+    }
+
+    @Override
+    public Map<String, Object> deleWork(Integer id) {
+        Map<String, Object> resp = new HashMap<>();
+        try {
+            workMapper.delete(id);
+            resp.put("c", 200);
+            resp.put("r", "删除成功");
+        } catch (Exception e) {
+            resp.put("c", 410);
+            resp.put("r", "删除失败");
+        }
+        return resp;
+    }
+
+    @Override
+    public Map<String, Object> deleMasterPaper(Integer id) {
+        Map<String, Object> resp = new HashMap<>();
+        try {
+            masterPaperMapper.delete(id);
+            resp.put("c", 200);
+            resp.put("r", "删除成功");
+        } catch (Exception e) {
+            resp.put("c", 410);
+            resp.put("r", "删除失败");
+        }
+        return resp;
+    }
+
 }

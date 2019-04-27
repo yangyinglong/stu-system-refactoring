@@ -52,7 +52,7 @@ public interface ICompetitionMapper {
     @Update("UPDATE `competition` SET stu_id=#{stuId}, competition_type=#{competitionType}, competition_name=#{competitionName}, ranking=#{ranking}, total_number=#{totalNumber}, competition_state=#{competitionState}, competition_prize=#{competitionPrize}, competition_level=#{competitionLevel}, teacher=#{teacher}, proof_material_id=#{proofMaterialId}, score=#{score}, state=#{state}, created_time=#{createdTime} WHERE `id` = #{id}")
     void update(CompetitionEntity competitionEntity);
 
-    @Delete("DELETE FROM `competition` WHERE `id` = #{id}")
+    @Update("UPDATE `competition` SET state=0 WHERE `id` = #{id}")
     void delete(@Param("id") Integer id);
 
     @Select("SELECT `id`, `stu_id`, `competition_type`, `competition_name`, `ranking`, `total_number`, `competition_state`, `competition_prize`, `competition_level`, `teacher`, `proof_material_id`, `score`, `state`, `created_time` FROM `competition` where `stu_id` = #{stuId} and `state` <> 0")

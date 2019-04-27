@@ -40,10 +40,10 @@ public interface IWorkMapper {
     @Update("UPDATE `work` SET stu_id=#{stuId}, company_name=#{companyName}, company_type=#{companyType}, work_type=#{workType}, score=#{score}, state=#{state}, created_time=#{createdTime} WHERE `id` = #{id}")
     void update(WorkEntity workEntity);
 
-    @Delete("DELETE FROM `work` WHERE `id` = #{id}")
+    @Update("UPDATE `work` SET state=0 WHERE `id` = #{id}")
     void delete(@Param("id") Integer id);
 
-    @Select("SELECT `id`, `stu_id`, `company_name`, `company_type`, `work_type`, `score`, `state`, `created_time` FROM `work` WHERE `stu_id` = #{stuId}")
+    @Select("SELECT `id`, `stu_id`, `company_name`, `company_type`, `work_type`, `score`, `state`, `created_time` FROM `work` WHERE `stu_id` = #{stuId} and `state` <> 0")
     @Results({
             @Result(property = "id", column = "id"),
             @Result(property = "stuId", column = "stu_id"),

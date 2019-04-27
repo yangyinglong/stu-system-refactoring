@@ -48,10 +48,10 @@ public interface IAcademicExchangeMapper {
     @Update("UPDATE `academic_exchange` SET stu_id=#{stuId}, exchange_type=#{exchangeType}, organization=#{organization}, conference_name=#{conferenceName}, start_time=#{startTime}, end_time=#{endTime}, level=#{level}, result=#{result}, proof_material_id=#{proofMaterialId}, score=#{score}, state=#{state} WHERE `id` = #{id}")
     void update(AcademicExchangeEntity academic_exchangeEntity);
 
-    @Delete("DELETE FROM `academic_exchange` WHERE `id` = #{id}")
+    @Update("UPDATE `academic_exchange` SET state=0 WHERE `id` = #{id}")
     void delete(@Param("id") Integer id);
 
-    @Select("SELECT `id`, `stu_id`, `exchange_type`, `organization`, `conference_name`, `start_time`, `end_time`, `level`, `result`, `proof_material_id`, `score`, `state` FROM `academic_exchange` WHERE `stu_id` = #{stuId}")
+    @Select("SELECT `id`, `stu_id`, `exchange_type`, `organization`, `conference_name`, `start_time`, `end_time`, `level`, `result`, `proof_material_id`, `score`, `state` FROM `academic_exchange` WHERE `stu_id` = #{stuId} and `state` <> 0")
     @Results({
             @Result(property = "id", column = "id"),
             @Result(property = "stuId", column = "stu_id"),
