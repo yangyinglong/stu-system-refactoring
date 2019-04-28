@@ -52,6 +52,9 @@ public class PrizeServiceImpl implements IPrizeService {
     @Autowired
     private IMasterPaperMapper masterPaperMapper;
 
+    @Autowired
+    private IStuBaseMapper stuBaseMapper;
+
 
     @Override
     public Map<String, Object> editHonor(EditHonorResp editHonorResp) {
@@ -110,9 +113,11 @@ public class PrizeServiceImpl implements IPrizeService {
 //            allPrizeEntity.setPatentNum(0);
 //            allPrizeEntity.setPatentScore(0);
 //        }
-        GetPrizesResp getPrizesResp = prizeModel.createGetPrizesResp(allPrizeEntity);
+//        GetPrizesResp getPrizesResp = prizeModel.createGetPrizesResp(allPrizeEntity);
+        Integer allStuNum = stuBaseMapper.queryCount();
+        GetPrizeForTeacherResp getPrizeForTeacherResp = prizeModel.createGetPrizeResp(allPrizeEntity, allStuNum);
         resp.put("c", 200);
-        resp.put("r", getPrizesResp);
+        resp.put("r", getPrizeForTeacherResp);
         return resp;
     }
 

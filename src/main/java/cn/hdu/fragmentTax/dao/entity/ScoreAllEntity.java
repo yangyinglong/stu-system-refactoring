@@ -29,12 +29,60 @@ public class ScoreAllEntity implements Serializable {
     private String createdTime;
     @Column
     private String changedTime;
+    @Column
+    private float jixiejiaozuo;  // 机械工程学科发展前沿专题讲座
+    @Column
+    private float jisuanyingyong;  // 计算流体力学软件及工程应用
+    @Column
+    private float jidianxue;  // 机电系统动力学
+    @Column
+    private float nami;  // 纳米技术与应用
+    @Column
+    private float jixiejiagong;  // 机械加工精度理论与机械制造装备技术
+    @Column
+    private float jixiezhizao;  // 机械制造方法理论与技术
+    @Column
+    private float dianyingyantao;  // 典型企业制造案例研讨
+    @Column
+    private float jisuanjichu;  // 计算流体力学基础
+    @Column
+    private float xiandaililun;  // 现代控制理论
+
+    public ScoreAllEntity() {
+    }
+
+    public ScoreAllEntity(Integer id, String stuId, float engineeringMathematics, float firstForeignLanguage, float characteristicSocialism, float numericalAnalysis, Integer state, String createdTime, String changedTime, float jixiejiaozuo, float jisuanyingyong, float jidianxue, float nami, float jixiejiagong, float jixiezhizao, float dianyingyantao, float jisuanjichu, float xiandaililun) {
+        this.id = id;
+        this.stuId = stuId;
+        this.engineeringMathematics = engineeringMathematics;
+        this.firstForeignLanguage = firstForeignLanguage;
+        this.characteristicSocialism = characteristicSocialism;
+        this.numericalAnalysis = numericalAnalysis;
+        this.state = state;
+        this.createdTime = createdTime;
+        this.changedTime = changedTime;
+        this.jixiejiaozuo = jixiejiaozuo;
+        this.jisuanyingyong = jisuanyingyong;
+        this.jidianxue = jidianxue;
+        this.nami = nami;
+        this.jixiejiagong = jixiejiagong;
+        this.jixiezhizao = jixiezhizao;
+        this.dianyingyantao = dianyingyantao;
+        this.jisuanjichu = jisuanjichu;
+        this.xiandaililun = xiandaililun;
+    }
 
     public static Map<String, Object> getAverageScore(ScoreAllEntity scoreAllEntity) {
         Map<String, Object> score = new HashMap<String, Object>();
         float allScores = 0;
         float averageScore = 0;
         int currNumber = 0;
+
+        if (-1 != scoreAllEntity.getNami()) {
+            allScores = allScores + scoreAllEntity.getNami();
+            currNumber = currNumber + 1;
+        }
+
         if (-1 != scoreAllEntity.getEngineeringMathematics()) {
             allScores = allScores + scoreAllEntity.getEngineeringMathematics();
             currNumber = currNumber + 1;
@@ -51,25 +99,52 @@ public class ScoreAllEntity implements Serializable {
             allScores = allScores + scoreAllEntity.getNumericalAnalysis();
             currNumber = currNumber + 1;
         }
+        if (-1 != scoreAllEntity.getDianyingyantao()) {
+            allScores = allScores + scoreAllEntity.getDianyingyantao();
+            currNumber = currNumber + 1;
+        }
+
+        if (-1 != scoreAllEntity.getJidianxue()) {
+            allScores = allScores + scoreAllEntity.getJidianxue();
+            currNumber = currNumber + 1;
+        }
+
+        if (-1 != scoreAllEntity.getJisuanjichu()) {
+            allScores = allScores + scoreAllEntity.getJisuanjichu();
+            currNumber = currNumber + 1;
+        }
+
+        if (-1 != scoreAllEntity.getJisuanyingyong()) {
+            allScores = allScores + scoreAllEntity.getJisuanyingyong();
+            currNumber = currNumber + 1;
+        }
+
+        if (-1 != scoreAllEntity.getJixiejiagong()) {
+            allScores = allScores + scoreAllEntity.getJixiejiagong();
+            currNumber = currNumber + 1;
+        }
+
+        if (-1 != scoreAllEntity.getJixiejiaozuo()) {
+            allScores = allScores + scoreAllEntity.getJixiejiaozuo();
+            currNumber = currNumber + 1;
+        }
+
+        if (-1 != scoreAllEntity.getJixiezhizao()) {
+            allScores = allScores + scoreAllEntity.getJixiezhizao();
+            currNumber = currNumber + 1;
+        }
+
+        if (-1 != scoreAllEntity.getXiandaililun()) {
+            allScores = allScores + scoreAllEntity.getXiandaililun();
+            currNumber = currNumber + 1;
+        }
+        score.put("currNumber", currNumber);
+        if (currNumber == 0) {
+            currNumber = 1;
+        }
         averageScore = allScores / currNumber;
         score.put("averageScore", averageScore);
-        score.put("currNumber", currNumber);
         return score;
-    }
-
-    public ScoreAllEntity() {
-    }
-
-    public ScoreAllEntity(Integer id, String stuId, float engineeringMathematics, float firstForeignLanguage, float characteristicSocialism, float numericalAnalysis, Integer state, String createdTime, String changedTime) {
-        this.id = id;
-        this.stuId = stuId;
-        this.engineeringMathematics = engineeringMathematics;
-        this.firstForeignLanguage = firstForeignLanguage;
-        this.characteristicSocialism = characteristicSocialism;
-        this.numericalAnalysis = numericalAnalysis;
-        this.state = state;
-        this.createdTime = createdTime;
-        this.changedTime = changedTime;
     }
 
     public Integer getId() {
@@ -142,6 +217,78 @@ public class ScoreAllEntity implements Serializable {
 
     public void setChangedTime(String changedTime) {
         this.changedTime = changedTime;
+    }
+
+    public float getJixiejiaozuo() {
+        return jixiejiaozuo;
+    }
+
+    public void setJixiejiaozuo(float jixiejiaozuo) {
+        this.jixiejiaozuo = jixiejiaozuo;
+    }
+
+    public float getJisuanyingyong() {
+        return jisuanyingyong;
+    }
+
+    public void setJisuanyingyong(float jisuanyingyong) {
+        this.jisuanyingyong = jisuanyingyong;
+    }
+
+    public float getJidianxue() {
+        return jidianxue;
+    }
+
+    public void setJidianxue(float jidianxue) {
+        this.jidianxue = jidianxue;
+    }
+
+    public float getNami() {
+        return nami;
+    }
+
+    public void setNami(float nami) {
+        this.nami = nami;
+    }
+
+    public float getJixiejiagong() {
+        return jixiejiagong;
+    }
+
+    public void setJixiejiagong(float jixiejiagong) {
+        this.jixiejiagong = jixiejiagong;
+    }
+
+    public float getJixiezhizao() {
+        return jixiezhizao;
+    }
+
+    public void setJixiezhizao(float jixiezhizao) {
+        this.jixiezhizao = jixiezhizao;
+    }
+
+    public float getDianyingyantao() {
+        return dianyingyantao;
+    }
+
+    public void setDianyingyantao(float dianyingyantao) {
+        this.dianyingyantao = dianyingyantao;
+    }
+
+    public float getJisuanjichu() {
+        return jisuanjichu;
+    }
+
+    public void setJisuanjichu(float jisuanjichu) {
+        this.jisuanjichu = jisuanjichu;
+    }
+
+    public float getXiandaililun() {
+        return xiandaililun;
+    }
+
+    public void setXiandaililun(float xiandaililun) {
+        this.xiandaililun = xiandaililun;
     }
 
 }

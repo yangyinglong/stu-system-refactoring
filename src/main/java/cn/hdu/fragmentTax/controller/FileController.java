@@ -7,16 +7,20 @@ import org.glassfish.jersey.media.multipart.FormDataContentDisposition;
 import org.glassfish.jersey.media.multipart.FormDataParam;
 import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
+import javax.servlet.http.HttpServletResponse;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.StreamingOutput;
-import java.io.File;
-import java.io.IOException;
-import java.io.InputStream;
+import java.io.*;
+import java.net.URLEncoder;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.HashMap;
+import java.util.Map;
 
 @Component
 @Path("/file")
@@ -64,4 +68,26 @@ public class FileController {
                 .header("content-disposition", "attachment; filename =" + fileName)
                 .build();
     }
+
+
+    @Path("/downloadFile")
+    @GET
+    @Produces(MediaType.APPLICATION_OCTET_STREAM)
+    public Response downloadFile(@QueryParam("fileName") String fileName){
+        File file = new File(IMAGE_PATH + "111.pdf");
+        //如果文件不存在，提示404
+        if (!file.exists()) {
+            return Response.status(Response.Status.NOT_FOUND).build();
+        }
+        try {
+            fileName = URLEncoder.encode(fileName, "UTF-8");
+        } catch (UnsupportedEncodingException e1) {
+            e1.printStackTrace();
+        }
+
+        return Response
+                .ok(file)
+                .header("Content-disposition", "attachment;filename=" + fileName).build();
+    }
+
 }

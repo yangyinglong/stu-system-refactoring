@@ -411,4 +411,22 @@ public class PrizeModelImpl implements IPrizeModel {
         }
         return getMasterPaperResp;
     }
+
+    @Override
+    public GetPrizeForTeacherResp createGetPrizeResp(AllPrizeEntity allPrizeEntity, Integer allStuNum) {
+        GetPrizeForTeacherResp getPrizeForTeacherResp = new GetPrizeForTeacherResp();
+        BeanUtils.copyProperties(allPrizeEntity, getPrizeForTeacherResp);
+        getPrizeForTeacherResp.setCompetitionNum(String.valueOf(allPrizeEntity.getCompetitionNum())+"/"+String.valueOf(allStuNum));
+        getPrizeForTeacherResp.setEngiNum(String.valueOf(allPrizeEntity.getEngiNum())+"/"+String.valueOf(allStuNum));
+        getPrizeForTeacherResp.setEntrNum(String.valueOf(allPrizeEntity.getEntrNum())+"/"+String.valueOf(allStuNum));
+        getPrizeForTeacherResp.setExchNum(String.valueOf(allPrizeEntity.getExchNum())+"/"+String.valueOf(allStuNum));
+        getPrizeForTeacherResp.setHonorNum(String.valueOf(allPrizeEntity.getHonorNum())+"/"+String.valueOf(allStuNum));
+        getPrizeForTeacherResp.setInnoNum(String.valueOf(allPrizeEntity.getInnoNum())+"/"+String.valueOf(allStuNum));
+        getPrizeForTeacherResp.setMasterNum(String.valueOf(allPrizeEntity.getMasterNum())+"/"+String.valueOf(allStuNum));
+        getPrizeForTeacherResp.setMasterNum(String.valueOf(allPrizeEntity.getMasterNum())+"/"+String.valueOf(allStuNum));
+        getPrizeForTeacherResp.setPaperNum(String.valueOf(allPrizeEntity.getPaperNum())+"/"+String.valueOf(allStuNum));
+        getPrizeForTeacherResp.setPatentNum(String.valueOf(allPrizeEntity.getPatentNum())+"/"+String.valueOf(allStuNum));
+        getPrizeForTeacherResp.setWorkNum(String.valueOf(allPrizeEntity.getWorkNum())+"/"+String.valueOf(allStuNum));
+        return getPrizeForTeacherResp;
+    }
 }

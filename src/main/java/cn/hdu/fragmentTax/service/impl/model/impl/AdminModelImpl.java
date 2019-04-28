@@ -328,4 +328,53 @@ public class AdminModelImpl implements IAdminModel {
 
         return getPrizeForTeacherResp;
     }
+
+    @Override
+    public GetAllScoreResp createGetAllScoreResp(ScoreAllEntity scoreAllEntity) {
+        GetAllScoreResp getAllScoreResp = new GetAllScoreResp();
+
+//        if (scoreAllEntity.getJixiejiagong() != -1) {
+//            getAllScoreResp.setJixiejiagong(scoreAllEntity.getJixiejiagong());
+//        }
+//        if (scoreAllEntity.getJixiejiaozuo() != -1) {
+//            getAllScoreResp.setJixiejiaozuo(scoreAllEntity.getJixiejiaozuo());
+//        }
+//        if (scoreAllEntity.getJixiezhizao() != -1) {
+//            getAllScoreResp.setJixiezhizao(scoreAllEntity.getJixiezhizao());
+//        }
+//        if (scoreAllEntity.getXiandaililun() != -1) {
+//            getAllScoreResp.setXiandaililun(scoreAllEntity.getXiandaililun());
+//        }
+//        if (scoreAllEntity.getNami() != -1) {
+//            getAllScoreResp.setNami(scoreAllEntity.getNami());
+//        }
+//        if (scoreAllEntity.getJisuanyingyong() != -1) {
+//            getAllScoreResp.setJisuanyingyong(scoreAllEntity.getJisuanyingyong());
+//        }
+//        if (scoreAllEntity.getJisuanjichu() != -1) {
+//            getAllScoreResp.setJisuanjichu(scoreAllEntity.getJisuanjichu());
+//        }
+//
+//        if (scoreAllEntity.getJidianxue() != -1) {
+//            getAllScoreResp.setJidianxue(scoreAllEntity.getJidianxue());
+//        }
+//        if (scoreAllEntity.getDianyingyantao() != -1) {
+//            getAllScoreResp.setDianyingyantao(scoreAllEntity.getDianyingyantao());
+//        }
+//        if (scoreAllEntity.getNumericalAnalysis() != -1) {
+//            getAllScoreResp.setNumericalAnalysis(scoreAllEntity.getNumericalAnalysis());
+//        }
+//        if (scoreAllEntity.getFirstForeignLanguage() != -1) {
+//            getAllScoreResp.setFirstForeignLanguage(scoreAllEntity.getFirstForeignLanguage());
+//        }
+//        if (scoreAllEntity.getCharacteristicSocialism() != -1) {
+//            getAllScoreResp.setCharacteristicSocialism(scoreAllEntity.getCharacteristicSocialism());
+//        }
+//        if (scoreAllEntity.getEngineeringMathematics() != -1) {
+//            getAllScoreResp.setEngineeringMathematics(scoreAllEntity.getEngineeringMathematics());
+//        }
+
+        BeanUtils.copyProperties(scoreAllEntity, getAllScoreResp);
+        return getAllScoreResp;
+    }
 }

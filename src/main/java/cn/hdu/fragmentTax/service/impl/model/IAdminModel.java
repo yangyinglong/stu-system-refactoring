@@ -29,4 +29,6 @@ public interface IAdminModel {
     GetStuForTeacherResp createGetStuForTeacherResp(StuBaseEntity stuBaseEntity, TutorsEntity tutorsEntity, CounsellorsEntity counsellorsEntity, ScoreEntranceEntity scoreEntranceEntity);
 
     GetPrizeForTeacherResp createGetPrizeForTeacherResp(AllPrizeEntity allPrizeEntity, StuBaseEntity stuBaseEntity, int allStuNum);
+
+    GetAllScoreResp createGetAllScoreResp(ScoreAllEntity scoreAllEntity);
 }

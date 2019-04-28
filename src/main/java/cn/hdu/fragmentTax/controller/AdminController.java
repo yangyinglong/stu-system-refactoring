@@ -307,4 +307,12 @@ public class AdminController {
         Map<String, Object> resp = adminService.showAllPrizeForTeacher(adminQueryRequ);
         return resp;
     }
+
+    @Path("/showScoresForTeacher")
+    @POST
+    @Produces(MediaType.APPLICATION_JSON)
+    public Map<String, Object> showScoresForTeacher(AdminQueryRequ adminQueryRequ){
+        Map<String, Object> resp = adminService.showScoresForTeacher(adminQueryRequ);
+        return resp;
+    }
 }

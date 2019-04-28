@@ -68,6 +68,12 @@ public class AdminServiceImpl implements IAdminService {
     @Autowired
     private IScoreEntranceMapper scoreEntranceMapper;
 
+    @Autowired
+    private IScoreAllMapper scoreAllMapper;
+
+    @Autowired
+    private IScoreAverageMapper scoreAverageMapper;
+
     @Override
     public Map<String, Object> showHonorsForTeacher(AdminQueryRequ adminQueryRequ) {
         Map<String, Object> resp = new HashMap<>();
@@ -714,13 +720,44 @@ public class AdminServiceImpl implements IAdminService {
 //            导师查询
             stuBaseEntities = stuBaseMapper.queryByTutorId(adminQueryRequ.getUserId());
         }
+        Integer allStuNum = stuBaseMapper.queryCount();
         for (StuBaseEntity stuBaseEntity : stuBaseEntities) {
            AllPrizeEntity allPrizeEntity = allPrizeMapper.queryByStuId(stuBaseEntity.getStuId());
-           GetPrizeForTeacherResp getPrizeForTeacherResp = adminModel.createGetPrizeForTeacherResp(allPrizeEntity, stuBaseEntity, stuBaseEntities.size());
+           GetPrizeForTeacherResp getPrizeForTeacherResp = adminModel.createGetPrizeForTeacherResp(allPrizeEntity, stuBaseEntity, allStuNum);
            getPrizeForTeacherResps.add(getPrizeForTeacherResp);
         }
         resp.put("c", 200);
         resp.put("r", getPrizeForTeacherResps);
+        return resp;
+    }
+
+    @Override
+    public Map<String, Object> showScoresForTeacher(AdminQueryRequ adminQueryRequ) {
+        Map<String, Object> resp = new HashMap<>();
+        List<StuBaseEntity> stuBaseEntities = null;
+        List<GetAllScoreResp> getAllScoreResps = new LinkedList<GetAllScoreResp>();
+        if (adminQueryRequ.getState() == 1) {
+//            辅导员查询
+            stuBaseEntities = stuBaseMapper.queryAll();
+        } else {
+//            导师查询
+            stuBaseEntities = stuBaseMapper.queryByTutorId(adminQueryRequ.getUserId());
+        }
+        for (StuBaseEntity stuBaseEntity : stuBaseEntities) {
+            ScoreAllEntity scoreAllEntity = scoreAllMapper.queryByStuId(stuBaseEntity.getStuId());
+            ScoreAverageEntity scoreAverageEntity = scoreAverageMapper.queryByStuId(stuBaseEntity.getStuId());
+            if (FormatUtil.isEmpty(scoreAllEntity)) {
+                continue;
+            }
+            GetAllScoreResp getAllScoreResp = adminModel.createGetAllScoreResp(scoreAllEntity);
+            getAllScoreResp.setStuId(stuBaseEntity.getStuId());
+            getAllScoreResp.setName(stuBaseEntity.getName());
+            getAllScoreResp.setCurrNumber(scoreAverageEntity.getCurrNumber());
+            getAllScoreResp.setAverageScore(scoreAverageEntity.getAverageScore());
+            getAllScoreResps.add(getAllScoreResp);
+        }
+        resp.put("c", 200);
+        resp.put("r", getAllScoreResps);
         return resp;
     }
 

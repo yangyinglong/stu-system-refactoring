@@ -48,4 +48,6 @@ public interface IPrizeModel {
     MasterPaperEntity createMasterPaperEntity(EditMasterPaperRequ editMasterPaperRequ) throws ParseException;
 
     GetMasterPaperResp createGetMasterPaperResp(MasterPaperEntity masterPaperEntity);
+
+    GetPrizeForTeacherResp createGetPrizeResp(AllPrizeEntity allPrizeEntity, Integer allStuNum);
 }
