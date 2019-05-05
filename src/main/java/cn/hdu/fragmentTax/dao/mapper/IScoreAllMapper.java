@@ -88,4 +88,7 @@ public interface IScoreAllMapper {
             @Result(property = "xiandaililun", column = "xiandaililun")
     })
     ScoreAllEntity queryByStuId(@Param("stuId") String stuId);
+
+    @Insert("INSERT INTO `score_all`(`stu_id`, `created_time`) VALUES(#{stuId}, #{createdTime})")
+    void insertFirst(@Param("stuId") String stuId, @Param("createdTime") String currentDatetime);
 }

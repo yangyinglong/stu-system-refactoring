@@ -74,7 +74,7 @@ public class FileController {
     @GET
     @Produces(MediaType.APPLICATION_OCTET_STREAM)
     public Response downloadFile(@QueryParam("fileName") String fileName){
-        File file = new File(IMAGE_PATH + "111.pdf");
+        File file = new File(IMAGE_PATH + fileName);
         //如果文件不存在，提示404
         if (!file.exists()) {
             return Response.status(Response.Status.NOT_FOUND).build();

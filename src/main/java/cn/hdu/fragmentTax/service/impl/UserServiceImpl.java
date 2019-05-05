@@ -35,6 +35,8 @@ public class UserServiceImpl implements IUserService {
     private ICounsellorsMapper counsellorsMapper;
     @Autowired
     private IAllPrizeMapper allPrizeMapper;
+    @Autowired
+    private IScoreAllMapper scoreAllMapper;
 
     @Autowired
     private IUserModel userModel;
@@ -55,6 +57,7 @@ public class UserServiceImpl implements IUserService {
         try {
             stuBaseMapper.insertBaseInfo(baseEntity);
             passwordMapper.insertAccPass(passwordEntity);
+//            scoreAllMapper.insertFirst(registerRequ.getStuId(), DateUtil.getCurrentDatetime());
 //            在综合素质里面插入一条数据
             int stuNumber = stuBaseMapper.queryCount();
             allPrizeMapper.insertFirst(registerRequ.getStuId(), stuNumber, DateUtil.getCurrentDatetime());

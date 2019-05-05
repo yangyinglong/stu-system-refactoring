@@ -23,6 +23,7 @@ public class AdminModelImpl implements IAdminModel {
         getHonorResp.setId(honorEntity.getId());
         getHonorResp.setStuId(honorEntity.getStuId());
         getHonorResp.setScore(honorEntity.getScore());
+        getHonorResp.setProofMaterialId(honorEntity.getProofMaterialId());
         if (honorEntity.getHonorType() == 1) {
             getHonorResp.setHonorType("本科生奖学金");
         } else if (honorEntity.getHonorType() == 2) {

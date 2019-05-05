@@ -93,7 +93,7 @@ public interface ICompetitionMapper {
     })
     List<CompetitionEntity> queryForAdmin(@Param("state") String status);
 
-    @Select("SELECT `id`, `stu_id`, `competition_type`, `competition_name`, `ranking`, `total_number`, `competition_state`, `competition_prize`, `competition_level`, `teacher`, `proof_material_id`, `score`, `state`, `created_time` FROM `competition` where `state` in (${state} and `stu_id` in (${stuIds})")
+    @Select("SELECT `id`, `stu_id`, `competition_type`, `competition_name`, `ranking`, `total_number`, `competition_state`, `competition_prize`, `competition_level`, `teacher`, `proof_material_id`, `score`, `state`, `created_time` FROM `competition` where `state` in (${state}) and `stu_id` in (${stuIds})")
     @Results({
             @Result(property = "id", column = "id"),
             @Result(property = "stuId", column = "stu_id"),
