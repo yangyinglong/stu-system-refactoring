@@ -11,6 +11,7 @@ import cn.hdu.fragmentTax.model.response.GetTutorCoerResp;
 import cn.hdu.fragmentTax.service.IScoreService;
 import cn.hdu.fragmentTax.service.impl.model.IScoreModel;
 import cn.hdu.fragmentTax.utils.FormatUtil;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -42,7 +43,10 @@ public class ScoreServiceImpl implements IScoreService {
         try {
             scoreEntranceMapper.insertScore(scoreEntranceEntity);
             scoreAverageMapper.insertLanguage(editEntranceInfoRequ.getStuId(), editEntranceInfoRequ.getLanguagesTypes(), editEntranceInfoRequ.getLanguagesScore());
-            stuBaseMapper.updateUSchool(editEntranceInfoRequ.getStuId(), editEntranceInfoRequ.getuSchool(), editEntranceInfoRequ.getuMajor());
+            stuBaseMapper.updateUSchool(editEntranceInfoRequ.getStuId(), editEntranceInfoRequ.getuSchool(), editEntranceInfoRequ.getuMajor(),
+                    editEntranceInfoRequ.getIdCard(), editEntranceInfoRequ.getMasterMajor(), editEntranceInfoRequ.getMasterDirection(),
+                    editEntranceInfoRequ.getPoliticalOutlook(), editEntranceInfoRequ.getBiogenicLand(), editEntranceInfoRequ.geteMail(),
+                    editEntranceInfoRequ.getEmergencyContact(), editEntranceInfoRequ.getEmergencyPhone());
             resp.put("c", 200);
             resp.put("r", "修改成功");
         } catch (Exception e) {
@@ -59,14 +63,16 @@ public class ScoreServiceImpl implements IScoreService {
         ScoreEntranceEntity scoreEntranceEntity = scoreEntranceMapper.queryByStuId(stuId);
         ScoreAverageEntity scoreAverageEntity = scoreAverageMapper.queryByStuId(stuId);
         GetEntranceInfoResp getEntranceInfoResp = new GetEntranceInfoResp();
-        getEntranceInfoResp.setStuId(stuId);
-        getEntranceInfoResp.setuSchool(stuBaseEntity.getUSchool());
-        getEntranceInfoResp.setuMajor(stuBaseEntity.getUMajor());
+//        getEntranceInfoResp.setStuId(stuId);
+//        getEntranceInfoResp.setuSchool(stuBaseEntity.getUSchool());
+//        getEntranceInfoResp.setuMajor(stuBaseEntity.getUMajor());
+        BeanUtils.copyProperties(stuBaseEntity, getEntranceInfoResp);
         if (!FormatUtil.isEmpty(scoreEntranceEntity)){
-            getEntranceInfoResp.setEnglish(scoreEntranceEntity.getEnglish());
-            getEntranceInfoResp.setMath(scoreEntranceEntity.getMath());
-            getEntranceInfoResp.setPolitical(scoreEntranceEntity.getPolitical());
-            getEntranceInfoResp.setSpecialized(scoreEntranceEntity.getSpecialized());
+            BeanUtils.copyProperties(scoreEntranceEntity, getEntranceInfoResp);
+//            getEntranceInfoResp.setEnglish(scoreEntranceEntity.getEnglish());
+//            getEntranceInfoResp.setMath(scoreEntranceEntity.getMath());
+//            getEntranceInfoResp.setPolitical(scoreEntranceEntity.getPolitical());
+//            getEntranceInfoResp.setSpecialized(scoreEntranceEntity.getSpecialized());
         }
         if (!FormatUtil.isEmpty(scoreAverageEntity)) {
             getEntranceInfoResp.setLanguagesTypes(scoreAverageEntity.getLanguagesTypes());
@@ -88,7 +94,7 @@ public class ScoreServiceImpl implements IScoreService {
             return resp;
         }
         try {
-            stuBaseMapper.updateTuCoer(editTutorCoerRequ.getStuId(), tutorsEntity.getTutorId(), counsellorsEntity.getCounsellorId());
+            stuBaseMapper.updateTuCoer(editTutorCoerRequ.getStuId(), tutorsEntity.getTutorId(), counsellorsEntity.getCounsellorId(), editTutorCoerRequ.getSecretary());
             resp.put("c", 200);
             resp.put("r", "修改成功");
         } catch (Exception e) {
@@ -104,6 +110,7 @@ public class ScoreServiceImpl implements IScoreService {
         StuBaseEntity stuBaseEntity = stuBaseMapper.queryByStuId(stuId);
         GetTutorCoerResp getTutorCoerResp = new GetTutorCoerResp();
         getTutorCoerResp.setStuId(stuId);
+        getTutorCoerResp.setSecretary(stuBaseEntity.getSecretary());
         if (!FormatUtil.isEmpty(stuBaseEntity.getCounsellorId())) {
             CounsellorsEntity counsellorsEntity = counsellorsMapper.queryByCoId(stuBaseEntity.getCounsellorId());
             getTutorCoerResp.setCounsellor(counsellorsEntity.getName());

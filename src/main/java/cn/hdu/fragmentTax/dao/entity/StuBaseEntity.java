@@ -33,11 +33,29 @@ public class StuBaseEntity implements Serializable {
     private String createdTime;
     @Column
     private String changedTime;
+    @Column
+    private String idCard;
+    @Column
+    private String masterMajor;
+    @Column
+    private String politicalOutlook;
+    @Column
+    private String biogenicLand;  // 生源地
+    @Column
+    private String masterDirection;  // 研究方向
+    @Column
+    private String eMail;
+    @Column
+    private String emergencyContact;
+    @Column
+    private String emergencyPhone;
+    @Column
+    private String secretary;  // 研究生秘书
 
     public StuBaseEntity() {
     }
 
-    public StuBaseEntity(Integer id, String stuId, String name, String phone, Integer sex, String uSchool, String uMajor, String counsellorId, String tutorId, Integer state, String createdTime, String changedTime) {
+    public StuBaseEntity(Integer id, String stuId, String name, String phone, Integer sex, String uSchool, String uMajor, String counsellorId, String tutorId, Integer state, String createdTime, String changedTime, String idCard, String masterMajor, String politicalOutlook, String biogenicLand, String masterDirection, String eMail, String emergencyContact, String emergencyPhone, String secretary) {
         this.id = id;
         this.stuId = stuId;
         this.name = name;
@@ -50,6 +68,15 @@ public class StuBaseEntity implements Serializable {
         this.state = state;
         this.createdTime = createdTime;
         this.changedTime = changedTime;
+        this.idCard = idCard;
+        this.masterMajor = masterMajor;
+        this.politicalOutlook = politicalOutlook;
+        this.biogenicLand = biogenicLand;
+        this.masterDirection = masterDirection;
+        this.eMail = eMail;
+        this.emergencyContact = emergencyContact;
+        this.emergencyPhone = emergencyPhone;
+        this.secretary = secretary;
     }
 
     public Integer getId() {
@@ -146,6 +173,78 @@ public class StuBaseEntity implements Serializable {
 
     public void setChangedTime(String changedTime) {
         this.changedTime = changedTime;
+    }
+
+    public String getIdCard() {
+        return idCard;
+    }
+
+    public void setIdCard(String idCard) {
+        this.idCard = idCard;
+    }
+
+    public String getMasterMajor() {
+        return masterMajor;
+    }
+
+    public void setMasterMajor(String masterMajor) {
+        this.masterMajor = masterMajor;
+    }
+
+    public String getPoliticalOutlook() {
+        return politicalOutlook;
+    }
+
+    public void setPoliticalOutlook(String politicalOutlook) {
+        this.politicalOutlook = politicalOutlook;
+    }
+
+    public String getBiogenicLand() {
+        return biogenicLand;
+    }
+
+    public void setBiogenicLand(String biogenicLand) {
+        this.biogenicLand = biogenicLand;
+    }
+
+    public String getMasterDirection() {
+        return masterDirection;
+    }
+
+    public void setMasterDirection(String masterDirection) {
+        this.masterDirection = masterDirection;
+    }
+
+    public String getEMail() {
+        return eMail;
+    }
+
+    public void setEMail(String eMail) {
+        this.eMail = eMail;
+    }
+
+    public String getEmergencyContact() {
+        return emergencyContact;
+    }
+
+    public void setEmergencyContact(String emergencyContact) {
+        this.emergencyContact = emergencyContact;
+    }
+
+    public String getEmergencyPhone() {
+        return emergencyPhone;
+    }
+
+    public void setEmergencyPhone(String emergencyPhone) {
+        this.emergencyPhone = emergencyPhone;
+    }
+
+    public String getSecretary() {
+        return secretary;
+    }
+
+    public void setSecretary(String secretary) {
+        this.secretary = secretary;
     }
 
 }

@@ -9,8 +9,6 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
-
 @Service
 public class AdminModelImpl implements IAdminModel {
     @Autowired
@@ -290,7 +288,7 @@ public class AdminModelImpl implements IAdminModel {
     }
 
     @Override
-    public GetStuForTeacherResp createGetStuForTeacherResp(StuBaseEntity stuBaseEntity, TutorsEntity tutorsEntity, CounsellorsEntity counsellorsEntity, ScoreEntranceEntity scoreEntranceEntity) {
+    public GetStuForTeacherResp createGetStuForTeacherResp(StuBaseEntity stuBaseEntity, TutorsEntity tutorsEntity, CounsellorsEntity counsellorsEntity, ScoreEntranceEntity scoreEntranceEntity, ScoreAverageEntity scoreAverageEntity) {
         GetStuForTeacherResp getStuForTeacherResp = new GetStuForTeacherResp();
         BeanUtils.copyProperties(stuBaseEntity, getStuForTeacherResp);
         if (1 == stuBaseEntity.getSex()) {
@@ -306,6 +304,9 @@ public class AdminModelImpl implements IAdminModel {
         }
         if (!FormatUtil.isEmpty(scoreEntranceEntity)) {
             BeanUtils.copyProperties(scoreEntranceEntity, getStuForTeacherResp);
+        }
+        if (!FormatUtil.isEmpty(scoreAverageEntity)) {
+            BeanUtils.copyProperties(scoreAverageEntity, getStuForTeacherResp);
         }
         return getStuForTeacherResp;
     }

@@ -16,6 +16,7 @@ public class GetMasterPaperResp {
     private String proofMaterialId;
     private String status;
     private Float score;
+    private String score4;
 
     public GetMasterPaperResp() {
     }
@@ -36,6 +37,14 @@ public class GetMasterPaperResp {
         this.proofMaterialId = proofMaterialId;
         this.status = status;
         this.score = score;
+    }
+
+    public String getScore4() {
+        return score4;
+    }
+
+    public void setScore4(String score4) {
+        this.score4 = score4;
     }
 
     public Integer getId() {

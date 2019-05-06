@@ -18,6 +18,19 @@ public class GetStuForTeacherResp {
     private String tuturName;
     private String counsellorName;
 
+    private String idCard;
+    private String masterMajor;
+    private String politicalOutlook;
+    private String biogenicLand;  // 生源地
+    private String masterDirection;  // 研究方向
+    private String eMail;
+    private String emergencyContact;
+    private String emergencyPhone;
+    private String secretary;
+
+    private float averageScore;
+    private Integer currNumber;
+
     public GetStuForTeacherResp() {
     }
 
@@ -36,6 +49,94 @@ public class GetStuForTeacherResp {
         this.sex = sex;
         this.tuturName = tuturName;
         this.counsellorName = counsellorName;
+    }
+
+    public float getAverageScore() {
+        return averageScore;
+    }
+
+    public void setAverageScore(float averageScore) {
+        this.averageScore = averageScore;
+    }
+
+    public Integer getCurrNumber() {
+        return currNumber;
+    }
+
+    public void setCurrNumber(Integer currNumber) {
+        this.currNumber = currNumber;
+    }
+
+    public String getSecretary() {
+        return secretary;
+    }
+
+    public void setSecretary(String secretary) {
+        this.secretary = secretary;
+    }
+
+    public String getIdCard() {
+        return idCard;
+    }
+
+    public void setIdCard(String idCard) {
+        this.idCard = idCard;
+    }
+
+    public String getMasterMajor() {
+        return masterMajor;
+    }
+
+    public void setMasterMajor(String masterMajor) {
+        this.masterMajor = masterMajor;
+    }
+
+    public String getPoliticalOutlook() {
+        return politicalOutlook;
+    }
+
+    public void setPoliticalOutlook(String politicalOutlook) {
+        this.politicalOutlook = politicalOutlook;
+    }
+
+    public String getBiogenicLand() {
+        return biogenicLand;
+    }
+
+    public void setBiogenicLand(String biogenicLand) {
+        this.biogenicLand = biogenicLand;
+    }
+
+    public String getMasterDirection() {
+        return masterDirection;
+    }
+
+    public void setMasterDirection(String masterDirection) {
+        this.masterDirection = masterDirection;
+    }
+
+    public String geteMail() {
+        return eMail;
+    }
+
+    public void seteMail(String eMail) {
+        this.eMail = eMail;
+    }
+
+    public String getEmergencyContact() {
+        return emergencyContact;
+    }
+
+    public void setEmergencyContact(String emergencyContact) {
+        this.emergencyContact = emergencyContact;
+    }
+
+    public String getEmergencyPhone() {
+        return emergencyPhone;
+    }
+
+    public void setEmergencyPhone(String emergencyPhone) {
+        this.emergencyPhone = emergencyPhone;
     }
 
     public String getPhone() {

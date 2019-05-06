@@ -3,8 +3,6 @@ package cn.hdu.fragmentTax.service.impl.model;
 import cn.hdu.fragmentTax.dao.entity.*;
 import cn.hdu.fragmentTax.model.response.*;
 
-import java.util.List;
-
 public interface IAdminModel {
     GetHonorResp createGetHonorResp(HonorEntity honorEntity, StuBaseEntity stuBaseEntity);
 
@@ -26,7 +24,7 @@ public interface IAdminModel {
 
     GetWorkResp createGetWorkResp(WorkEntity workEntity, StuBaseEntity stuBaseEntity);
 
-    GetStuForTeacherResp createGetStuForTeacherResp(StuBaseEntity stuBaseEntity, TutorsEntity tutorsEntity, CounsellorsEntity counsellorsEntity, ScoreEntranceEntity scoreEntranceEntity);
+    GetStuForTeacherResp createGetStuForTeacherResp(StuBaseEntity stuBaseEntity, TutorsEntity tutorsEntity, CounsellorsEntity counsellorsEntity, ScoreEntranceEntity scoreEntranceEntity, ScoreAverageEntity scoreAverageEntity);
 
     GetPrizeForTeacherResp createGetPrizeForTeacherResp(AllPrizeEntity allPrizeEntity, StuBaseEntity stuBaseEntity, int allStuNum);
 

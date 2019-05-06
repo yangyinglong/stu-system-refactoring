@@ -23,7 +23,7 @@ public class ScoreController {
     private IScoreService scoreService;
 
     /**
-     * 修改入学考试的成绩
+     * 修改入学考试的成绩和基本信息
      * @param editEntranceInfoRequ
      * @return
      */

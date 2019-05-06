@@ -8,6 +8,7 @@ import cn.hdu.fragmentTax.model.response.*;
 import cn.hdu.fragmentTax.service.IAdminService;
 import cn.hdu.fragmentTax.service.impl.model.IAdminModel;
 import cn.hdu.fragmentTax.utils.FormatUtil;
+import com.github.pagehelper.PageHelper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -700,7 +701,8 @@ public class AdminServiceImpl implements IAdminService {
             TutorsEntity tutorsEntity = tutorsMapper.queryByTuId(stuBaseEntity.getTutorId());
             CounsellorsEntity counsellorsEntity = counsellorsMapper.queryByCoId(stuBaseEntity.getCounsellorId());
             ScoreEntranceEntity scoreEntranceEntity = scoreEntranceMapper.queryByStuId(stuBaseEntity.getStuId());
-            GetStuForTeacherResp getStuForTeacherResp = adminModel.createGetStuForTeacherResp(stuBaseEntity, tutorsEntity, counsellorsEntity, scoreEntranceEntity);
+            ScoreAverageEntity scoreAverageEntity = scoreAverageMapper.queryByStuId(stuBaseEntity.getStuId());
+            GetStuForTeacherResp getStuForTeacherResp = adminModel.createGetStuForTeacherResp(stuBaseEntity, tutorsEntity, counsellorsEntity, scoreEntranceEntity, scoreAverageEntity);
             getStuForTeacherResps.add(getStuForTeacherResp);
         }
         resp.put("c", 200);

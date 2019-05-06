@@ -13,6 +13,7 @@ public class EditMasterPaperRequ {
     private String sugg3;
     private String getDate;
     private String proofMaterialId;
+    private String score4;
 
     public EditMasterPaperRequ() {
     }
@@ -30,6 +31,14 @@ public class EditMasterPaperRequ {
         this.sugg3 = sugg3;
         this.getDate = getDate;
         this.proofMaterialId = proofMaterialId;
+    }
+
+    public String getScore4() {
+        return score4;
+    }
+
+    public void setScore4(String score4) {
+        this.score4 = score4;
     }
 
     public Integer getId() {

@@ -4,6 +4,7 @@ public class EditTutorCoerRequ {
     private String stuId;
     private String tutor;
     private String counsellor;
+    private String secretary;  // 研究生秘书
 
     public EditTutorCoerRequ() {
     }
@@ -12,6 +13,14 @@ public class EditTutorCoerRequ {
         this.stuId = stuId;
         this.tutor = tutor;
         this.counsellor = counsellor;
+    }
+
+    public String getSecretary() {
+        return secretary;
+    }
+
+    public void setSecretary(String secretary) {
+        this.secretary = secretary;
     }
 
     public String getStuId() {

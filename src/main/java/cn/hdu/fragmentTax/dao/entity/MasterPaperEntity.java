@@ -37,10 +37,12 @@ private Integer state;
 private String createdTime;
 @Column
 private String proofMaterialId;
+@Column
+private String score4;
 
 public MasterPaperEntity(){}
 
-public MasterPaperEntity(Integer id,String stuId,String paperName,String paperAbstract,String score1,String sugg1,String score2,String sugg2,String score3,String sugg3,float score,Integer state,String createdTime,String proofMaterialId){
+public MasterPaperEntity(Integer id,String stuId,String paperName,String paperAbstract,String score1,String sugg1,String score2,String sugg2,String score3,String sugg3,float score,Integer state,String createdTime,String proofMaterialId,String score4){
 this.id = id;
 this.stuId = stuId;
 this.paperName = paperName;
@@ -55,6 +57,7 @@ this.score = score;
 this.state = state;
 this.createdTime = createdTime;
 this.proofMaterialId = proofMaterialId;
+this.score4 = score4;
 }
 
 public Integer getId() {return id;}
@@ -112,5 +115,9 @@ public void setCreatedTime(String createdTime){this.createdTime = createdTime;}
 public String getProofMaterialId() {return proofMaterialId;}
 
 public void setProofMaterialId(String proofMaterialId){this.proofMaterialId = proofMaterialId;}
+
+public String getScore4() {return score4;}
+
+public void setScore4(String score4){this.score4 = score4;}
 
 }
