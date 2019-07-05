@@ -20,7 +20,7 @@ import java.util.Properties;
  */
 @Configuration
 @EnableTransactionManagement
-public class        MyBatisConfig implements TransactionManagementConfigurer {
+public class MyBatisConfig implements TransactionManagementConfigurer {
 
     @Autowired
     DataSource dataSource;

@@ -2,11 +2,10 @@ package cn.hdu.fragmentTax.service.impl;
 
 import cn.hdu.fragmentTax.dao.entity.*;
 import cn.hdu.fragmentTax.dao.mapper.*;
-import cn.hdu.fragmentTax.model.request.*;
-import cn.hdu.fragmentTax.model.response.*;
+import cn.hdu.fragmentTax.view.request.*;
+import cn.hdu.fragmentTax.view.response.*;
 import cn.hdu.fragmentTax.service.IPrizeService;
 import cn.hdu.fragmentTax.service.impl.model.IPrizeModel;
-import cn.hdu.fragmentTax.utils.DateUtil;
 import cn.hdu.fragmentTax.utils.FormatUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

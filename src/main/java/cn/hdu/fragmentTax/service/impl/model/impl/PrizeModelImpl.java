@@ -1,11 +1,10 @@
 package cn.hdu.fragmentTax.service.impl.model.impl;
 
 import cn.hdu.fragmentTax.dao.entity.*;
-import cn.hdu.fragmentTax.model.request.*;
-import cn.hdu.fragmentTax.model.response.*;
+import cn.hdu.fragmentTax.view.request.*;
+import cn.hdu.fragmentTax.view.response.*;
 import cn.hdu.fragmentTax.service.impl.model.IPrizeModel;
 import cn.hdu.fragmentTax.utils.DateUtil;
-import org.apache.http.client.utils.DateUtils;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
 

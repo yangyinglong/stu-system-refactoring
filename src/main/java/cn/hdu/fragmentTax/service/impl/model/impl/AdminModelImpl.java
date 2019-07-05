@@ -2,7 +2,7 @@ package cn.hdu.fragmentTax.service.impl.model.impl;
 
 import cn.hdu.fragmentTax.dao.entity.*;
 import cn.hdu.fragmentTax.dao.mapper.IStuBaseMapper;
-import cn.hdu.fragmentTax.model.response.*;
+import cn.hdu.fragmentTax.view.response.*;
 import cn.hdu.fragmentTax.service.impl.model.IAdminModel;
 import cn.hdu.fragmentTax.utils.FormatUtil;
 import org.springframework.beans.BeanUtils;

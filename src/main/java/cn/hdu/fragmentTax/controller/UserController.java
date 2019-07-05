@@ -1,11 +1,9 @@
 package cn.hdu.fragmentTax.controller;
 
-import cn.hdu.fragmentTax.dao.entity.StuBaseEntity;
-import cn.hdu.fragmentTax.dao.mapper.IStuBaseMapper;
-import cn.hdu.fragmentTax.model.request.EditBaseInfoRequ;
-import cn.hdu.fragmentTax.model.request.ForgetPassRequ;
-import cn.hdu.fragmentTax.model.request.RegisterRequ;
-import cn.hdu.fragmentTax.model.request.StuLoginRequ;
+import cn.hdu.fragmentTax.view.request.EditBaseInfoRequ;
+import cn.hdu.fragmentTax.view.request.ForgetPassRequ;
+import cn.hdu.fragmentTax.view.request.RegisterRequ;
+import cn.hdu.fragmentTax.view.request.StuLoginRequ;
 import cn.hdu.fragmentTax.service.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;

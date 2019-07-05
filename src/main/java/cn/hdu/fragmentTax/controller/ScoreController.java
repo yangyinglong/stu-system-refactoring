@@ -1,8 +1,8 @@
 package cn.hdu.fragmentTax.controller;
 
-import cn.hdu.fragmentTax.model.request.EditAllScoreRequ;
-import cn.hdu.fragmentTax.model.request.EditEntranceInfoRequ;
-import cn.hdu.fragmentTax.model.request.EditTutorCoerRequ;
+import cn.hdu.fragmentTax.view.request.EditAllScoreRequ;
+import cn.hdu.fragmentTax.view.request.EditEntranceInfoRequ;
+import cn.hdu.fragmentTax.view.request.EditTutorCoerRequ;
 import cn.hdu.fragmentTax.service.IScoreService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;

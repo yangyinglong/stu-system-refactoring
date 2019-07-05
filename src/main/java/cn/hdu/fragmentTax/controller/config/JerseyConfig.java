@@ -22,6 +22,8 @@ public class JerseyConfig extends ResourceConfig {
         register(MultiPartFeature.class);
 		register(FileController.class);
 		register(AdminController.class);
+//		register(ProjectController.class);
+//		register(BaseController.class);
 	}
 //
 //	@Bean

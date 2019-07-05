@@ -2,12 +2,12 @@ package cn.hdu.fragmentTax.service.impl;
 
 import cn.hdu.fragmentTax.dao.entity.*;
 import cn.hdu.fragmentTax.dao.mapper.*;
-import cn.hdu.fragmentTax.model.request.EditAllScoreRequ;
-import cn.hdu.fragmentTax.model.request.EditEntranceInfoRequ;
-import cn.hdu.fragmentTax.model.request.EditTutorCoerRequ;
-import cn.hdu.fragmentTax.model.response.GetAllScoreResp;
-import cn.hdu.fragmentTax.model.response.GetEntranceInfoResp;
-import cn.hdu.fragmentTax.model.response.GetTutorCoerResp;
+import cn.hdu.fragmentTax.view.request.EditAllScoreRequ;
+import cn.hdu.fragmentTax.view.request.EditEntranceInfoRequ;
+import cn.hdu.fragmentTax.view.request.EditTutorCoerRequ;
+import cn.hdu.fragmentTax.view.response.GetAllScoreResp;
+import cn.hdu.fragmentTax.view.response.GetEntranceInfoResp;
+import cn.hdu.fragmentTax.view.response.GetTutorCoerResp;
 import cn.hdu.fragmentTax.service.IScoreService;
 import cn.hdu.fragmentTax.service.impl.model.IScoreModel;
 import cn.hdu.fragmentTax.utils.FormatUtil;

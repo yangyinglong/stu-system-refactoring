@@ -1,8 +1,8 @@
 package cn.hdu.fragmentTax.service;
 
-import cn.hdu.fragmentTax.model.request.EditAllScoreRequ;
-import cn.hdu.fragmentTax.model.request.EditEntranceInfoRequ;
-import cn.hdu.fragmentTax.model.request.EditTutorCoerRequ;
+import cn.hdu.fragmentTax.view.request.EditAllScoreRequ;
+import cn.hdu.fragmentTax.view.request.EditEntranceInfoRequ;
+import cn.hdu.fragmentTax.view.request.EditTutorCoerRequ;
 
 import java.util.Map;
 

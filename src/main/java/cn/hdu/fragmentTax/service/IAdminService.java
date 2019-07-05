@@ -1,7 +1,7 @@
 package cn.hdu.fragmentTax.service;
 
-import cn.hdu.fragmentTax.model.request.AdminExamRequ;
-import cn.hdu.fragmentTax.model.request.AdminQueryRequ;
+import cn.hdu.fragmentTax.view.request.AdminExamRequ;
+import cn.hdu.fragmentTax.view.request.AdminQueryRequ;
 
 import java.util.Map;
 

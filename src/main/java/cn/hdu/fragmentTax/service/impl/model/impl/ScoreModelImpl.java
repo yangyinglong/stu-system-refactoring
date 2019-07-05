@@ -2,9 +2,9 @@ package cn.hdu.fragmentTax.service.impl.model.impl;
 
 import cn.hdu.fragmentTax.dao.entity.ScoreAllEntity;
 import cn.hdu.fragmentTax.dao.entity.ScoreEntranceEntity;
-import cn.hdu.fragmentTax.model.request.EditAllScoreRequ;
-import cn.hdu.fragmentTax.model.request.EditEntranceInfoRequ;
-import cn.hdu.fragmentTax.model.response.GetAllScoreResp;
+import cn.hdu.fragmentTax.view.request.EditAllScoreRequ;
+import cn.hdu.fragmentTax.view.request.EditEntranceInfoRequ;
+import cn.hdu.fragmentTax.view.response.GetAllScoreResp;
 import cn.hdu.fragmentTax.service.impl.model.IScoreModel;
 import cn.hdu.fragmentTax.utils.DateUtil;
 import org.springframework.beans.BeanUtils;

@@ -5,11 +5,11 @@ import cn.hdu.fragmentTax.dao.entity.PasswordEntity;
 import cn.hdu.fragmentTax.dao.entity.StuBaseEntity;
 import cn.hdu.fragmentTax.dao.entity.TutorsEntity;
 import cn.hdu.fragmentTax.dao.mapper.*;
-import cn.hdu.fragmentTax.model.request.EditBaseInfoRequ;
-import cn.hdu.fragmentTax.model.request.ForgetPassRequ;
-import cn.hdu.fragmentTax.model.request.RegisterRequ;
-import cn.hdu.fragmentTax.model.request.StuLoginRequ;
-import cn.hdu.fragmentTax.model.response.LoginResp;
+import cn.hdu.fragmentTax.view.request.EditBaseInfoRequ;
+import cn.hdu.fragmentTax.view.request.ForgetPassRequ;
+import cn.hdu.fragmentTax.view.request.RegisterRequ;
+import cn.hdu.fragmentTax.view.request.StuLoginRequ;
+import cn.hdu.fragmentTax.view.response.LoginResp;
 import cn.hdu.fragmentTax.service.IUserService;
 import cn.hdu.fragmentTax.service.impl.model.IUserModel;
 import cn.hdu.fragmentTax.utils.DateUtil;
@@ -18,7 +18,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 
-import java.text.Format;
 import java.util.HashMap;
 import java.util.Map;
 

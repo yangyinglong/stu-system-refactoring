@@ -1,8 +1,8 @@
 package cn.hdu.fragmentTax.controller;
 
 
-import cn.hdu.fragmentTax.model.request.AdminExamRequ;
-import cn.hdu.fragmentTax.model.request.AdminQueryRequ;
+import cn.hdu.fragmentTax.view.request.AdminExamRequ;
+import cn.hdu.fragmentTax.view.request.AdminQueryRequ;
 import cn.hdu.fragmentTax.service.IAdminService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;

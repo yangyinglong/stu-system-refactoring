@@ -1,9 +1,9 @@
 package cn.hdu.fragmentTax.service;
 
-import cn.hdu.fragmentTax.model.request.EditBaseInfoRequ;
-import cn.hdu.fragmentTax.model.request.ForgetPassRequ;
-import cn.hdu.fragmentTax.model.request.RegisterRequ;
-import cn.hdu.fragmentTax.model.request.StuLoginRequ;
+import cn.hdu.fragmentTax.view.request.EditBaseInfoRequ;
+import cn.hdu.fragmentTax.view.request.ForgetPassRequ;
+import cn.hdu.fragmentTax.view.request.RegisterRequ;
+import cn.hdu.fragmentTax.view.request.StuLoginRequ;
 
 import java.util.Map;
 

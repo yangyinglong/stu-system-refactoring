@@ -2,10 +2,11 @@ package cn.hdu.fragmentTax.dao.mapper;
 
 import cn.hdu.fragmentTax.dao.entity.HonorEntity;
 import org.apache.ibatis.annotations.*;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-
+@Service
 @Mapper
 public interface IHonorMapper {
     @Select("SELECT `id`, `stu_id`, `honor_type`, `honor_level`, `honor_grade`, `proof_material_id`, `score`, `state`, `created_time`, `changed_time` FROM `honor`")
